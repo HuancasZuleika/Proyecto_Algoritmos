@@ -8,6 +8,7 @@ package menu_p;
  *
  * @author sayuri
  */
+import formularios.menu;
 import javax.swing.*;
 import java.awt.*;
 

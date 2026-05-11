@@ -1,4 +1,4 @@
-package menu_p;
+package formularios;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -10,6 +10,7 @@ package menu_p;
  * @author sayuri
  */
 
+import menu_p.*;
 import javax.swing.ImageIcon;
 
 
