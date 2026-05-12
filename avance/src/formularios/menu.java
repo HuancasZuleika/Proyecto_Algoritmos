@@ -39,18 +39,18 @@ public class menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnJugar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnJugar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnJugar.addActionListener(this::btnJugarActionPerformed);
-        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 200, 130));
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 730));
+
+        btnJugar.addActionListener(this::btnJugarActionPerformed);
+        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 220, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
