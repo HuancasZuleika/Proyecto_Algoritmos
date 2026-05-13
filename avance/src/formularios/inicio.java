@@ -15,6 +15,19 @@ public class inicio extends javax.swing.JFrame {
      */
     public inicio() {
         initComponents();
+        setLocationRelativeTo(null);
+        //botón mundo matemático
+        jbtnMundoMate.setOpaque(false);
+        jbtnMundoMate.setContentAreaFilled(false);
+        jbtnMundoMate.setBorderPainted(false);
+        //botón mundo historia
+        jbtnMundoHist.setOpaque(false);
+        jbtnMundoHist.setContentAreaFilled(false);
+        jbtnMundoHist.setBorderPainted(false);
+        //botón mundo astronomia
+        jbtnMundoAst.setOpaque(false);        
+        jbtnMundoAst.setContentAreaFilled(false);
+        jbtnMundoAst.setBorderPainted(false);
     }
 
     /**
@@ -28,17 +41,19 @@ public class inicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jbtnMundoMate = new javax.swing.JButton();
+        jbtnMundoHist = new javax.swing.JButton();
+        jbtnMundoAst = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextField1.setBackground(new java.awt.Color(153, 196, 255));
         jTextField1.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(0, 51, 102));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("...");
         jTextField1.setAutoscrolls(false);
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -46,13 +61,28 @@ public class inicio extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 290, 50));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 290, 70));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/mundoMatematico.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 290, 390));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pag_principal.jpeg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrincipal.jpeg"))); // NOI18N
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 690));
+
+        jbtnMundoMate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnMundoMateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnMundoMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 140, 50));
+
+        jbtnMundoHist.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jbtnMundoHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 150, 50));
+
+        jbtnMundoAst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnMundoAstActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, 170, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,6 +104,14 @@ public class inicio extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jbtnMundoMateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoMateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnMundoMateActionPerformed
+
+    private void jbtnMundoAstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoAstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnMundoAstActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,8 +151,10 @@ public class inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jbtnMundoAst;
+    private javax.swing.JButton jbtnMundoHist;
+    private javax.swing.JButton jbtnMundoMate;
     // End of variables declaration//GEN-END:variables
 }
