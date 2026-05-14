@@ -26,7 +26,7 @@ public class menu extends javax.swing.JFrame {
     btnJugar.setContentAreaFilled(false);
     btnJugar.setBorderPainted(false);
     }
-    
+     
 
 
     /**
@@ -47,7 +47,7 @@ public class menu extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 730));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 740));
 
         btnJugar.addActionListener(this::btnJugarActionPerformed);
         getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 220, 140));
@@ -57,6 +57,13 @@ public class menu extends javax.swing.JFrame {
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         // TODO add your handling code here:
+        
+        inicio newframe= new inicio ();
+        newframe.setVisible(true);
+        
+        this.dispose();
+        
+        
     }//GEN-LAST:event_btnJugarActionPerformed
 
     /**
