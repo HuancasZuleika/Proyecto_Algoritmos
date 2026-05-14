@@ -38,7 +38,7 @@ public class EjemploPitagoras extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploP.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 280, 210));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 280, 210));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -48,7 +48,7 @@ public class EjemploPitagoras extends javax.swing.JFrame {
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 360, 230));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 180, 360, 230));
 
         jLabel3.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 255));
@@ -59,23 +59,25 @@ public class EjemploPitagoras extends javax.swing.JFrame {
         jTextArea2.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
-        jTextArea2.setText("Imagina que tienes una rampa. Un lado mide 3 y la base mide 4. ¿Cuánto                               medirá el camino largo? ¡Vamos a descubrirlo!");
+        jTextArea2.setText("Imagina que tienes una rampa. Un lado mide 3 y la base mide 4. ¿Cuánto  medirá el camino largo? ¡Vamos a descubrirlo!");
         jTextArea2.setWrapStyleWord(true);
         jScrollPane2.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 680, 320));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 1010, 460));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
+        btnAudio.setBorderPainted(false);
+        btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 60, -1));
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, 60, -1));
 
         btnVolver.setText("VOLVER");
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
 
         btnSiguiente.setText("SIGUIENTE");
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 560, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

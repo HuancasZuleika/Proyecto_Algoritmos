@@ -37,19 +37,15 @@ public class formularios_Temas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         btnPitagoras = new javax.swing.JButton();
         btnConjuntos = new javax.swing.JButton();
         btnOperaciones = new javax.swing.JButton();
         btnArea = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 3, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 0, 153));
-        jLabel2.setText("MUNDO DE LAS MATEMÁTICAS");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         btnPitagoras.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnPitagoras.setForeground(new java.awt.Color(255, 0, 102));
@@ -63,7 +59,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnPitagoras.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.addActionListener(this::btnPitagorasActionPerformed);
-        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 200, 180));
+        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 200, 180));
 
         btnConjuntos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnConjuntos.setForeground(new java.awt.Color(255, 0, 102));
@@ -76,11 +72,11 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnConjuntos.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.addActionListener(this::btnConjuntosActionPerformed);
-        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 190, 210));
+        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 230, 210));
 
         btnOperaciones.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnOperaciones.setForeground(new java.awt.Color(255, 51, 102));
-        btnOperaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/operacionesCon.png"))); // NOI18N
+        btnOperaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OperacionesCon.jpg"))); // NOI18N
         btnOperaciones.setText("Operaciones Combinadas\n");
         btnOperaciones.setBorderPainted(false);
         btnOperaciones.setContentAreaFilled(false);
@@ -88,7 +84,8 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnOperaciones.setMargin(new java.awt.Insets(0, 0, 10, 0));
         btnOperaciones.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 250, -1));
+        btnOperaciones.addActionListener(this::btnOperacionesActionPerformed);
+        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 250, -1));
 
         btnArea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnArea.setForeground(new java.awt.Color(255, 0, 102));
@@ -100,7 +97,16 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnArea.setMargin(new java.awt.Insets(0, 0, 10, 0));
         btnArea.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnArea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, 280, 230));
+        btnArea.addActionListener(this::btnAreaActionPerformed);
+        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 280, 230));
+
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(this::btnVolverActionPerformed);
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, 90));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMat.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1150, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +124,24 @@ public class formularios_Temas extends javax.swing.JFrame {
         pantallaTeoria.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnConjuntosActionPerformed
+
+    private void btnOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperacionesActionPerformed
+
+        TeoriaOperaciones pantallaTeoria = new TeoriaOperaciones();
+        pantallaTeoria.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnOperacionesActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
+        // TODO add your handling code here:
+        TeoriaArea pantallaTeoria = new TeoriaArea();
+        pantallaTeoria.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAreaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +173,7 @@ public class formularios_Temas extends javax.swing.JFrame {
     private javax.swing.JButton btnConjuntos;
     private javax.swing.JButton btnOperaciones;
     private javax.swing.JButton btnPitagoras;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

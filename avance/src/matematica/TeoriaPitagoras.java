@@ -50,7 +50,7 @@ public class TeoriaPitagoras extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 460, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/teoremapit.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 360, 230));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 360, 230));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -61,13 +61,15 @@ public class TeoriaPitagoras extends javax.swing.JFrame {
         jTextArea1.setSelectionColor(new java.awt.Color(204, 204, 255));
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 240, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 240, 120));
 
         jLabel3.setFont(new java.awt.Font("Serif", 1, 18)); // NOI18N
         jLabel3.setText("a² + b² = c²");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, -1, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 30));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
+        btnAudio.setBorderPainted(false);
+        btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
         getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 80, 60, -1));
 
@@ -95,14 +97,9 @@ public class TeoriaPitagoras extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAudioActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
-        // Creamos una instancia del menú principal
+
         formularios_Temas menuPrincipal = new formularios_Temas();
-
-        // Lo hacemos visible
         menuPrincipal.setVisible(true);
-
-        // Cerramos la pantalla de teoría actual
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 

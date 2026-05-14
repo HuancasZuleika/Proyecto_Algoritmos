@@ -10,6 +10,7 @@ package matematica;
  */
 public class TeoriaArea extends javax.swing.JFrame {
     
+    Matematicas logicaMat = new Matematicas();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TeoriaArea.class.getName());
 
     /**
@@ -28,21 +29,70 @@ public class TeoriaArea extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnVolver = new javax.swing.JButton();
+        btnSiguiente = new javax.swing.JButton();
+        btnAudio = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnVolver.setText("VOLVER");
+        btnVolver.addActionListener(this::btnVolverActionPerformed);
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 505, -1, -1));
+
+        btnSiguiente.setText("Siguiente");
+        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 500, -1, -1));
+
+        btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
+        btnAudio.setBorderPainted(false);
+        btnAudio.setContentAreaFilled(false);
+        btnAudio.addActionListener(this::btnAudioActionPerformed);
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, 70));
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel1.setText("¡Midiendo nuestro Espacio!");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 640, 50));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("\"¡Hola, pequeño arquitecto! \n¿Sabías que el ÁREA es el tamaño de la superficie de una figura? \nEs decir, todo el espacio que hay dentro de sus líneas.\n\nPara cada figura hay una fórmula mágica:\n\nCuadrado: ¡Solo multiplicas un lado por el otro!\n\nTriángulo: Imagina la mitad de un rectángulo. ¡Es base por altura entre dos!\n\nRectangulo: ¡Aqui vamos solo a multiplicar el ancho por la altura !\n\n¡Aprender a medir áreas nos ayuda a construir cosas asombrosas!\"");
+        jTextArea1.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 400, 230));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploA.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 690, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        formularios_Temas menu = new formularios_Temas();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        // TODO add your handling code here:
+        EjemploArea pantallaEjemplo = new EjemploArea();
+        pantallaEjemplo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudioActionPerformed
+        // TODO add your handling code here:
+                logicaMat.reproducirAudio("explicacionA.wav");
+
+    }//GEN-LAST:event_btnAudioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +120,12 @@ public class TeoriaArea extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAudio;
+    private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

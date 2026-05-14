@@ -32,24 +32,41 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         btnSiguiente = new javax.swing.JButton();
         btnAudio = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVolver.setText("VOLVER");
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, -1, -1));
 
         btnSiguiente.setText("SIGUIENTE");
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 520, -1, -1));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 60, 60));
+        btnAudio.setBorderPainted(false);
+        btnAudio.setContentAreaFilled(false);
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 60, 60));
 
-        jLabel1.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("OCR A Extended", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));
         jLabel1.setText("Ejemplo Explicativo");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 50));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 650, 50));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("¡Vamos a resolver un acertijo! Tenemos esta operación\n\nPaso 1: El Escudo Mágico \n\nPrimero resolvemos lo que está protegido por paréntesis: 7−4=3. ¡Ahora nuestra operación es más pequeña: 5+6÷3!\n\nPaso 2: La Fuerza de la División\nEntre sumar y dividir, ¡la división es más fuerte! Así que hacemos: 6÷3=2.\n\nPaso 3: El Gran Final\nAhora solo nos queda sumar: 5+2=7.\n\n¡Viste! Si sigues el orden, ¡siempre llegas a la meta!\".");
+        jTextArea1.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 410, 250));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OperacionEjem.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 610, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -91,5 +108,8 @@ public class EjemploOperaciones extends javax.swing.JFrame {
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
