@@ -28,14 +28,14 @@ public class QUIZ1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jBtnPiensa = new javax.swing.JButton();
+        jBtnAprende = new javax.swing.JButton();
+        jBtnCalificación = new javax.swing.JButton();
+        jBtnSiguiente = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jBtnA = new javax.swing.JButton();
+        jBtnB = new javax.swing.JButton();
+        jBtnC = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -53,48 +53,48 @@ public class QUIZ1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(35, 8, 100));
-        jButton1.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 204, 204));
-        jButton1.setText("PIENSA");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 430, 150, 40));
+        jBtnPiensa.setBackground(new java.awt.Color(35, 8, 100));
+        jBtnPiensa.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
+        jBtnPiensa.setForeground(new java.awt.Color(0, 204, 204));
+        jBtnPiensa.setText("PIENSA");
+        getContentPane().add(jBtnPiensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 430, 150, 40));
 
-        jButton2.setBackground(new java.awt.Color(35, 8, 100));
-        jButton2.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 204, 204));
-        jButton2.setText("APRENDE");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 510, 150, 40));
+        jBtnAprende.setBackground(new java.awt.Color(35, 8, 100));
+        jBtnAprende.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
+        jBtnAprende.setForeground(new java.awt.Color(0, 204, 204));
+        jBtnAprende.setText("APRENDE");
+        jBtnAprende.addActionListener(this::jBtnAprendeActionPerformed);
+        getContentPane().add(jBtnAprende, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 510, 150, 40));
 
-        jButton3.setBackground(new java.awt.Color(35, 8, 100));
-        jButton3.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 204, 204));
-        jButton3.setText("CALIFICACIÓN");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1322, 580, 180, 40));
+        jBtnCalificación.setBackground(new java.awt.Color(35, 8, 100));
+        jBtnCalificación.setFont(new java.awt.Font("Swis721 Blk BT", 0, 18)); // NOI18N
+        jBtnCalificación.setForeground(new java.awt.Color(0, 204, 204));
+        jBtnCalificación.setText("CALIFICACIÓN");
+        getContentPane().add(jBtnCalificación, new org.netbeans.lib.awtextra.AbsoluteConstraints(1322, 580, 180, 40));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton4.setContentAreaFilled(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 870, -1, -1));
+        jBtnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBtnSiguiente.setContentAreaFilled(false);
+        getContentPane().add(jBtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 870, -1, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/QUIZ1.1__1_-removebg-preview.png"))); // NOI18N
         jButton5.setContentAreaFilled(false);
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 710, -1, 260));
 
-        jButton6.setBackground(new java.awt.Color(255, 153, 153));
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("A) 10");
-        jButton6.addActionListener(this::jButton6ActionPerformed);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 710, -1, -1));
+        jBtnA.setBackground(new java.awt.Color(255, 153, 153));
+        jBtnA.setForeground(new java.awt.Color(0, 0, 0));
+        jBtnA.setText("A) 10");
+        jBtnA.addActionListener(this::jBtnAActionPerformed);
+        getContentPane().add(jBtnA, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 710, -1, -1));
 
-        jButton7.setBackground(new java.awt.Color(255, 153, 153));
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setText("B)19");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 710, -1, -1));
+        jBtnB.setBackground(new java.awt.Color(255, 153, 153));
+        jBtnB.setForeground(new java.awt.Color(0, 0, 0));
+        jBtnB.setText("B)19");
+        getContentPane().add(jBtnB, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 710, -1, -1));
 
-        jButton8.setBackground(new java.awt.Color(255, 153, 153));
-        jButton8.setForeground(new java.awt.Color(0, 0, 0));
-        jButton8.setText("C)25");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 710, -1, -1));
+        jBtnC.setBackground(new java.awt.Color(255, 153, 153));
+        jBtnC.setForeground(new java.awt.Color(0, 0, 0));
+        jBtnC.setText("C)25");
+        getContentPane().add(jBtnC, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 710, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/CONJUNTO A.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 190, 180));
@@ -151,13 +151,13 @@ public class QUIZ1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jBtnAprendeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAprendeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jBtnAprendeActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jBtnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jBtnAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,14 +185,14 @@ public class QUIZ1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jBtnA;
+    private javax.swing.JButton jBtnAprende;
+    private javax.swing.JButton jBtnB;
+    private javax.swing.JButton jBtnC;
+    private javax.swing.JButton jBtnCalificación;
+    private javax.swing.JButton jBtnPiensa;
+    private javax.swing.JButton jBtnSiguiente;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
