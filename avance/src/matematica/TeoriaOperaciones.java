@@ -11,6 +11,13 @@ public class TeoriaOperaciones extends javax.swing.JFrame {
      */
     public TeoriaOperaciones() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(java.awt.event.WindowEvent e) {
+            logicaMat.detenerAudio();
+        }
+    });
     }
 
     /**
@@ -25,50 +32,42 @@ public class TeoriaOperaciones extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         btnAudio = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnVolver.setText("VOLVER");
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setBorderPainted(false);
+        btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, 80));
 
-        btnSiguiente.setText("SIGUIENTE");
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        btnSiguiente.setBorderPainted(false);
+        btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 570, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 300, -1, 90));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
         btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 60, -1));
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 40, 60, -1));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel1.setText("¡El Tren de las Operaciones!");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 690, 60));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/teoriaOp.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 780, 440));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("¡Hola, pequeño matemático! A veces, los números se juntan en una gran fiesta con sumas, restas, multiplicaciones y divisiones. ¡Eso es una Operación Combinada!\n\nPero ¡cuidado!, no podemos resolverlas en cualquier orden. Hay una regla de oro:\n\n1. Primero resolvemos lo que está dentro de los paréntesis ( ).\n\n2. Luego, buscamos las multiplicaciones y divisiones.\n\n3. Al final, hacemos las sumas y restas.\n\n¡Sigue este orden y siempre ganarás el reto!\"");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 640, 200));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploO.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 1030, 290));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoTeo.Ope.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        logicaMat.detenerAudio();
         formularios_Temas menu = new formularios_Temas();
         menu.setVisible(true);
         this.dispose();
@@ -76,6 +75,7 @@ public class TeoriaOperaciones extends javax.swing.JFrame {
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
        
+        logicaMat.detenerAudio();
         EjemploOperaciones pantallaEjemplo = new EjemploOperaciones();
         pantallaEjemplo.setVisible(true);
         this.dispose();
@@ -83,7 +83,13 @@ public class TeoriaOperaciones extends javax.swing.JFrame {
 
     private void btnAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudioActionPerformed
       
-        logicaMat.reproducirAudio("explicacionO.wav");
+        if (logicaMat.estaSonando()) {
+            logicaMat.pausarAudio();
+            btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png")));
+        } else {
+            logicaMat.reproducirAudio("explicacionO.wav"); 
+            btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/stop_icon.png")));
+        }   
     }//GEN-LAST:event_btnAudioActionPerformed
 
     /**
@@ -115,9 +121,7 @@ public class TeoriaOperaciones extends javax.swing.JFrame {
     private javax.swing.JButton btnAudio;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,15 +2,22 @@
 package matematica;
 
 public class EjemploConjuntos extends javax.swing.JFrame {
-    
+     
     Matematicas logicaMat = new Matematicas(); 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EjemploConjuntos.class.getName());
-
+ 
     /**
      * Creates new form EjemploConjuntos
      */
     public EjemploConjuntos() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(java.awt.event.WindowEvent e) {
+            logicaMat.detenerAudio();
+        }
+    });
     }
 
     /**
@@ -22,40 +29,40 @@ public class EjemploConjuntos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         btnAudio = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel1.setText("Ejemplo Explicativo");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 320, 50));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
         btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, 60, -1));
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, 60, -1));
 
-        btnVolver.setText("VOLVER");
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setBorderPainted(false);
+        btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
 
-        btnSiguiente.setText("SIGUIENTE");
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        btnSiguiente.setBorderPainted(false);
+        btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 570, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 330, 100, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploC.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 510, 150));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploConj.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 790, 420));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEjem.Pit.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 660));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -64,24 +71,25 @@ public class EjemploConjuntos extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 640, 150));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 880, 470));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 640, 150));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudioActionPerformed
         // TODO add your handling code here:
-                logicaMat.reproducirAudio("ejemploC.wav");
+        if (logicaMat.estaSonando()) {
+            logicaMat.pausarAudio();
+            btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png")));
+        } else {
+            logicaMat.reproducirAudio("ejemploC.wav"); 
+            btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/stop_icon.png")));
+        } 
     }//GEN-LAST:event_btnAudioActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+         logicaMat.detenerAudio();
         TeoriaConjuntos volverTeoria = new TeoriaConjuntos();
         volverTeoria.setVisible(true); 
         this.dispose();
@@ -89,6 +97,7 @@ public class EjemploConjuntos extends javax.swing.JFrame {
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         // TODO add your handling code here:
+         logicaMat.detenerAudio();
         
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
@@ -121,11 +130,9 @@ public class EjemploConjuntos extends javax.swing.JFrame {
     private javax.swing.JButton btnAudio;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

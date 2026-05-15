@@ -59,7 +59,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnPitagoras.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.addActionListener(this::btnPitagorasActionPerformed);
-        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 200, 180));
+        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 240, 180));
 
         btnConjuntos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnConjuntos.setForeground(new java.awt.Color(255, 0, 102));
@@ -72,7 +72,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnConjuntos.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.addActionListener(this::btnConjuntosActionPerformed);
-        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 230, 210));
+        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 230, 210));
 
         btnOperaciones.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnOperaciones.setForeground(new java.awt.Color(255, 51, 102));
@@ -85,7 +85,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnOperaciones.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.addActionListener(this::btnOperacionesActionPerformed);
-        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 250, -1));
+        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 250, -1));
 
         btnArea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnArea.setForeground(new java.awt.Color(255, 0, 102));
@@ -98,7 +98,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnArea.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnArea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnArea.addActionListener(this::btnAreaActionPerformed);
-        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, 280, 230));
+        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 420, 280, 230));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -106,7 +106,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMat.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1150, 670));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, 640));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,7 +119,6 @@ public class formularios_Temas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPitagorasActionPerformed
 
     private void btnConjuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConjuntosActionPerformed
-        
         TeoriaConjuntos pantallaTeoria = new TeoriaConjuntos();
         pantallaTeoria.setVisible(true);
         this.dispose();
@@ -127,8 +126,8 @@ public class formularios_Temas extends javax.swing.JFrame {
 
     private void btnOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperacionesActionPerformed
 
-        TeoriaOperaciones pantallaTeoria = new TeoriaOperaciones();
-        pantallaTeoria.setVisible(true);
+        TeoriaOperaciones pantalla = new TeoriaOperaciones();
+        pantalla.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnOperacionesActionPerformed
 

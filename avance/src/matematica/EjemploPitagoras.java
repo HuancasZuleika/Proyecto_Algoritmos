@@ -6,13 +6,20 @@ public class EjemploPitagoras extends javax.swing.JFrame {
      Matematicas logicaMat = new Matematicas(); // Tu clase con el método de audio
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EjemploPitagoras.class.getName());
 
-    /**
+    /** 
      * Creates new form EjemploPitagoras
      */
     public EjemploPitagoras() {
         initComponents();
         jTextArea1.setLineWrap(true);
         jTextArea1.setWrapStyleWord(true);
+        this.setLocationRelativeTo(null);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+        @Override
+        public void windowClosing(java.awt.event.WindowEvent e) {
+            logicaMat.detenerAudio();
+        }
+    });
     }
 
     /**
@@ -25,20 +32,39 @@ public class EjemploPitagoras extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         btnAudio = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploP.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 280, 210));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploPit.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 790, 440));
+
+        btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
+        btnAudio.setBorderPainted(false);
+        btnAudio.setContentAreaFilled(false);
+        btnAudio.addActionListener(this::btnAudioActionPerformed);
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 30, 60, -1));
+
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setBorderPainted(false);
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(this::btnVolverActionPerformed);
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 80));
+
+        btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        btnSiguiente.setBorderPainted(false);
+        btnSiguiente.setContentAreaFilled(false);
+        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 300, 90, 90));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEjem.Pit.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1160, 650));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -48,42 +74,14 @@ public class EjemploPitagoras extends javax.swing.JFrame {
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 180, 360, 230));
-
-        jLabel3.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel3.setText("Ejemplo Explicativo:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 360, 30));
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Imagina que tienes una rampa. Un lado mide 3 y la base mide 4. ¿Cuánto  medirá el camino largo? ¡Vamos a descubrirlo!");
-        jTextArea2.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 1010, 460));
-
-        btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
-        btnAudio.setBorderPainted(false);
-        btnAudio.setContentAreaFilled(false);
-        btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, 60, -1));
-
-        btnVolver.setText("VOLVER");
-        btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
-
-        btnSiguiente.setText("SIGUIENTE");
-        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 560, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 360, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+         logicaMat.detenerAudio();
         TeoriaPitagoras volverTeoria = new TeoriaPitagoras();
         volverTeoria.setVisible(true); 
         this.dispose(); 
@@ -91,6 +89,7 @@ public class EjemploPitagoras extends javax.swing.JFrame {
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         // TODO add your handling code here:
+         logicaMat.detenerAudio();
         //QuizzPitagoras irAlQuizz = new QuizzPitagoras();
         //irAlQuizz.setVisible(true); // Abre el cuestionario
         this.dispose(); // Cierra el ejemplo
@@ -98,7 +97,13 @@ public class EjemploPitagoras extends javax.swing.JFrame {
 
     private void btnAudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudioActionPerformed
         // TODO add your handling code here:
-        logicaMat.reproducirAudio("ejemploP.wav");
+         if (logicaMat.estaSonando()) {
+            logicaMat.pausarAudio();
+            btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png")));
+        } else {
+            logicaMat.reproducirAudio("ejemploP.wav"); 
+            btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/stop_icon.png")));
+        } 
     }//GEN-LAST:event_btnAudioActionPerformed
 
     /**
@@ -131,10 +136,8 @@ public class EjemploPitagoras extends javax.swing.JFrame {
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }
