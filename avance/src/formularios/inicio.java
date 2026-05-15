@@ -4,6 +4,8 @@
  */
 package formularios;
 
+import matematica.formularios_Temas;
+
 /**
  *
  * @author User
@@ -75,6 +77,11 @@ public class inicio extends javax.swing.JFrame {
         jPanel1.add(jbtnMundoMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 140, 50));
 
         jbtnMundoHist.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtnMundoHist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnMundoHistActionPerformed(evt);
+            }
+        });
         jPanel1.add(jbtnMundoHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 150, 50));
 
         jbtnMundoAst.addActionListener(new java.awt.event.ActionListener() {
@@ -106,12 +113,21 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jbtnMundoMateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoMateActionPerformed
-        // TODO add your handling code here:
+        
+        formularios_Temas conecMM = new formularios_Temas();
+        
+        conecMM.setVisible(true);//va a permitir aq se visualice la ventana dle formulario
+        this.dispose();
+        
     }//GEN-LAST:event_jbtnMundoMateActionPerformed
 
     private void jbtnMundoAstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoAstActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnMundoAstActionPerformed
+
+    private void jbtnMundoHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoHistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnMundoHistActionPerformed
 
     /**
      * @param args the command line arguments

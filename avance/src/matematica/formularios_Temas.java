@@ -4,6 +4,7 @@ package matematica;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Image;
+import formularios.inicio;
 
 public class formularios_Temas extends javax.swing.JFrame {
     
@@ -133,6 +134,12 @@ public class formularios_Temas extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        inicio pantallaInicio = new inicio(); 
+    pantallaInicio.setVisible(true);
+    
+    // Cerramos la ventana actual de temas
+    this.dispose();
+
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
