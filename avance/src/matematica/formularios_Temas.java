@@ -1,4 +1,3 @@
-
 package matematica;
 
 import javax.swing.ImageIcon;
@@ -7,7 +6,7 @@ import java.awt.Image;
 import formularios.inicio;
 
 public class formularios_Temas extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(formularios_Temas.class.getName());
 
     /**
@@ -15,6 +14,53 @@ public class formularios_Temas extends javax.swing.JFrame {
      */
     public formularios_Temas() {
         initComponents();
+        // === BOTÓN PITÁGORAS ===
+        String rutaPitagoras = "/imagen/pitagoras2.0.png";
+        btnPitagoras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnPitagoras, rutaPitagoras, 70, 330, 240, 180, true);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnPitagoras, rutaPitagoras, 70, 330, 240, 180, false);
+            }
+        });
+
+        // === BOTÓN CONJUNTOS ===
+        String rutaConjuntos = "/imagen/Conjuntos2.0.png";
+        btnConjuntos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnConjuntos, rutaConjuntos, 330, 420, 230, 210, true);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnConjuntos, rutaConjuntos, 330, 420, 230, 210, false);
+            }
+        });
+
+        // === BOTÓN OPERACIONES ===
+        String rutaOperaciones = "/imagen/Operacion2.1.png"; // O la nueva que uses en PNG
+        btnOperaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnOperaciones, rutaOperaciones, 580, 310, 250, 210, true);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnOperaciones, rutaOperaciones, 580, 310, 250, 210, false);
+            }
+        });
+
+        // === BOTÓN ÁREA DE FIGURAS ===
+        String rutaArea = "/imagen/areaFig..png";
+        btnArea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnArea, rutaArea, 860, 420, 280, 230, true);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aplicarEfectoZoom(btnArea, rutaArea, 860, 420, 280, 230, false);
+            }
+        });
     }
 
     public void setAjustarImagenALabel(JLabel label, String rutaImagen) {
@@ -28,7 +74,64 @@ public class formularios_Temas extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
         label.setIcon(scaledIcon);
     }
-    
+
+    private void aplicarEfectoZoom(javax.swing.JButton boton, String rutaImagen, int x, int y, int anchoContenedor, int altoContenedor, boolean expandir) {
+        try {
+            java.net.URL imgURL = getClass().getResource(rutaImagen);
+            if (imgURL == null) {
+                return;
+            }
+
+            javax.swing.ImageIcon originalIcon = new javax.swing.ImageIcon(imgURL);
+            java.awt.Image imgOriginal = originalIcon.getImage();
+
+            // 1. Calcular proporciones para que NO se deforme la nueva imagen
+            int imgAncho = imgOriginal.getWidth(null);
+            int imgAlto = imgOriginal.getHeight(null);
+
+            // Dejamos un pequeño espacio libre (30px) por si el botón tiene texto abajo
+            int espacioTexto = 30;
+            int maxAncho = anchoContenedor;
+            int maxAlto = altoContenedor - espacioTexto;
+
+            double escalaX = (double) maxAncho / imgAncho;
+            double escalaY = (double) maxAlto / imgAlto;
+            double escalaProporcional = Math.min(escalaX, escalaY);
+
+            // Dimensiones base de la imagen ajustada
+            int anchoFinalBase = (int) (imgAncho * escalaProporcional);
+            int altoFinalBase = (int) (imgAlto * escalaProporcional);
+
+            // 2. Si el mouse está encima, aplicamos el Zoom (15% más grande)
+            if (expandir) {
+                int anchoZoom = (int) (anchoFinalBase * 1.15);
+                int altoZoom = (int) (altoFinalBase * 1.15);
+
+                // Calculamos la posición para que crezca simétricamente desde el centro
+                int nuevoX = x - (anchoZoom - anchoFinalBase) / 2;
+                int nuevoY = y - (altoZoom - altoFinalBase) / 2;
+
+                boton.setBounds(nuevoX, nuevoY, anchoZoom, altoZoom + espacioTexto);
+
+                java.awt.Image scaledImage = imgOriginal.getScaledInstance(anchoZoom, altoZoom, java.awt.Image.SCALE_SMOOTH);
+                boton.setIcon(new javax.swing.ImageIcon(scaledImage));
+                boton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            } else {
+                // Regresa a su estado y tamaño original centrado
+                int nuevoX = x + (anchoContenedor - anchoFinalBase) / 2;
+                int nuevoY = y + (altoContenedor - (altoFinalBase + espacioTexto)) / 2;
+
+                boton.setBounds(nuevoX, nuevoY, anchoFinalBase, altoFinalBase + espacioTexto);
+
+                java.awt.Image scaledImage = imgOriginal.getScaledInstance(anchoFinalBase, altoFinalBase, java.awt.Image.SCALE_SMOOTH);
+                boton.setIcon(new javax.swing.ImageIcon(scaledImage));
+            }
+
+        } catch (Exception e) {
+            logger.log(java.util.logging.Level.SEVERE, "Error al ajustar la nueva imagen", e);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,16 +144,16 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnPitagoras = new javax.swing.JButton();
         btnConjuntos = new javax.swing.JButton();
         btnOperaciones = new javax.swing.JButton();
-        btnArea = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        btnArea = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnPitagoras.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnPitagoras.setForeground(new java.awt.Color(255, 0, 102));
-        btnPitagoras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pitagoras.png"))); // NOI18N
+        btnPitagoras.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btnPitagoras.setForeground(new java.awt.Color(255, 255, 255));
+        btnPitagoras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pitagoras2.0.png"))); // NOI18N
         btnPitagoras.setText("Teorema de Pitágoras");
         btnPitagoras.setBorderPainted(false);
         btnPitagoras.setContentAreaFilled(false);
@@ -60,11 +163,11 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnPitagoras.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.addActionListener(this::btnPitagorasActionPerformed);
-        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 240, 180));
+        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 250, 230));
 
-        btnConjuntos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnConjuntos.setForeground(new java.awt.Color(255, 0, 102));
-        btnConjuntos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Conjuntos.png"))); // NOI18N
+        btnConjuntos.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btnConjuntos.setForeground(new java.awt.Color(255, 255, 255));
+        btnConjuntos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Conjuntos2.0.png"))); // NOI18N
         btnConjuntos.setText("Teoria de Conjuntos \n\n");
         btnConjuntos.setBorderPainted(false);
         btnConjuntos.setContentAreaFilled(false);
@@ -73,11 +176,11 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnConjuntos.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.addActionListener(this::btnConjuntosActionPerformed);
-        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 230, 210));
+        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 240, 240));
 
-        btnOperaciones.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnOperaciones.setForeground(new java.awt.Color(255, 51, 102));
-        btnOperaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OperacionesCon.jpg"))); // NOI18N
+        btnOperaciones.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btnOperaciones.setForeground(new java.awt.Color(255, 255, 255));
+        btnOperaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Operacion2.1.png"))); // NOI18N
         btnOperaciones.setText("Operaciones Combinadas\n");
         btnOperaciones.setBorderPainted(false);
         btnOperaciones.setContentAreaFilled(false);
@@ -86,11 +189,16 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnOperaciones.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.addActionListener(this::btnOperacionesActionPerformed);
-        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 250, -1));
+        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 260, 240));
 
-        btnArea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnArea.setForeground(new java.awt.Color(255, 0, 102));
-        btnArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/areaFig.png"))); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(this::btnVolverActionPerformed);
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 90, 90));
+
+        btnArea.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        btnArea.setForeground(new java.awt.Color(255, 255, 255));
+        btnArea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/areaFig..png"))); // NOI18N
         btnArea.setText("Area de Figuras  Planas");
         btnArea.setBorderPainted(false);
         btnArea.setContentAreaFilled(false);
@@ -99,12 +207,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnArea.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnArea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnArea.addActionListener(this::btnAreaActionPerformed);
-        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 420, 280, 230));
-
-        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
-        btnVolver.setContentAreaFilled(false);
-        btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 90, 90));
+        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 360, 260, 260));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMat.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, 640));
@@ -134,11 +237,11 @@ public class formularios_Temas extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
-        inicio pantallaInicio = new inicio(); 
-    pantallaInicio.setVisible(true);
-    
-    // Cerramos la ventana actual de temas
-    this.dispose();
+        inicio pantallaInicio = new inicio();
+        pantallaInicio.setVisible(true);
+
+        // Cerramos la ventana actual de temas
+        this.dispose();
 
     }//GEN-LAST:event_btnVolverActionPerformed
 
