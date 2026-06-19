@@ -47,6 +47,8 @@ public class inicio extends javax.swing.JFrame {
         aplicarEfectoPulso(jLabelMundoMat, jbtnMate,"/imagen/planetaMate.png");
         aplicarEfectoPulso(jLabelMundoHis, jbtnHist,"/imagen/planetaHistoria.png");
         aplicarEfectoPulso(jLabelMundoAst, jbtnAst,"/imagen/planetaAstronomia.png");
+        //efecto boton para el ajuste
+        EfectoBoton(jbtnAjuste);
     }
 
     /**
@@ -137,7 +139,7 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnMateActionPerformed
 
     private void jbtnAstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAstActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jbtnAstActionPerformed
 
     private void jbtnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistActionPerformed
@@ -207,6 +209,60 @@ public class inicio extends javax.swing.JFrame {
         timerPulso.start();
     }
     
+    //método para el efecto botón
+    private void EfectoBoton(javax.swing.JButton boton) {
+        if (boton.getIcon() == null) return;
+
+        ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
+        int anchoNormal = imgOriginal.getIconWidth();
+        int altoNormal = imgOriginal.getIconHeight();
+
+        // Calculamos las tres escalas:
+        int anchoHover = (int) (anchoNormal * 1.08); // Un poco más grande (Hover)
+        int altoHover = (int) (altoNormal * 1.08);
+
+        int anchoClick = (int) (anchoNormal * 0.94); // Un poco más chico (Efecto hundido/presionado)
+        int altoClick = (int) (altoNormal * 0.94);
+
+        // Creamos los tres iconos escalados
+        javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
+        javax.swing.Icon iconoHover = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoHover, altoHover, java.awt.Image.SCALE_DEFAULT));
+        javax.swing.Icon iconoClick = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoClick, altoClick, java.awt.Image.SCALE_DEFAULT));
+
+        // Estética del botón
+        boton.setContentAreaFilled(false);
+        boton.setBorderPainted(false);
+        boton.setFocusPainted(false);
+        boton.setIcon(iconoNormal);
+
+        // Control total de la ilusión de presión
+        boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                boton.setIcon(iconoHover); // Crece al pasar el mouse
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                boton.setIcon(iconoNormal); // Regresa al tamaño base al salir
+            }
+
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent e) {
+                boton.setIcon(iconoClick); // ¡Se hunde al hacer click!
+            }
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent e) {
+                // Si sueltas el click dentro del botón, vuelve al tamaño hover
+                if (boton.getBounds().contains(e.getPoint())) {
+                    boton.setIcon(iconoHover);
+                } else {
+                    boton.setIcon(iconoNormal);
+                }
+            }
+        });
+    }
     /**
      * @param args the command line arguments
      */

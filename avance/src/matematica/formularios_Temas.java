@@ -210,6 +210,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 360, 260, 260));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMat.png"))); // NOI18N
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, 640));
 
         pack();
