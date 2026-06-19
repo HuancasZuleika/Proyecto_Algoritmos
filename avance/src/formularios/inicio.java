@@ -25,6 +25,7 @@ public class inicio extends javax.swing.JFrame {
         SetFondoPrin(jLabelMundoMat,"src/imagen/planetaMate.png");
         SetFondoPrin(jLabelMundoHis,"src/imagen/planetaHistoria.png");
         SetFondoPrin(jLabelMundoAst,"src/imagen/planetaAstronomia.png");
+        
         //botón mundo matemático
         jbtnMate.setOpaque(false);
         jbtnMate.setContentAreaFilled(false);
@@ -37,6 +38,10 @@ public class inicio extends javax.swing.JFrame {
         jbtnAst.setOpaque(false);
         jbtnAst.setContentAreaFilled(false);
         jbtnAst.setBorderPainted(false);
+        //botón ajustes
+        jbtnAjuste.setOpaque(false);
+        jbtnAjuste.setContentAreaFilled(false);
+        jbtnAjuste.setBorderPainted(false);
         
         //animación para cada mundo
         aplicarEfectoPulso(jLabelMundoMat, jbtnMate,"/imagen/planetaMate.png");
@@ -54,20 +59,18 @@ public class inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabelMundoAst = new javax.swing.JLabel();
         jbtnAst = new javax.swing.JButton();
-        jLabelMundoHis = new javax.swing.JLabel();
+        jLabelMundoAst = new javax.swing.JLabel();
         jbtnHist = new javax.swing.JButton();
-        jLabelMundoMat = new javax.swing.JLabel();
+        jLabelMundoHis = new javax.swing.JLabel();
         jbtnMate = new javax.swing.JButton();
+        jLabelMundoMat = new javax.swing.JLabel();
+        jbtnAjuste = new javax.swing.JButton();
         jLabelMenuPrin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaAstronomia.png"))); // NOI18N
-        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 360, 310));
 
         jbtnAst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,8 +79,8 @@ public class inicio extends javax.swing.JFrame {
         });
         jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 200, 130));
 
-        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaHistoria.png"))); // NOI18N
-        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 350, 320));
+        jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaAstronomia.png"))); // NOI18N
+        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 360, 310));
 
         jbtnHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,8 +89,8 @@ public class inicio extends javax.swing.JFrame {
         });
         jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 210, 140));
 
-        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaMate.png"))); // NOI18N
-        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 330, 300));
+        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaHistoria.png"))); // NOI18N
+        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 350, 320));
 
         jbtnMate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +98,17 @@ public class inicio extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 210, 140));
+
+        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaMate.png"))); // NOI18N
+        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 330, 300));
+
+        jbtnAjuste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAjuste.png"))); // NOI18N
+        jbtnAjuste.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnAjusteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnAjuste, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 100, 70));
 
         jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.jpg"))); // NOI18N
         jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
@@ -129,6 +143,10 @@ public class inicio extends javax.swing.JFrame {
     private void jbtnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnHistActionPerformed
+
+    private void jbtnAjusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAjusteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnAjusteActionPerformed
     
     //método para ajustar una imagen a un jLabel
     private void SetFondoPrin(JLabel LabelName, String root){
@@ -231,6 +249,7 @@ public class inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMundoHis;
     private javax.swing.JLabel jLabelMundoMat;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbtnAjuste;
     private javax.swing.JButton jbtnAst;
     private javax.swing.JButton jbtnHist;
     private javax.swing.JButton jbtnMate;
