@@ -4,6 +4,10 @@
  */
 package formularios;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import matematica.formularios_Temas;
 
 /**
@@ -17,19 +21,26 @@ public class inicio extends javax.swing.JFrame {
      */
     public inicio() {
         initComponents();
-        setLocationRelativeTo(null);
+        //iniciar el programa en el centro de la pantalla
+        this.setLocationRelativeTo(this);
+        
+        SetFondoPrin(jLabelMenuPrin,"src/imagen/fondoMenuPrin.jpg");
+        SetFondoPrin(jLabelMundoMat,"src/imagen/planetaMate.png");
+        SetFondoPrin(jLabelMundoHis,"src/imagen/planetaHistoria.png");
+        SetFondoPrin(jLabelMundoAst,"src/imagen/planetaAstronomia.png");
         //botón mundo matemático
-        jbtnMundoMate.setOpaque(false);
-        jbtnMundoMate.setContentAreaFilled(false);
-        jbtnMundoMate.setBorderPainted(false);
-        //botón mundo historia
-        jbtnMundoHist.setOpaque(false);
-        jbtnMundoHist.setContentAreaFilled(false);
-        jbtnMundoHist.setBorderPainted(false);
-        //botón mundo astronomia
-        jbtnMundoAst.setOpaque(false);        
-        jbtnMundoAst.setContentAreaFilled(false);
-        jbtnMundoAst.setBorderPainted(false);
+        jbtnMate.setOpaque(false);
+        jbtnMate.setContentAreaFilled(false);
+        jbtnMate.setBorderPainted(false);
+        //botón mundo matemático
+        jbtnHist.setOpaque(false);
+        jbtnHist.setContentAreaFilled(false);
+        jbtnHist.setBorderPainted(false);
+        //botón mundo matemático
+        jbtnAst.setOpaque(false);
+        jbtnAst.setContentAreaFilled(false);
+        jbtnAst.setBorderPainted(false);
+        
     }
 
     /**
@@ -42,93 +53,89 @@ public class inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jbtnMundoMate = new javax.swing.JButton();
-        jbtnMundoHist = new javax.swing.JButton();
-        jbtnMundoAst = new javax.swing.JButton();
+        jLabelMundoAst = new javax.swing.JLabel();
+        jLabelMundoHis = new javax.swing.JLabel();
+        jLabelMundoMat = new javax.swing.JLabel();
+        jLabelMenuPrin = new javax.swing.JLabel();
+        jbtnMate = new javax.swing.JButton();
+        jbtnHist = new javax.swing.JButton();
+        jbtnAst = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(153, 196, 255));
-        jTextField1.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 51, 102));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setAutoscrolls(false);
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaAstronomia.png"))); // NOI18N
+        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 340, 300));
+
+        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaHistoria.png"))); // NOI18N
+        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 320, 290));
+
+        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaMate.png"))); // NOI18N
+        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 320, 280));
+
+        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.jpg"))); // NOI18N
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
+
+        jbtnMate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jbtnMateActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 290, 70));
+        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 210, 140));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrincipal.jpeg"))); // NOI18N
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 690));
-
-        jbtnMundoMate.addActionListener(new java.awt.event.ActionListener() {
+        jbtnHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnMundoMateActionPerformed(evt);
+                jbtnHistActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnMundoMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 140, 50));
+        jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 210, 140));
 
-        jbtnMundoHist.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jbtnMundoHist.addActionListener(new java.awt.event.ActionListener() {
+        jbtnAst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnMundoHistActionPerformed(evt);
+                jbtnAstActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnMundoHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 150, 50));
-
-        jbtnMundoAst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnMundoAstActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, 170, 50));
+        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 200, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jbtnMundoMateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoMateActionPerformed
-        
-        formularios_Temas conecMM = new formularios_Temas();
-        
-        conecMM.setVisible(true);//va a permitir aq se visualice la ventana dle formulario
+    private void jbtnMateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMateActionPerformed
+        formularios_Temas conexMundoMate = new formularios_Temas();
+        conexMundoMate.setVisible(true);
         this.dispose();
-        
-    }//GEN-LAST:event_jbtnMundoMateActionPerformed
+    }//GEN-LAST:event_jbtnMateActionPerformed
 
-    private void jbtnMundoAstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoAstActionPerformed
+    private void jbtnAstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAstActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnMundoAstActionPerformed
+    }//GEN-LAST:event_jbtnAstActionPerformed
 
-    private void jbtnMundoHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMundoHistActionPerformed
+    private void jbtnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnMundoHistActionPerformed
+    }//GEN-LAST:event_jbtnHistActionPerformed
 
+    private void SetFondoPrin(JLabel LabelName, String root){
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(LabelName.getWidth(), LabelName.getHeight(), Image.SCALE_DEFAULT));
+        LabelName.setIcon(icon);
+        this.repaint();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -166,11 +173,13 @@ public class inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelMenuPrin;
+    private javax.swing.JLabel jLabelMundoAst;
+    private javax.swing.JLabel jLabelMundoHis;
+    private javax.swing.JLabel jLabelMundoMat;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton jbtnMundoAst;
-    private javax.swing.JButton jbtnMundoHist;
-    private javax.swing.JButton jbtnMundoMate;
+    private javax.swing.JButton jbtnAst;
+    private javax.swing.JButton jbtnHist;
+    private javax.swing.JButton jbtnMate;
     // End of variables declaration//GEN-END:variables
 }
