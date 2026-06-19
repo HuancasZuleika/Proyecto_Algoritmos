@@ -15,10 +15,7 @@ import matematica.formularios_Temas;
  * @author User
  */
 public class inicio extends javax.swing.JFrame {
-
-    /**
-     * Creates new form inicio
-     */
+    
     public inicio() {
         initComponents();
         //iniciar el programa en el centro de la pantalla
@@ -41,6 +38,10 @@ public class inicio extends javax.swing.JFrame {
         jbtnAst.setContentAreaFilled(false);
         jbtnAst.setBorderPainted(false);
         
+        //animación para cada mundo
+        aplicarEfectoPulso(jLabelMundoMat, jbtnMate,"/imagen/planetaMate.png");
+        aplicarEfectoPulso(jLabelMundoHis, jbtnHist,"/imagen/planetaHistoria.png");
+        aplicarEfectoPulso(jLabelMundoAst, jbtnAst,"/imagen/planetaAstronomia.png");
     }
 
     /**
@@ -54,35 +55,29 @@ public class inicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelMundoAst = new javax.swing.JLabel();
-        jLabelMundoHis = new javax.swing.JLabel();
-        jLabelMundoMat = new javax.swing.JLabel();
-        jLabelMenuPrin = new javax.swing.JLabel();
-        jbtnMate = new javax.swing.JButton();
-        jbtnHist = new javax.swing.JButton();
         jbtnAst = new javax.swing.JButton();
+        jLabelMundoHis = new javax.swing.JLabel();
+        jbtnHist = new javax.swing.JButton();
+        jLabelMundoMat = new javax.swing.JLabel();
+        jbtnMate = new javax.swing.JButton();
+        jLabelMenuPrin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaAstronomia.png"))); // NOI18N
-        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 340, 300));
+        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 360, 310));
 
-        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaHistoria.png"))); // NOI18N
-        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 320, 290));
-
-        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaMate.png"))); // NOI18N
-        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 320, 280));
-
-        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.jpg"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
-
-        jbtnMate.addActionListener(new java.awt.event.ActionListener() {
+        jbtnAst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnMateActionPerformed(evt);
+                jbtnAstActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 210, 140));
+        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 200, 130));
+
+        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaHistoria.png"))); // NOI18N
+        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 350, 320));
 
         jbtnHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,12 +86,18 @@ public class inicio extends javax.swing.JFrame {
         });
         jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 210, 140));
 
-        jbtnAst.addActionListener(new java.awt.event.ActionListener() {
+        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaMate.png"))); // NOI18N
+        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 330, 300));
+
+        jbtnMate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnAstActionPerformed(evt);
+                jbtnMateActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 200, 130));
+        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 210, 140));
+
+        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.jpg"))); // NOI18N
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,12 +129,64 @@ public class inicio extends javax.swing.JFrame {
     private void jbtnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnHistActionPerformed
-
+    
+    //método para ajustar una imagen a un jLabel
     private void SetFondoPrin(JLabel LabelName, String root){
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(image.getImage().getScaledInstance(LabelName.getWidth(), LabelName.getHeight(), Image.SCALE_DEFAULT));
         LabelName.setIcon(icon);
         this.repaint();
+    }
+    
+    //método para incluir movimiento en las imágenes
+    private void aplicarEfectoPulso(javax.swing.JLabel label, javax.swing.JButton boton, String rutaImagen) {
+        java.net.URL urlImagen = getClass().getResource(rutaImagen);
+        if (urlImagen == null) return; 
+
+        ImageIcon imgOriginal = new ImageIcon(urlImagen);
+        final int anchoBase = label.getWidth();
+        final int altoBase = label.getHeight();
+
+        javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoBase, altoBase, java.awt.Image.SCALE_DEFAULT));
+        label.setIcon(iconoNormal);
+
+        javax.swing.Timer timerPulso = new javax.swing.Timer(30, null);
+
+        timerPulso.addActionListener(new java.awt.event.ActionListener() {
+            private double angulo = 0;
+
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                double factorZoom = 1.0 + ((Math.sin(angulo) + 1.0) / 3.5) * 0.06;
+                int nuevoAncho = (int) (anchoBase * factorZoom);
+                int nuevoAlto = (int) (altoBase * factorZoom);
+
+                label.setIcon(new ImageIcon(imgOriginal.getImage().getScaledInstance(nuevoAncho, nuevoAlto, java.awt.Image.SCALE_DEFAULT)));
+                angulo += 0.1; 
+            }
+        });
+
+        // Creamos el detector de eventos que detiene y limpia el pulso
+        java.awt.event.MouseAdapter detectorMouse = new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                timerPulso.stop();          // Detiene el latido
+                label.setIcon(iconoNormal); // Regresa al tamaño original
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                timerPulso.start();         // Reanuda el latido al salir
+            }
+        };
+
+        // 🔥 LA SOLUCIÓN: Le asignamos el detector a la imagen Y TAMBIÉN al botón que está al frente
+        label.addMouseListener(detectorMouse);
+        if (boton != null) {
+            boton.addMouseListener(detectorMouse);
+        }
+
+        timerPulso.start();
     }
     
     /**
