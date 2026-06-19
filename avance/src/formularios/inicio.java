@@ -4,6 +4,7 @@
  */
 package formularios;
 
+import Astronomia.formulario_TemasAstro;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -139,7 +140,9 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnMateActionPerformed
 
     private void jbtnAstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAstActionPerformed
-        
+        Astronomia.formulario_TemasAstro conexMundoAstro = new formulario_TemasAstro();
+        conexMundoAstro.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbtnAstActionPerformed
 
     private void jbtnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistActionPerformed
@@ -147,7 +150,9 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnHistActionPerformed
 
     private void jbtnAjusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAjusteActionPerformed
-        // TODO add your handling code here:
+        ajuste conexAjuste = new ajuste();
+        conexAjuste.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbtnAjusteActionPerformed
     
     //método para ajustar una imagen a un jLabel
