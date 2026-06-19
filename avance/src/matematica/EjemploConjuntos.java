@@ -44,25 +44,25 @@ public class EjemploConjuntos extends javax.swing.JFrame {
         btnAudio.setBorderPainted(false);
         btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, 60, -1));
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 30, 60, -1));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setBorderPainted(false);
         btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 310, 100, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, 100, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploConj.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 790, 420));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 790, 420));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEjem.Pit.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 660));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo_Ejem.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);

@@ -57,19 +57,19 @@ public class EjemploArea extends javax.swing.JFrame {
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 320, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 270, -1, -1));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
         btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 40, -1, 50));
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 40, -1, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploArea.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 770, 430));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEjem.Pit.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 650));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo_Ejem.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);

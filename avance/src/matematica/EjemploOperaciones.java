@@ -51,13 +51,13 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         btnVolver.setBorderPainted(false);
         btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
         btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, -1, -1));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
@@ -66,10 +66,10 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 60, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OperacionEjem.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 680, 390));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 680, 390));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEjem.Pit.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1160, 620));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo_Ejem.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1100, 620));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
