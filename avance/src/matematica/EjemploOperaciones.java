@@ -57,7 +57,7 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 300, -1, -1));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
@@ -106,6 +106,11 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         // TODO add your handling code here:
         logicaMat.detenerAudio();
         
+        // Código dentro del Ejercicio Explicativo para abrir el Quiz
+QuizOperaciones ventanaQuiz = new QuizOperaciones();
+ventanaQuiz.setVisible(true);
+ventanaQuiz.setLocationRelativeTo(null);
+this.dispose(); // Cierra el ejercicio explicativo
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     /**
