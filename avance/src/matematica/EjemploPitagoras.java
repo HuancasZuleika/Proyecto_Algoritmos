@@ -31,40 +31,57 @@ public class EjemploPitagoras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         btnAudio = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploPit.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 790, 440));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pit_ejm1.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 300, 320));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pit_ejm2.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 290, 260));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pit_ejm4.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 310, 240));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pit_ejm3.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 80, 310, 290));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pit_ejm5.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 340, 60));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
         btnAudio.setContentAreaFilled(false);
         btnAudio.addActionListener(this::btnAudioActionPerformed);
-        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 30, 60, -1));
+        getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 30, 60, -1));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setBorderPainted(false);
         btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 80));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 80));
 
         btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 300, 90, 90));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 260, 90, 90));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEjem.Pit.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1160, 650));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo_Ejem.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1100, 620));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -75,6 +92,9 @@ public class EjemploPitagoras extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, 360, 230));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploPit.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 790, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -137,6 +157,11 @@ public class EjemploPitagoras extends javax.swing.JFrame {
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
