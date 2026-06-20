@@ -150,9 +150,7 @@ public class inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnHistActionPerformed
 
     private void jbtnAjusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAjusteActionPerformed
-        ajuste conexAjuste = new ajuste();
-        conexAjuste.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_jbtnAjusteActionPerformed
     
     //método para ajustar una imagen a un jLabel
