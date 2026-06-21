@@ -163,7 +163,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnPitagoras.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnPitagoras.addActionListener(this::btnPitagorasActionPerformed);
-        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 250, 230));
+        getContentPane().add(btnPitagoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 250, 230));
 
         btnConjuntos.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         btnConjuntos.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,7 +176,7 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnConjuntos.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnConjuntos.addActionListener(this::btnConjuntosActionPerformed);
-        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 240, 240));
+        getContentPane().add(btnConjuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 240, 240));
 
         btnOperaciones.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         btnOperaciones.setForeground(new java.awt.Color(255, 255, 255));
@@ -189,12 +189,12 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnOperaciones.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnOperaciones.addActionListener(this::btnOperacionesActionPerformed);
-        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 260, 240));
+        getContentPane().add(btnOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 260, 240));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 90, 90));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 90, 90));
 
         btnArea.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         btnArea.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,9 +207,9 @@ public class formularios_Temas extends javax.swing.JFrame {
         btnArea.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnArea.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnArea.addActionListener(this::btnAreaActionPerformed);
-        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 360, 260, 260));
+        getContentPane().add(btnArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, 260, 260));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMat.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMundoMat.png"))); // NOI18N
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1160, 640));
 

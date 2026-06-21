@@ -286,10 +286,10 @@ private void aplicarZoomSutil(javax.swing.JLabel label, java.awt.Image img, int 
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 330, 320));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pizarra_pitagoras.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 360, 220));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 350, 190));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/rampa_cubos.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 370, 210));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 370, 210));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
