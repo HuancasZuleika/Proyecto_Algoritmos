@@ -8,14 +8,14 @@ package matematica;
  *
  * @author Usuario
  */
-public class Conjunto5 extends javax.swing.JFrame {
+public class QuzOperaciones2 extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Conjunto5.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuzOperaciones2.class.getName());
 
     /**
-     * Creates new form Conjunto5
+     * Creates new form QuzOperaciones2
      */
-    public Conjunto5() {
+    public QuzOperaciones2() {
         initComponents();
     }
 
@@ -30,33 +30,49 @@ public class Conjunto5 extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/CANASTAFINAL.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 500, 310));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/niñoOperaciones (1) (1).png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/NIÑOFINALQUIZ1 (1) (1).png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 250, 400, 520));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("{40 - (25 / 5)}X {6 + (18 /3)} - 10}");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 440, 50));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/NIÑAFINALQUIZ1 (1).png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 300, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("410");
         jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 590, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 80, 80));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/AUSTROFINAL (1).png"))); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("310");
         jButton2.setContentAreaFilled(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 210, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 513, 90, 100));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/CONJUNTOSCOMPLETOQUIZ (1).png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, -1));
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setText("250");
+        jButton3.setContentAreaFilled(false);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 90, 100));
+
+        jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("190");
+        jButton4.setContentAreaFilled(false);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 100, 100));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Fondo_Operaciones3 (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -83,15 +99,16 @@ public class Conjunto5 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Conjunto5().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new QuzOperaciones2().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

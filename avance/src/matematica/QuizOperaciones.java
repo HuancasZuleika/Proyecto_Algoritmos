@@ -66,7 +66,7 @@ this.setLocationRelativeTo(null);
             }
         });
         btnNino.addActionListener(this::btnNinoActionPerformed);
-        getContentPane().add(btnNino, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 580));
+        getContentPane().add(btnNino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, 580));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 153));
         jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
@@ -75,7 +75,7 @@ this.setLocationRelativeTo(null);
         jButton6.setBorder(null);
         jButton6.setContentAreaFilled(false);
         jButton6.addActionListener(this::jButton6ActionPerformed);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 150, 120));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, 150, 120));
 
         jButton1.setBackground(new java.awt.Color(188, 229, 97));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
@@ -84,7 +84,7 @@ this.setLocationRelativeTo(null);
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, 140, 110));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 140, 110));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
@@ -93,7 +93,7 @@ this.setLocationRelativeTo(null);
         jButton4.setBorder(null);
         jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(this::jButton4ActionPerformed);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 120, 100));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 460, 120, 100));
 
         jButton3.setBackground(new java.awt.Color(123, 200, 221));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
@@ -102,7 +102,7 @@ this.setLocationRelativeTo(null);
         jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 480, 140, 110));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 460, 140, 110));
 
         jLabel2.setBackground(new java.awt.Color(41, 150, 179));
         jLabel2.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 18)); // NOI18N
@@ -116,12 +116,12 @@ this.setLocationRelativeTo(null);
         jLabel3.setFont(new java.awt.Font("Swis721 Blk BT", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("(24 ÷ 6) + (7 × 3) − 5 + 8 = ?");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 690, 170));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 690, 170));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjercicioOperaciones.png"))); // NOI18N
         jLabel1.setText("31");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1150, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, 1150, 690));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         jButton10.setContentAreaFilled(false);
