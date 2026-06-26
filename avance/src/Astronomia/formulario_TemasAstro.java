@@ -8,8 +8,9 @@ import formularios.*;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
-import matematica.formularios_Temas;
+
 
 /**
  *
@@ -22,7 +23,13 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         //iniciar el programa en el centro de la pantalla
         this.setLocationRelativeTo(this);
         
-        
+        //imagen se adapte al label
+        SetFondoPrin(jLabelFondoAstro, "src/imagen/fondoPrinAstro.png");
+        //imagen se adapte al botón
+        SetBotones(jbtnOrigen, "src/imagen/btnOrigenUniver.png");
+        SetBotones(jbtnSistSolar, "src/imagen/btnSistemaSolar.png");
+        SetBotones(jbtnViaLact, "src/imagen/btnViaLactea.png");
+        SetBotones(jbtnPlanetas, "src/imagen/btnPlanetas.png");
         //transparencia para el botón origen
         jbtnOrigen.setContentAreaFilled(false);
         jbtnOrigen.setBorderPainted(false);
@@ -64,8 +71,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         jbtnOrigen = new javax.swing.JButton();
         jbtnSistSolar = new javax.swing.JButton();
         jbtnViaLact = new javax.swing.JButton();
-        jLabelMenuPrin = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabelFondoAstro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,7 +92,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnPlanetasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnPlanetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 360, 230));
+        jPanel1.add(jbtnPlanetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 280, 140));
 
         jbtnOrigen.setBackground(new java.awt.Color(242, 242, 242));
         jbtnOrigen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnOrigenUniver.png"))); // NOI18N
@@ -97,7 +103,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnOrigenActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 400, 220));
+        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 280, 140));
 
         jbtnSistSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSistemaSolar.png"))); // NOI18N
         jbtnSistSolar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +111,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnSistSolarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 400, 220));
+        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 280, 140));
 
         jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLactea.png"))); // NOI18N
         jbtnViaLact.addActionListener(new java.awt.event.ActionListener() {
@@ -113,13 +119,10 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnViaLactActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 370, 220));
+        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 280, 140));
 
-        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMundoAstro.jpg"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
-
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
+        jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro.png"))); // NOI18N
+        jPanel1.add(jLabelFondoAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,6 +176,21 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    
+    //método para ajustar una imagen a un jLabel
+    private void SetFondoPrin(JLabel LabelName, String root){
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(LabelName.getWidth(), LabelName.getHeight(), Image.SCALE_DEFAULT));
+        LabelName.setIcon(icon);
+        this.repaint();
+    }
+    //método para ajustar una imagen a un botón
+    private void SetBotones(JButton ButonName, String root){
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(ButonName.getWidth(), ButonName.getHeight(), Image.SCALE_DEFAULT));
+        ButonName.setIcon(icon);
+        this.repaint();
+    }
     
     //método para el efecto botón
     private void EfectoBoton(javax.swing.JButton boton) {
@@ -272,8 +290,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabelMenuPrin;
+    private javax.swing.JLabel jLabelFondoAstro;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnOrigen;
     private javax.swing.JButton jbtnPlanetas;
