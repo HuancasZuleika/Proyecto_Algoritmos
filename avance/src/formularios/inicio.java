@@ -23,10 +23,10 @@ public class inicio extends javax.swing.JFrame {
         //iniciar el programa en el centro de la pantalla
         this.setLocationRelativeTo(this);
         
-        SetFondoPrin(jLabelMenuPrin,"src/imagen/fondoMenuPrin.jpg");
-        SetFondoPrin(jLabelMundoMat,"src/imagen/planetaMate.png");
-        SetFondoPrin(jLabelMundoHis,"src/imagen/planetaHistoria.png");
-        SetFondoPrin(jLabelMundoAst,"src/imagen/planetaAstronomia.png");
+        SetFondoPrin(jLabelMenuPrin,"src/imagen/fondoMenuPrin.png");
+        SetFondoPrin(jLabelMundoMat,"src/imagen/MundoMate.png");
+        SetFondoPrin(jLabelMundoHis,"src/imagen/MundoHisto.png");
+        SetFondoPrin(jLabelMundoAst,"src/imagen/MundoAstro.png");
         
         //botón mundo matemático
         jbtnMate.setOpaque(false);
@@ -46,9 +46,9 @@ public class inicio extends javax.swing.JFrame {
         jbtnAjuste.setBorderPainted(false);
         
         //animación para cada mundo
-        aplicarEfectoPulso(jLabelMundoMat, jbtnMate,"/imagen/planetaMate.png");
-        aplicarEfectoPulso(jLabelMundoHis, jbtnHist,"/imagen/planetaHistoria.png");
-        aplicarEfectoPulso(jLabelMundoAst, jbtnAst,"/imagen/planetaAstronomia.png");
+        aplicarEfectoPulso(jLabelMundoMat, jbtnMate,"/imagen/MundoMate.png");
+        aplicarEfectoPulso(jLabelMundoHis, jbtnHist,"/imagen/MundoHisto.png");
+        aplicarEfectoPulso(jLabelMundoAst, jbtnAst,"/imagen/MundoAstro.png");
         //efecto boton para el ajuste
         EfectoBoton(jbtnAjuste);
     }
@@ -81,30 +81,30 @@ public class inicio extends javax.swing.JFrame {
                 jbtnAstActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 200, 130));
+        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 170, 150));
 
-        jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaAstronomia.png"))); // NOI18N
-        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 360, 310));
+        jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MundoAstro.png"))); // NOI18N
+        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 250, 230));
 
         jbtnHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnHistActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 210, 140));
+        jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 210, 190));
 
-        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaHistoria.png"))); // NOI18N
-        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 350, 320));
+        jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MundoHisto.png"))); // NOI18N
+        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 270, 250));
 
         jbtnMate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnMateActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 210, 140));
+        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 180, 160));
 
-        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/planetaMate.png"))); // NOI18N
-        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 330, 300));
+        jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MundoMate.png"))); // NOI18N
+        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 240, 230));
 
         jbtnAjuste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAjuste.png"))); // NOI18N
         jbtnAjuste.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class inicio extends javax.swing.JFrame {
         });
         jPanel1.add(jbtnAjuste, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 100, 70));
 
-        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.jpg"))); // NOI18N
+        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.png"))); // NOI18N
         jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
