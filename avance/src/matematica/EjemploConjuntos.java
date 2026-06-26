@@ -29,16 +29,32 @@ public class EjemploConjuntos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         btnAudio = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Conj.1.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 310, 290));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Conj.3.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 330, 220));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Conj.2.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 300, 250));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Conj.4.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, -1, 260));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
@@ -58,11 +74,8 @@ public class EjemploConjuntos extends javax.swing.JFrame {
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
         getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, 100, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploConj.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 790, 420));
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo_Ejem.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 630));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 1100, 630));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -72,6 +85,9 @@ public class EjemploConjuntos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 640, 150));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjemploConj.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 790, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,6 +114,20 @@ public class EjemploConjuntos extends javax.swing.JFrame {
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         // TODO add your handling code here:
          logicaMat.detenerAudio();
+         
+         // Crear el objeto con el nombre exacto de tu ventana
+    Conjuntos4 ventanaQuiz = new Conjuntos4(); 
+    
+    // Hacerla visible
+    ventanaQuiz.setVisible(true); 
+    
+    // Centrarla en la pantalla (opcional, pero recomendado)
+    ventanaQuiz.setLocationRelativeTo(null); 
+    
+    // Cerrar la ventana actual del ejemplo
+    this.dispose();
+         
+
         
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
@@ -130,8 +160,12 @@ public class EjemploConjuntos extends javax.swing.JFrame {
     private javax.swing.JButton btnAudio;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

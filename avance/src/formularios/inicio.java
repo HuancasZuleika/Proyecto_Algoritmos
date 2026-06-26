@@ -10,6 +10,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import matematica.formularios_Temas;
+import Historia.formulariosHis_Temas;
 
 /**
  *
@@ -147,12 +148,13 @@ public class inicio extends javax.swing.JFrame {
 
     private void jbtnHistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistActionPerformed
         // TODO add your handling code here:
+        formulariosHis_Temas conexMundoHist = new formulariosHis_Temas();
+        conexMundoHist.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbtnHistActionPerformed
 
     private void jbtnAjusteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAjusteActionPerformed
-        ajuste conexAjuste = new ajuste();
-        conexAjuste.setVisible(true);
-        this.dispose();
+       
     }//GEN-LAST:event_jbtnAjusteActionPerformed
     
     //método para ajustar una imagen a un jLabel

@@ -36,16 +36,34 @@ public class EjemploOperaciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel7 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         btnAudio = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ope.4.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 280, 120));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ope.3.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 370, 160));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ope.2.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 530, 210));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 220, 90));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ope.1.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 620, 220));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -57,7 +75,7 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 270, -1, -1));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 250, -1, -1));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
@@ -65,11 +83,8 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         btnAudio.addActionListener(this::btnAudioActionPerformed);
         getContentPane().add(btnAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, 60, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OperacionEjem.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 680, 390));
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo_Ejem.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1100, 620));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1090, 620));
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -79,6 +94,9 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 410, 250));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OperacionEjem.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 680, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -106,6 +124,11 @@ public class EjemploOperaciones extends javax.swing.JFrame {
         // TODO add your handling code here:
         logicaMat.detenerAudio();
         
+        // Código dentro del Ejercicio Explicativo para abrir el Quiz
+QuizOperaciones ventanaQuiz = new QuizOperaciones();
+ventanaQuiz.setVisible(true);
+ventanaQuiz.setLocationRelativeTo(null);
+this.dispose(); // Cierra el ejercicio explicativo
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     /**
@@ -137,8 +160,13 @@ public class EjemploOperaciones extends javax.swing.JFrame {
     private javax.swing.JButton btnAudio;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables

@@ -17,6 +17,15 @@ public class QuizOperaciones extends javax.swing.JFrame {
      */
     public QuizOperaciones() {
         initComponents();
+        this.setResizable(false);
+     
+
+// 2. Define el tamaño exacto que debe tener tu juego (Ancho, Alto)
+// Modifica estos números según el tamaño real de tu imagen de fondo
+this.setSize(1150, 768); 
+
+// 3. Hace que la ventana aparezca perfectamente centrada en la pantalla
+this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,6 +37,7 @@ public class QuizOperaciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnNino = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -36,34 +46,63 @@ public class QuizOperaciones extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        btnNino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/niñoOperaciones (1) (1).png"))); // NOI18N
+        btnNino.setBorder(null);
+        btnNino.setBorderPainted(false);
+        btnNino.setContentAreaFilled(false);
+        btnNino.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnNino.setFocusPainted(false);
+        btnNino.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                btnNinoAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        btnNino.addActionListener(this::btnNinoActionPerformed);
+        getContentPane().add(btnNino, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, 580));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 153));
+        jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 0, 153));
         jButton6.setText("31");
+        jButton6.setBorder(null);
         jButton6.setContentAreaFilled(false);
         jButton6.addActionListener(this::jButton6ActionPerformed);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 150, 120));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 150, 120));
 
         jButton1.setBackground(new java.awt.Color(188, 229, 97));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 153));
         jButton1.setText("34");
+        jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 680, 140, 110));
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, 140, 110));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 0, 153));
         jButton4.setText("29");
+        jButton4.setBorder(null);
         jButton4.setContentAreaFilled(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 680, 140, 120));
+        jButton4.addActionListener(this::jButton4ActionPerformed);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 120, 100));
 
         jButton3.setBackground(new java.awt.Color(123, 200, 221));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 153));
         jButton3.setText("28");
+        jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 680, 140, 110));
+        jButton3.addActionListener(this::jButton3ActionPerformed);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 480, 140, 110));
 
         jLabel2.setBackground(new java.awt.Color(41, 150, 179));
         jLabel2.setFont(new java.awt.Font("Swis721 BlkEx BT", 0, 18)); // NOI18N
@@ -72,25 +111,22 @@ public class QuizOperaciones extends javax.swing.JFrame {
         jLabel2.setAutoscrolls(true);
         jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 180, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 180, 40));
 
-        jLabel3.setFont(new java.awt.Font("Swis721 Blk BT", 0, 48)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Swis721 Blk BT", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 51));
         jLabel3.setText("(24 ÷ 6) + (7 × 3) − 5 + 8 = ?");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 930, 210));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 690, 170));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/QUIZ2.3.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjercicioOperaciones.png"))); // NOI18N
         jLabel1.setText("31");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 1800, 1040));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1150, 660));
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         jButton10.setContentAreaFilled(false);
         jButton10.addActionListener(this::jButton10ActionPerformed);
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 730, 200, 160));
-
-        jButton5.setText("jButton5");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 660, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -100,12 +136,125 @@ public class QuizOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+       
+        mostrarVentanaResultado(false); // Falso = Muestra ventana roja de error
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void btnNinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNinoActionPerformed
+        controlarAudio("/audio/audiodeOperaciones.wav");
+      
+    }//GEN-LAST:event_btnNinoActionPerformed
+
+    private void btnNinoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_btnNinoAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNinoAncestorAdded
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       
+        mostrarVentanaResultado(false); // Falso = Muestra ventana roja de error
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        mostrarVentanaResultado(false); // Falso = Muestra ventana roja de error
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         mostrarVentanaResultado(true); // Verdadero = Muestra ventana verde con las 3 estrellas amarillas
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    
+    private javax.sound.sampled.Clip clipActual = null;
+    
+    public void controlarAudio(String rutaArchivo) {
+    try {
+        // 2. SI EL AUDIO YA ESTÁ SONANDO: ¡Lo paramos y lo cerramos!
+        if (clipActual != null && clipActual.isRunning()) {
+            clipActual.stop();
+            clipActual.close();
+            clipActual = null; // Lo dejamos limpio
+            System.out.println("Audio detenido.");
+            return; // Nos salimos del método para que no vuelva a empezar
+        }
+
+        // 3. SI NO ESTÁ SONANDO: Lo cargamos y le damos Play
+        java.io.File archivo = new java.io.File(getClass().getResource(rutaArchivo).toURI());
+        javax.sound.sampled.AudioInputStream audioStream = javax.sound.sampled.AudioSystem.getAudioInputStream(archivo);
+        clipActual = javax.sound.sampled.AudioSystem.getClip();
+        clipActual.open(audioStream);
+        clipActual.start();
+        System.out.println("Audio iniciado.");
+        
+    } catch (Exception e) {
+        System.out.println("Error con el audio: " + e.getMessage());
+    }
+}
+    private void mostrarVentanaResultado(boolean esCorrecto) {
+    // 1. Creamos la ventana flotante sobre el juego
+    javax.swing.JDialog ventana = new javax.swing.JDialog(this, true);
+    ventana.setUndecorated(true); // Le quita el borde aburrido de Windows
+    ventana.setSize(450, 250);
+    ventana.setLocationRelativeTo(this); // La centra en la pantalla
+
+    // 2. Creamos el panel de fondo decorativo
+    javax.swing.JPanel panel = new javax.swing.JPanel();
+    panel.setLayout(null);
+    
+    // Asignamos colores según el resultado (Verde para correcto, Rojo para error)
+    if (esCorrecto) {
+        panel.setBackground(new java.awt.Color(40, 180, 99)); // Verde bonito
+    } else {
+        panel.setBackground(new java.awt.Color(231, 76, 60)); // Rojo llamativo
+    }
+    panel.setBorder(javax.swing.BorderFactory.createLineBorder(java.awt.Color.WHITE, 4)); // Borde blanco grueso
+
+    // 3. Etiqueta para el Título Grande
+    javax.swing.JLabel lblTitulo = new javax.swing.JLabel();
+    lblTitulo.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 28));
+    lblTitulo.setForeground(java.awt.Color.WHITE);
+    lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    lblTitulo.setBounds(20, 30, 410, 40);
+
+    // 4. Etiqueta para las Estrellas o Mensaje animado
+    javax.swing.JLabel lblDetalle = new javax.swing.JLabel();
+    lblDetalle.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 22));
+    lblDetalle.setForeground(java.awt.Color.YELLOW); // Estrellas amarillas brillantes
+    lblDetalle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    lblDetalle.setBounds(20, 90, 410, 40);
+
+    // Configurar textos según la respuesta
+    if (esCorrecto) {
+        lblTitulo.setText("¡WOW! ¡EXCELENTE!");
+        lblDetalle.setText("⭐ ⭐ ⭐ ¡CORRECTO! ⭐ ⭐ ⭐");
+    } else {
+        lblTitulo.setText("¡OH NO, ERROR!");
+        lblDetalle.setText("❌ ¡Inténtalo otra vez! ❌");
+    }
+
+    // 5. Botón llamativo para cerrar la ventana y seguir jugando
+    javax.swing.JButton btnCerrar = new javax.swing.JButton("¡CONTINUAR!");
+    btnCerrar.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 16));
+    btnCerrar.setForeground(new java.awt.Color(51, 51, 51));
+    btnCerrar.setBackground(java.awt.Color.WHITE);
+    btnCerrar.setFocusPainted(false);
+    btnCerrar.setBounds(140, 160, 170, 45);
+    btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    
+    // Evento para cerrar al darle clic
+    btnCerrar.addActionListener(e -> ventana.dispose());
+
+    // 6. Armamos la ventana decorativa
+    panel.add(lblTitulo);
+    panel.add(lblDetalle);
+    panel.add(btnCerrar);
+    ventana.add(panel);
+    
+    // 7. La mostramos
+    ventana.setVisible(true);
+}
+ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -127,13 +276,16 @@ public class QuizOperaciones extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new QuizOperaciones().setVisible(true));
     }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNino;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
