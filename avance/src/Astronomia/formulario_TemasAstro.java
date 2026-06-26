@@ -24,12 +24,12 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         
         //imagen se adapte al label
-        SetFondoPrin(jLabelFondoAstro, "src/imagen/fondoPrinAstro.png");
+        SetFondoPrin(jLabelFondoAstro, "src/imagen/fondoPrinAstro2.png");
         //imagen se adapte al botón
-        SetBotones(jbtnOrigen, "src/imagen/btnOrigenUniver.png");
-        SetBotones(jbtnSistSolar, "src/imagen/btnSistemaSolar.png");
-        SetBotones(jbtnViaLact, "src/imagen/btnViaLactea.png");
-        SetBotones(jbtnPlanetas, "src/imagen/btnPlanetas.png");
+        SetBotones(jbtnOrigen, "src/imagen/btnOrigen.png");
+        SetBotones(jbtnSistSolar, "src/imagen/btnSisSol.png");
+        SetBotones(jbtnViaLact, "src/imagen/btnViaLac.png");
+        
         //transparencia para el botón origen
         jbtnOrigen.setContentAreaFilled(false);
         jbtnOrigen.setBorderPainted(false);
@@ -42,15 +42,11 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         jbtnViaLact.setContentAreaFilled(false);
         jbtnViaLact.setBorderPainted(false);
         jbtnViaLact.setOpaque(false);
-        //transparencia para el botón planetas
-        jbtnPlanetas.setContentAreaFilled(false);
-        jbtnPlanetas.setBorderPainted(false);
-        jbtnPlanetas.setOpaque(false);
         //efectos para los botones        
         EfectoBoton(jbtnOrigen);
         EfectoBoton(jbtnSistSolar);
         EfectoBoton(jbtnViaLact);
-        EfectoBoton(jbtnPlanetas);
+        
         
         //efecto boton para el ajuste
         
@@ -67,7 +63,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnVolver = new javax.swing.JButton();
-        jbtnPlanetas = new javax.swing.JButton();
         jbtnOrigen = new javax.swing.JButton();
         jbtnSistSolar = new javax.swing.JButton();
         jbtnViaLact = new javax.swing.JButton();
@@ -86,16 +81,8 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, 90));
 
-        jbtnPlanetas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnPlanetas.png"))); // NOI18N
-        jbtnPlanetas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnPlanetasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnPlanetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 280, 140));
-
         jbtnOrigen.setBackground(new java.awt.Color(242, 242, 242));
-        jbtnOrigen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnOrigenUniver.png"))); // NOI18N
+        jbtnOrigen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnOrigen.png"))); // NOI18N
         jbtnOrigen.setBorderPainted(false);
         jbtnOrigen.setOpaque(true);
         jbtnOrigen.addActionListener(new java.awt.event.ActionListener() {
@@ -103,25 +90,25 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnOrigenActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 280, 140));
+        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 220, 200));
 
-        jbtnSistSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSistemaSolar.png"))); // NOI18N
+        jbtnSistSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSisSol.png"))); // NOI18N
         jbtnSistSolar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnSistSolarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 280, 140));
+        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 230, 230));
 
-        jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLactea.png"))); // NOI18N
+        jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLac.png"))); // NOI18N
         jbtnViaLact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnViaLactActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 280, 140));
+        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, 220, 210));
 
-        jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro.png"))); // NOI18N
+        jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro2.png"))); // NOI18N
         jPanel1.add(jLabelFondoAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,13 +127,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jbtnPlanetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlanetasActionPerformed
-
-        teoria_Planetas conexPlanetas = new teoria_Planetas();
-        conexPlanetas.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtnPlanetasActionPerformed
 
     private void jbtnOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOrigenActionPerformed
         teoria_Origen conexOrigen = new teoria_Origen();
@@ -201,11 +181,11 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         int altoNormal = imgOriginal.getIconHeight();
 
         // Calculamos las tres escalas:
-        int anchoHover = (int) (anchoNormal * 1.08); // Un poco más grande (Hover)
-        int altoHover = (int) (altoNormal * 1.08);
+        int anchoHover = (int) (anchoNormal * 1.02); // Un poco más grande (Hover)
+        int altoHover = (int) (altoNormal * 1.02);
 
-        int anchoClick = (int) (anchoNormal * 0.94); // Un poco más chico (Efecto hundido/presionado)
-        int altoClick = (int) (altoNormal * 0.94);
+        int anchoClick = (int) (anchoNormal * 0.90); // Un poco más chico (Efecto hundido/presionado)
+        int altoClick = (int) (altoNormal * 0.90);
 
         // Creamos los tres iconos escalados
         javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
@@ -293,7 +273,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelFondoAstro;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnOrigen;
-    private javax.swing.JButton jbtnPlanetas;
     private javax.swing.JButton jbtnSistSolar;
     private javax.swing.JButton jbtnViaLact;
     // End of variables declaration//GEN-END:variables
