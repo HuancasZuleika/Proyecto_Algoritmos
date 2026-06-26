@@ -5,6 +5,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Image;
 import formularios.inicio;
+import matematica.TeoriaPitagoras;
 
 public class formulariosHis_Temas extends javax.swing.JFrame {
     
@@ -142,6 +143,7 @@ public class formulariosHis_Temas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnAtras = new javax.swing.JButton();
         btnPreincas = new javax.swing.JButton();
         btnImperio = new javax.swing.JButton();
         btnConquista = new javax.swing.JButton();
@@ -150,6 +152,12 @@ public class formulariosHis_Temas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnAtras.setBorderPainted(false);
+        btnAtras.setContentAreaFilled(false);
+        btnAtras.addActionListener(this::btnAtrasActionPerformed);
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 120, 90));
 
         btnPreincas.setFont(new java.awt.Font("Berlin Sans FB Demi", 1, 24)); // NOI18N
         btnPreincas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Preincas2.0.png"))); // NOI18N
@@ -183,6 +191,7 @@ public class formulariosHis_Temas extends javax.swing.JFrame {
         btnConquista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnConquista.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnConquista.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnConquista.addActionListener(this::btnConquistaActionPerformed);
         getContentPane().add(btnConquista, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 290, 210));
 
         btnIndepen.setFont(new java.awt.Font("Bodoni MT Black", 1, 24)); // NOI18N
@@ -193,6 +202,7 @@ public class formulariosHis_Temas extends javax.swing.JFrame {
         btnIndepen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnIndepen.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnIndepen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnIndepen.addActionListener(this::btnIndepenActionPerformed);
         getContentPane().add(btnIndepen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 360, 230));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMundoHist.png"))); // NOI18N
@@ -203,12 +213,40 @@ public class formulariosHis_Temas extends javax.swing.JFrame {
 
     private void btnImperioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImperioActionPerformed
         // TODO add your handling code here:
+        TeoriaImperio pantallaTeoria = new TeoriaImperio();
+        pantallaTeoria.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnImperioActionPerformed
 
     private void btnPreincasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreincasActionPerformed
         // TODO add your handling code here:
-        
+        TeoriaPreinca pantallaTeoria = new TeoriaPreinca();
+        pantallaTeoria.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnPreincasActionPerformed
+
+    private void btnIndepenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIndepenActionPerformed
+        // TODO add your handling code here:
+        TeoriaIndependencia pantallaTeoria = new TeoriaIndependencia();
+        pantallaTeoria.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnIndepenActionPerformed
+
+    private void btnConquistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConquistaActionPerformed
+        // TODO add your handling code here:
+        TeoriaConquista pantallaTeoria = new TeoriaConquista();
+        pantallaTeoria.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnConquistaActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+        inicio pantallaInicio = new inicio();
+        pantallaInicio.setVisible(true);
+
+        // Cerramos la ventana actual de temas
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,6 +274,7 @@ public class formulariosHis_Temas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnConquista;
     private javax.swing.JButton btnImperio;
     private javax.swing.JButton btnIndepen;
