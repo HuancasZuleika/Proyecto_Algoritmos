@@ -283,7 +283,7 @@ private void aplicarZoomSutil(javax.swing.JLabel label, java.awt.Image img, int 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/triangulo_explorador.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 330, 320));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 330, 320));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/pizarra_pitagoras.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 360, 220));

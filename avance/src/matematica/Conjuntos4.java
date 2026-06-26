@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class QUIZ1 extends javax.swing.JFrame {
+public class Conjuntos4 extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QUIZ1.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Conjuntos4.class.getName());
 
     /**
      * Creates new form QUIZ1
      */
-    public QUIZ1() {
+    public Conjuntos4() {
         initComponents();        
         jpanelMensaje.setVisible(false);
         
@@ -315,7 +315,7 @@ public void controlarAudio(String rutaArchivo) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new QUIZ1().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Conjuntos4().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

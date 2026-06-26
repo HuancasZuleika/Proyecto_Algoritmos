@@ -100,7 +100,7 @@ public class EjemploConjuntos extends javax.swing.JFrame {
          logicaMat.detenerAudio();
          
          // Crear el objeto con el nombre exacto de tu ventana
-    QUIZ1 ventanaQuiz = new QUIZ1(); 
+    Conjuntos4 ventanaQuiz = new Conjuntos4(); 
     
     // Hacerla visible
     ventanaQuiz.setVisible(true); 
