@@ -258,25 +258,25 @@ private void animarFiguraSola(int figura, boolean aumentar) {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTriangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/triangulo_area.png"))); // NOI18N
-        getContentPane().add(lblTriangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 290, 310));
+        getContentPane().add(lblTriangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 320, 310));
 
         lblCuadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/cuadrado_area.png"))); // NOI18N
-        getContentPane().add(lblCuadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 330, 330));
+        getContentPane().add(lblCuadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 360, 340));
 
         lblRectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/rectan_area.png"))); // NOI18N
-        getContentPane().add(lblRectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 310, 360));
+        getContentPane().add(lblRectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 380, 360));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setBorderPainted(false);
         btnVolver.setContentAreaFilled(false);
         btnVolver.addActionListener(this::btnVolverActionPerformed);
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 90));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 90));
 
         btnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         btnSiguiente.setBorderPainted(false);
         btnSiguiente.setContentAreaFilled(false);
         btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
-        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, -1, 80));
+        getContentPane().add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 220, -1, 80));
 
         btnAudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/volume1.png"))); // NOI18N
         btnAudio.setBorderPainted(false);
