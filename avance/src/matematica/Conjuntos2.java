@@ -35,7 +35,7 @@ public class Conjuntos2 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jBotonsisguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,14 +45,17 @@ public class Conjuntos2 extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MENSAJEQUIZ2 (1).png"))); // NOI18N
+        jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/ConjuntoBQUIZ2 (1).png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 320, -1, 270));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/ConjuntoAQuiz2 (1).png"))); // NOI18N
+        jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 260));
 
@@ -67,7 +70,7 @@ public class Conjuntos2 extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("B) 13");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, 140, 40));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 150, 40));
 
         jButton6.setBackground(new java.awt.Color(241, 138, 138));
         jButton6.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
@@ -75,9 +78,11 @@ public class Conjuntos2 extends javax.swing.JFrame {
         jButton6.setText("C) 20");
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 660, 120, 40));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton7.setContentAreaFilled(false);
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 630, -1, -1));
+        jBotonsisguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBotonsisguiente.setBorderPainted(false);
+        jBotonsisguiente.setContentAreaFilled(false);
+        jBotonsisguiente.addActionListener(this::jBotonsisguienteActionPerformed);
+        getContentPane().add(jBotonsisguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 630, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/FONDOQUIZ2 (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 760));
@@ -88,6 +93,20 @@ public class Conjuntos2 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jBotonsisguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonsisguienteActionPerformed
+        // 1. Creamos la instancia de la pantalla de Felicitaciones
+    Conjuntos3 ventanaFelicitaciones = new Conjuntos3(); 
+    
+    // 2. La hacemos visible
+    ventanaFelicitaciones.setVisible(true); 
+    
+    // 3. La centramos en la pantalla
+    ventanaFelicitaciones.setLocationRelativeTo(null); 
+    
+    // 4. Cerramos la ventana de la evaluación
+    this.dispose();
+    }//GEN-LAST:event_jBotonsisguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,13 +134,13 @@ public class Conjuntos2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBotonsisguiente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

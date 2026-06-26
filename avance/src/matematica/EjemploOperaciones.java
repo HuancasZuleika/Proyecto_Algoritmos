@@ -129,6 +129,8 @@ QuizOperaciones ventanaQuiz = new QuizOperaciones();
 ventanaQuiz.setVisible(true);
 ventanaQuiz.setLocationRelativeTo(null);
 this.dispose(); // Cierra el ejercicio explicativo
+
+
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     /**

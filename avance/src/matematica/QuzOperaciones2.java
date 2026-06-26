@@ -34,6 +34,7 @@ public class QuzOperaciones2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jBotonsiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,11 +72,32 @@ public class QuzOperaciones2 extends javax.swing.JFrame {
         jButton4.setContentAreaFilled(false);
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 510, 100, 100));
 
+        jBotonsiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBotonsiguiente.setBorderPainted(false);
+        jBotonsiguiente.setContentAreaFilled(false);
+        jBotonsiguiente.addActionListener(this::jBotonsiguienteActionPerformed);
+        getContentPane().add(jBotonsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 620, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Fondo_Operaciones3 (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBotonsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonsiguienteActionPerformed
+      
+        // Creamos la instancia para entrar a la escuela (Biblioteca/Salón de honor)
+    QuizOperaciones3 biblioteca = new QuizOperaciones3();
+    
+    // La hacemos visible y la centramos
+    biblioteca.setVisible(true);
+    biblioteca.setLocationRelativeTo(null);
+    
+    // Cerramos la pantalla del candado exterior
+    this.dispose();
+        
+        
+    }//GEN-LAST:event_jBotonsiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,6 +125,7 @@ public class QuzOperaciones2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBotonsiguiente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

@@ -37,7 +37,7 @@ public class Conjuntos3 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jBotonsiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,6 +53,7 @@ public class Conjuntos3 extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 430, 410, 320));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MENSAJEQUIZ3 (1).png"))); // NOI18N
+        jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 640, 120));
 
@@ -72,7 +73,7 @@ public class Conjuntos3 extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("B) 10");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 600, 90, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 600, 100, 40));
 
         jButton4.setBackground(new java.awt.Color(255, 102, 102));
         jButton4.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
@@ -80,15 +81,31 @@ public class Conjuntos3 extends javax.swing.JFrame {
         jButton4.setText("C) 9");
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 600, 90, -1));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton5.setContentAreaFilled(false);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, -1, -1));
+        jBotonsiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBotonsiguiente.setBorderPainted(false);
+        jBotonsiguiente.setContentAreaFilled(false);
+        jBotonsiguiente.addActionListener(this::jBotonsiguienteActionPerformed);
+        getContentPane().add(jBotonsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 650, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/FONDOQUIZ3 (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBotonsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonsiguienteActionPerformed
+        // 1. Creamos la instancia de la pantalla de Créditos
+    Conjuntos4 ventanaCreditos = new Conjuntos4(); 
+    
+    // 2. La hacemos visible
+    ventanaCreditos.setVisible(true); 
+    
+    // 3. La centramos en la pantalla
+    ventanaCreditos.setLocationRelativeTo(null); 
+    
+    // 4. Cerramos la ventana de Felicitaciones
+    this.dispose();
+    }//GEN-LAST:event_jBotonsiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,11 +133,11 @@ public class Conjuntos3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBotonsiguiente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

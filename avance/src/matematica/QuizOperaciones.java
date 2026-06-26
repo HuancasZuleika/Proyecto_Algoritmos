@@ -44,8 +44,9 @@ this.setLocationRelativeTo(null);
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -118,15 +119,19 @@ this.setLocationRelativeTo(null);
         jLabel3.setText("(24 ÷ 6) + (7 × 3) − 5 + 8 = ?");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 690, 170));
 
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jButton10.setContentAreaFilled(false);
+        jButton10.addActionListener(this::jButton10ActionPerformed);
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 730, 200, 160));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjercicioOperaciones.png"))); // NOI18N
         jLabel1.setText("31");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, 1150, 690));
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton10.setContentAreaFilled(false);
-        jButton10.addActionListener(this::jButton10ActionPerformed);
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 730, 200, 160));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 550, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -161,6 +166,18 @@ this.setLocationRelativeTo(null);
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
          mostrarVentanaResultado(true); // Verdadero = Muestra ventana verde con las 3 estrellas amarillas
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    // Llamamos a la siguiente pantalla del quiz (la escuela)
+    QuizOperaciones1 pregunta2 = new QuizOperaciones1();
+    pregunta2.setVisible(true);
+    pregunta2.setLocationRelativeTo(null);
+    
+    this.dispose(); // Cierra la pregunta 1
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,6 +301,7 @@ this.setLocationRelativeTo(null);
     private javax.swing.JButton btnNino;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;

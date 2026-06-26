@@ -112,21 +112,20 @@ public class EjemploConjuntos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        // TODO add your handling code here:
-         logicaMat.detenerAudio();
+     // TODO add your handling code here:
+    logicaMat.detenerAudio(); // Esto está perfecto para parar la música del ejemplo
          
-         // Crear el objeto con el nombre exacto de tu ventana
-    Conjuntos4 ventanaQuiz = new Conjuntos4(); 
+    // CAMBIO AQUÍ: En lugar de Conjuntos4, llamamos a la Bienvenida (Conjunto1)
+    Conjunto1 ventanaBienvenida = new Conjunto1(); 
     
     // Hacerla visible
-    ventanaQuiz.setVisible(true); 
+    ventanaBienvenida.setVisible(true); 
     
-    // Centrarla en la pantalla (opcional, pero recomendado)
-    ventanaQuiz.setLocationRelativeTo(null); 
+    // Centrarla en la pantalla
+    ventanaBienvenida.setLocationRelativeTo(null); 
     
     // Cerrar la ventana actual del ejemplo
     this.dispose();
-         
 
         
     }//GEN-LAST:event_btnSiguienteActionPerformed

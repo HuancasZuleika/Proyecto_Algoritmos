@@ -31,7 +31,7 @@ public class Conjunto1 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jBotonInterrogante = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -39,6 +39,7 @@ public class Conjunto1 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/niños.Quiz.conjuntos(1) (1).png"))); // NOI18N
+        jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
 
@@ -48,11 +49,14 @@ public class Conjunto1 extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/flechaQUIZ1.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 160, 130));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/BOTONQUIZ1 (1).png"))); // NOI18N
-        jButton2.setContentAreaFilled(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 630, -1, 80));
+        jBotonInterrogante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/BOTONQUIZ1 (1).png"))); // NOI18N
+        jBotonInterrogante.setBorderPainted(false);
+        jBotonInterrogante.setContentAreaFilled(false);
+        jBotonInterrogante.addActionListener(this::jBotonInterroganteActionPerformed);
+        getContentPane().add(jBotonInterrogante, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 630, -1, 80));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MENSAJEQUIZ1 (1).png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 590, 260));
 
@@ -61,6 +65,21 @@ public class Conjunto1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBotonInterroganteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonInterroganteActionPerformed
+      
+        // 1. Creamos la instancia de la nueva pantalla de Evaluación
+    Conjuntos2 ventanaEvaluacion = new Conjuntos2(); 
+    
+    // 2. La hacemos visible
+    ventanaEvaluacion.setVisible(true); 
+    
+    // 3. La centramos en la pantalla
+    ventanaEvaluacion.setLocationRelativeTo(null); 
+    
+    // 4. Cerramos la ventana actual de bienvenida
+    this.dispose();
+    }//GEN-LAST:event_jBotonInterroganteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,8 +107,8 @@ public class Conjunto1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBotonInterrogante;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

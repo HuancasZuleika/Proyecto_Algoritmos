@@ -61,7 +61,7 @@ this.setLocationRelativeTo(null);
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jbtnRegresaAlInicio = new javax.swing.JButton();
+        jbtnSiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jpanelMensaje = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -168,10 +168,10 @@ this.setLocationRelativeTo(null);
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/unnamed-removebg-preview (1).png"))); // NOI18N
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 80, 50));
 
-        jbtnRegresaAlInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jbtnRegresaAlInicio.setContentAreaFilled(false);
-        jbtnRegresaAlInicio.addActionListener(this::jbtnRegresaAlInicioActionPerformed);
-        getContentPane().add(jbtnRegresaAlInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 620, -1, -1));
+        jbtnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jbtnSiguiente.setContentAreaFilled(false);
+        jbtnSiguiente.addActionListener(this::jbtnSiguienteActionPerformed);
+        getContentPane().add(jbtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 620, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(22, 7, 100));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ejercicio de Conjuntos.jpeg"))); // NOI18N
@@ -250,20 +250,20 @@ this.setLocationRelativeTo(null);
              this.dispose(); // Cierra el Quiz actual
     }//GEN-LAST:event_jBtnPiensaActionPerformed
 
-    private void jbtnRegresaAlInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegresaAlInicioActionPerformed
-        // 1. Creamos la ventana del menú principal
-    // Nota: Asegúrate de que el nombre coincida exactamente con tu clase (Formularios_Temas o formularios_Temas)
-    formularios_Temas ventanaMenu = new formularios_Temas();
+    private void jbtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteActionPerformed
+  
+        // 1. Creamos la instancia de la pantalla de Celebración Final
+    Conjunto5 ventanaFinal = new Conjunto5(); 
     
     // 2. La hacemos visible
-    ventanaMenu.setVisible(true);
+    ventanaFinal.setVisible(true); 
     
-    // 3. La centramos en la pantalla para que no salga en una esquina
-    ventanaMenu.setLocationRelativeTo(null);
+    // 3. La centramos en la pantalla
+    ventanaFinal.setLocationRelativeTo(null); 
     
-    // 4. Cerramos este Quiz actual para que no se quede abierto por detrás
+    // 4. Cerramos el Quiz Espacial
     this.dispose();
-    }//GEN-LAST:event_jbtnRegresaAlInicioActionPerformed
+    }//GEN-LAST:event_jbtnSiguienteActionPerformed
 
     // 1. Declaramos la variable del clip arriba (fuera del método) para que Java la recuerde
 private javax.sound.sampled.Clip clipActual = null;
@@ -343,7 +343,7 @@ public void controlarAudio(String rutaArchivo) {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JButton jbtnRegresaAlInicio;
+    private javax.swing.JButton jbtnSiguiente;
     private javax.swing.JPanel jpanelMensaje;
     private javax.swing.JButton jreproductor;
     // End of variables declaration//GEN-END:variables

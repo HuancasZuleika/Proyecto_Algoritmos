@@ -31,7 +31,7 @@ public class Conjunto5 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbotonsisguiente = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -47,11 +47,14 @@ public class Conjunto5 extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/NIÑAFINALQUIZ1 (1).png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 300, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 590, -1, -1));
+        jbotonsisguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jbotonsisguiente.setBorderPainted(false);
+        jbotonsisguiente.setContentAreaFilled(false);
+        jbotonsisguiente.addActionListener(this::jbotonsisguienteActionPerformed);
+        getContentPane().add(jbotonsisguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 590, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/AUSTROFINAL (1).png"))); // NOI18N
+        jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 210, -1, -1));
 
@@ -60,6 +63,20 @@ public class Conjunto5 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbotonsisguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbotonsisguienteActionPerformed
+        // 1. Creamos la instancia para regresar a la teoría
+    formularios_Temas ventanaTeoria = new formularios_Temas();
+    
+    // 2. La hacemos visible
+    ventanaTeoria.setVisible(true);
+    
+    // 3. La centramos en la pantalla
+    ventanaTeoria.setLocationRelativeTo(null);
+    
+    // 4. Cerramos esta ventana final de felicitaciones
+    this.dispose();
+    }//GEN-LAST:event_jbotonsisguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,11 +104,11 @@ public class Conjunto5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jbotonsisguiente;
     // End of variables declaration//GEN-END:variables
 }

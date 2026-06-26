@@ -39,7 +39,7 @@ public class QuizOperaciones1 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jBotonsiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,15 +101,31 @@ public class QuizOperaciones1 extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/niño1OPERACIONES (1) (2) (1).png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 160, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 610, -1, -1));
+        jBotonsiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBotonsiguiente.setContentAreaFilled(false);
+        jBotonsiguiente.addActionListener(this::jBotonsiguienteActionPerformed);
+        getContentPane().add(jBotonsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 610, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/FONDO_OPERACIONES2.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1160, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBotonsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonsiguienteActionPerformed
+      
+        // Creamos la instancia para ir a la Pregunta 3 (El candado de la escuela)
+    QuzOperaciones2 pregunta3 = new QuzOperaciones2();
+    
+    // La hacemos visible y la centramos
+    pregunta3.setVisible(true);
+    pregunta3.setLocationRelativeTo(null);
+    
+    // Cerramos la pantalla anterior
+    this.dispose();
+        
+        
+    }//GEN-LAST:event_jBotonsiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,7 +153,7 @@ public class QuizOperaciones1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBotonsiguiente;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

@@ -33,6 +33,7 @@ public class QuizOperaciones3 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jBotonsiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,22 +52,34 @@ public class QuizOperaciones3 extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("B) 79");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 640, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 640, 90, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 102, 102));
         jButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("C) 120");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 640, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 640, 100, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/LIBROOPERACIONES (1) (1).png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+
+        jBotonsiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBotonsiguiente.setBorderPainted(false);
+        jBotonsiguiente.setContentAreaFilled(false);
+        jBotonsiguiente.addActionListener(this::jBotonsiguienteActionPerformed);
+        getContentPane().add(jBotonsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 600, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Fondo_Operaciones4 (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBotonsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonsiguienteActionPerformed
+
+        
+        
+    }//GEN-LAST:event_jBotonsiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,6 +107,7 @@ public class QuizOperaciones3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBotonsiguiente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
