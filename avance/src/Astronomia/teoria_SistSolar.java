@@ -45,15 +45,26 @@ public class teoria_SistSolar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JButton();
         jbtnSistemSolar = new javax.swing.JButton();
         jLabelMenuPrin = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jbtnSistemSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSistemaSolar.png"))); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, 90));
+
+        jbtnSistemSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Incas2.0.png"))); // NOI18N
         jbtnSistemSolar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnSistemSolarActionPerformed(evt);
@@ -89,6 +100,15 @@ public class teoria_SistSolar extends javax.swing.JFrame {
         conexMundoMate.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnSistemSolarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
+        pantallaAstro.setVisible(true);
+
+        // Cerramos la ventana actual de temas
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     
     //método para el efecto botón
@@ -188,6 +208,7 @@ public class teoria_SistSolar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabelMenuPrin;
     private javax.swing.JPanel jPanel1;

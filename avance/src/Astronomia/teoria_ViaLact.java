@@ -47,6 +47,7 @@ public class teoria_ViaLact extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JButton();
         jbtnViaLact = new javax.swing.JButton();
         jLabelViaLact = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -55,7 +56,16 @@ public class teoria_ViaLact extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLactea.png"))); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, 90));
+
+        jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/areaFig..png"))); // NOI18N
         jbtnViaLact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnViaLactActionPerformed(evt);
@@ -89,6 +99,15 @@ public class teoria_ViaLact extends javax.swing.JFrame {
     private void jbtnViaLactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnViaLactActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnViaLactActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
+        pantallaAstro.setVisible(true);
+
+        // Cerramos la ventana actual de temas
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     //método para ajustar una imagen a un jLabel
     private void SetFondoPrin(JLabel LabelName, String root){
@@ -194,6 +213,7 @@ public class teoria_ViaLact extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabelViaLact;
     private javax.swing.JPanel jPanel1;
