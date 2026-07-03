@@ -13,22 +13,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MiniExploradores extends JFrame {
- 
- private JProgressBar barra;
+
+    private JProgressBar barra;
     private JLabel porcentaje;
 
     public MiniExploradores() {
 
- 
         // ANCHO Y ALTURA DE LA VENTANA
-   
-
         setTitle("Carga");
-        setSize(880, 631);
+        setSize(969, 745);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-
 
         FondoPanel fondo = new FondoPanel();
         fondo.setLayout(null);
@@ -36,46 +32,34 @@ public class MiniExploradores extends JFrame {
         // =========================================
         // BARRA DE CARGA
         // =========================================
-
         barra = new JProgressBar();
-
-        barra.setBounds(270, 255, 340, 25);
-
+// Cambiado de 340 a 320 para subirla un poco
+        barra.setBounds(270, 320, 340, 25);
         barra.setMinimum(0);
         barra.setMaximum(100);
-
         barra.setForeground(new Color(180, 0, 255));
         barra.setBackground(new Color(40, 40, 40));
-
-        barra.setBorder(
-                BorderFactory.createLineBorder(
-                        new Color(120, 255, 255), 3));
-
+        barra.setBorder(BorderFactory.createLineBorder(new Color(120, 255, 255), 3));
         barra.setStringPainted(false);
-
-
 
         porcentaje = new JLabel("0%");
         porcentaje.setFont(new Font("Arial", Font.BOLD, 18));
         porcentaje.setForeground(Color.WHITE);
+// Cambiado de 370 a 350 para mantener la distancia con la barra
+        porcentaje.setBounds(420, 350, 80, 30);
 
-        porcentaje.setBounds(420, 285, 80, 30);
-
- 
+        fondo.add(barra);
+        fondo.add(porcentaje);
 
         fondo.add(barra);
         fondo.add(porcentaje);
 
         add(fondo);
 
-    
-
         iniciarCarga();
     }
 
-
     // ANIMACION DE CARGA
-   
     private void iniciarCarga() {
 
         Thread hilo = new Thread(() -> {
@@ -95,11 +79,8 @@ public class MiniExploradores extends JFrame {
                 }
             }
 
-        
-
             new menu().setVisible(true);
 
-          
             dispose();
 
         });
@@ -107,15 +88,14 @@ public class MiniExploradores extends JFrame {
         hilo.start();
     }
 
-
     class FondoPanel extends JPanel {
 
         private Image imagen;
 
         public FondoPanel() {
 
-            java.net.URL ruta =
-                    getClass().getResource("/Imagen/fondoo2.png");
+            java.net.URL ruta
+                    = getClass().getResource("/Imagen/PPP.png");
 
             if (ruta != null) {
 
@@ -143,8 +123,6 @@ public class MiniExploradores extends JFrame {
             );
         }
     }
-
-   
 
     public static void main(String[] args) {
 

@@ -4,6 +4,8 @@
  */
 package Astronomia;
 
+import javax.swing.JOptionPane;
+import javax.swing.JDialog;
 /**
  *
  * @author sayuri
@@ -24,8 +26,7 @@ public class Quiz_Origen2 extends javax.swing.JFrame {
         timer.start();
     }
 
-    
-        private boolean respuestaCorrecta = false;
+    private boolean respuestaCorrecta = false;
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Quiz_Origen2.class.getName());
 
@@ -75,7 +76,7 @@ public class Quiz_Origen2 extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel2.setText("Una gran explosión.");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 320, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 320, 30));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Botton B.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -90,28 +91,28 @@ public class Quiz_Origen2 extends javax.swing.JFrame {
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, 50, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 50, 50));
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel3.setText("Una tormenta solar.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel4.setText("La formación de la Tierra.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 14)); // NOI18N
         jLabel5.setText("2. Según la teoría del Big Bang, el universo se originó por: ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 560, 50));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 560, 50));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/botton Siguiente1.png"))); // NOI18N
         jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(this::jButton4ActionPerformed);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, -1, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 570, -1, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Fondo Quiz.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo2Origen.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 870, 791));
 
         pack();
@@ -119,15 +120,26 @@ public class Quiz_Origen2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-aplicarAnimacion(jButton1);
-    
-    respuestaCorrecta = true; 
-    
-    javax.swing.Timer delayTimer = new javax.swing.Timer(200, e -> {
-        javax.swing.JOptionPane.showMessageDialog(this, "¡Excelente!");
-    });
-    delayTimer.setRepeats(false);
-    delayTimer.start();
+        aplicarAnimacion(jButton1);
+
+respuestaCorrecta = true;
+
+javax.swing.Timer delayTimer = new javax.swing.Timer(200, e -> {
+
+    javax.swing.ImageIcon icono = new javax.swing.ImageIcon(
+            getClass().getResource("/imagen/origensonriendo.png"));
+
+    javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "¡Excelente!",
+            "Respuesta correcta",
+            javax.swing.JOptionPane.PLAIN_MESSAGE,
+            icono
+    );
+
+});
+        delayTimer.setRepeats(false);
+        delayTimer.start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -156,15 +168,15 @@ aplicarAnimacion(jButton1);
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-                if (respuestaCorrecta) {
-        // Aquí llamas a tu siguiente formulario (ejemplo: Quiz_Dos)
-        Quiz_Origen3 siguiente = new Quiz_Origen3();
-        siguiente.setVisible(true);
-        this.dispose(); // Cierra el formulario actual
-    } else {
-        javax.swing.JOptionPane.showMessageDialog(this, "Primero debes responder correctamente.");
-    }
-        
+        if (respuestaCorrecta) {
+            // Aquí llamas a tu siguiente formulario (ejemplo: Quiz_Dos)
+            Quiz_Origen3 siguiente = new Quiz_Origen3();
+            siguiente.setVisible(true);
+            this.dispose(); // Cierra el formulario actual
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Primero debes responder correctamente.");
+        }
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -193,15 +205,38 @@ aplicarAnimacion(jButton1);
     }
 
     private void procesarError() {
-        GameData.restarVida();
 
-        if (GameData.vidas > 0) {
-            javax.swing.JOptionPane.showMessageDialog(this, "No es el correcto. Te quedan " + GameData.vidas + " vidas.");
-        } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "¡Game Over! Has perdido todas tus vidas.");
-            System.exit(0); // Cierra el programa
-        }
+    GameData.restarVida();
+
+    if (GameData.vidas > 0) {
+
+        javax.swing.ImageIcon icono = new javax.swing.ImageIcon(
+                getClass().getResource("/imagen/triste origen.png"));
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "No es el correcto.\nTe quedan " + GameData.vidas + " vidas.",
+                "Respuesta incorrecta",
+                javax.swing.JOptionPane.PLAIN_MESSAGE,
+                icono
+        );
+
+    } else {
+
+        javax.swing.ImageIcon icono = new javax.swing.ImageIcon(
+                getClass().getResource("/imagen/gameover.png"));
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "¡Game Over!",
+                "Fin del juego",
+                javax.swing.JOptionPane.PLAIN_MESSAGE,
+                icono
+        );
+
+        System.exit(0);
     }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
