@@ -127,7 +127,7 @@ this.setLocationRelativeTo(null);
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/EjercicioOperaciones.png"))); // NOI18N
         jLabel1.setText("31");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, 1150, 690));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, -20, 1150, 690));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         jButton2.addActionListener(this::jButton2ActionPerformed);

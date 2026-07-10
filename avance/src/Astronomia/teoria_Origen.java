@@ -59,6 +59,7 @@ public class teoria_Origen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JButton();
         jbtnCosmo = new javax.swing.JButton();
         jbtnEst = new javax.swing.JButton();
         jbtElectri = new javax.swing.JButton();
@@ -69,6 +70,15 @@ public class teoria_Origen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, 90));
 
         jbtnCosmo.setBackground(new java.awt.Color(242, 242, 242));
         jbtnCosmo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/teoriaCosmo (1).jpg"))); // NOI18N
@@ -155,6 +165,15 @@ public class teoria_Origen extends javax.swing.JFrame {
     private void jbtnEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEstActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnEstActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+        formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
+        pantallaAstro.setVisible(true);
+
+        // Cerramos la ventana actual de temas
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     
     //método para el efecto botón
@@ -254,6 +273,7 @@ public class teoria_Origen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVolver;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabelMenuPrin;
     private javax.swing.JPanel jPanel1;

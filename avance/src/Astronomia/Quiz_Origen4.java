@@ -58,6 +58,7 @@ public class Quiz_Origen4 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,11 +70,11 @@ public class Quiz_Origen4 extends javax.swing.JFrame {
         jButton1.setFocusPainted(false);
         jButton1.setRequestFocusEnabled(false);
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 50, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 50, 50));
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel2.setText("Que el universo permanece estable creando nueva materia.");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 420, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 420, 30));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Botton B.png"))); // NOI18N
         jButton2.setBorder(null);
@@ -81,22 +82,22 @@ public class Quiz_Origen4 extends javax.swing.JFrame {
         jButton2.setFocusPainted(false);
         jButton2.setRequestFocusEnabled(false);
         jButton2.addActionListener(this::jButton2ActionPerformed);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 50, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 50, 50));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/botton C.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 50, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 50, 50));
 
         jLabel3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel3.setText("Que el universo nació por una explosión.");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel4.setText("Que existen planetas gigantes.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 14)); // NOI18N
         jLabel5.setText("4. ¿Qué sostiene la teoría del estado estacionario? ");
@@ -107,9 +108,12 @@ public class Quiz_Origen4 extends javax.swing.JFrame {
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(this::jButton4ActionPerformed);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 100, 60));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, 100, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Fondo Quiz.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Fija_del_origen_-removebg-preview (3).png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo 4.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 870, 791));
 
         pack();
@@ -212,5 +216,6 @@ aplicarAnimacion(jButton1);
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
