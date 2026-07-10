@@ -4,12 +4,13 @@
  */
 package Astronomia;
 
-import formularios.*;
+
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
-import matematica.formularios_Temas;
+
 
 /**
  *
@@ -22,31 +23,43 @@ public class teoria_Origen extends javax.swing.JFrame {
         //iniciar el programa en el centro de la pantalla
         this.setLocationRelativeTo(this);
         
+        //ajustar a label
+        SetLabel(jLabelMenuPrin, "src/imagen/fondoTeoOrigen.png");
         
-        //transparencia para el botón origen
-        jbtnBb.setContentAreaFilled(false);
-        jbtnBb.setBorderPainted(false);
-        jbtnBb.setOpaque(false);
-        //transparencia para el botón origen
-        jbtElectri.setContentAreaFilled(false);
-        jbtElectri.setBorderPainted(false);
-        jbtElectri.setOpaque(false);
-        //transparencia para el botón origen
+        //ajustar imagen a botón
+        /*SetBotones(jbtnBigBang, "src/imagen/btnBigBang.png");
+        SetBotones(jbtnBranas, "src/imagen/btnBranas.png");
+        SetBotones(jbtnCiclica, "src/imagen/btnCiclica.png");
+        SetBotones(jbtnElec, "src/imagen/btnElec.png");
+        SetBotones(jbtnEst, "src/imagen/btnEst.png");
+        SetBotones(jbtnRebote, "src/imagen/btnRebote.png");*/
+        
+        //transparencia a botón bigbang
+        jbtnBigBang.setContentAreaFilled(false);
+        jbtnBigBang.setBorderPainted(false);
+        jbtnBigBang.setOpaque(false);
+        //transparencia a botón branas
+        jbtnBranas.setContentAreaFilled(false);
+        jbtnBranas.setBorderPainted(false);
+        jbtnBranas.setOpaque(false);
+        //transparencia a botón cíclica
+        jbtnCiclica.setContentAreaFilled(false);
+        jbtnCiclica.setBorderPainted(false);
+        jbtnCiclica.setOpaque(false);
+        //transparencia a botón eléctrico
+        jbtnElec.setContentAreaFilled(false);
+        jbtnElec.setBorderPainted(false);
+        jbtnElec.setOpaque(false);
+        //transparencia a botón estacionario
         jbtnEst.setContentAreaFilled(false);
-        jbtnBb.setBorderPainted(false);
-        jbtnBb.setOpaque(false);
-        //transparencia para el botón origen
-        jbtnCosmo.setContentAreaFilled(false);
-        jbtnCosmo.setBorderPainted(false);
-        jbtnCosmo.setOpaque(false);
+        jbtnEst.setBorderPainted(false);
+        jbtnEst.setOpaque(false);
+        //transparencia a botón rebote
+        jbtnRebote.setContentAreaFilled(false);
+        jbtnRebote.setBorderPainted(false);
+        jbtnRebote.setOpaque(false);
         
-        //efectos para los botones        
-        EfectoBoton(jbtnBb);
-        EfectoBoton(jbtnCosmo);
-        EfectoBoton(jbtElectri);
-        EfectoBoton(jbtnEst);
-        
-        
+       
     }
 
     /**
@@ -59,17 +72,56 @@ public class teoria_Origen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnVolver = new javax.swing.JButton();
-        jbtnCosmo = new javax.swing.JButton();
+        jbtnRebote = new javax.swing.JButton();
         jbtnEst = new javax.swing.JButton();
-        jbtElectri = new javax.swing.JButton();
-        jbtnBb = new javax.swing.JButton();
+        jbtnElec = new javax.swing.JButton();
+        jbtnCiclica = new javax.swing.JButton();
+        jbtnBranas = new javax.swing.JButton();
+        jbtnBigBang = new javax.swing.JButton();
+        jlabelNave = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JButton();
         jLabelMenuPrin = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jbtnRebote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnRebote.png"))); // NOI18N
+        jPanel1.add(jbtnRebote, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 160, 160));
+
+        jbtnEst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnEst.png"))); // NOI18N
+        jPanel1.add(jbtnEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 160, 160));
+
+        jbtnElec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnElec.png"))); // NOI18N
+        jPanel1.add(jbtnElec, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 160, 170));
+
+        jbtnCiclica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnCiclica.png"))); // NOI18N
+        jbtnCiclica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCiclicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnCiclica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 170, 160));
+
+        jbtnBranas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnBranas.png"))); // NOI18N
+        jbtnBranas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnBranasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnBranas, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 160, 160));
+
+        jbtnBigBang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnBigBang.png"))); // NOI18N
+        jbtnBigBang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnBigBangActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jbtnBigBang, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 170, 160));
+
+        jlabelNave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/nave.png"))); // NOI18N
+        jlabelNave.setText("jLabel1");
+        jPanel1.add(jlabelNave, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 150, 260, 240));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -80,64 +132,14 @@ public class teoria_Origen extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, 90));
 
-        jbtnCosmo.setBackground(new java.awt.Color(242, 242, 242));
-        jbtnCosmo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/teoriaCosmo (1).jpg"))); // NOI18N
-        jbtnCosmo.setBorderPainted(false);
-        jbtnCosmo.setOpaque(true);
-        jbtnCosmo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnCosmoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnCosmo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 300, 160));
-
-        jbtnEst.setBackground(new java.awt.Color(242, 242, 242));
-        jbtnEst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnEsradoEstaci.png"))); // NOI18N
-        jbtnEst.setBorderPainted(false);
-        jbtnEst.setOpaque(true);
-        jbtnEst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnEstActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 250, 230));
-
-        jbtElectri.setBackground(new java.awt.Color(242, 242, 242));
-        jbtElectri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/teoriaUniversoElec (1).jpg"))); // NOI18N
-        jbtElectri.setText("TEORÍA DEL BIGBANG");
-        jbtElectri.setBorderPainted(false);
-        jbtElectri.setOpaque(true);
-        jbtElectri.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtElectriActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtElectri, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 280, 160));
-
-        jbtnBb.setBackground(new java.awt.Color(242, 242, 242));
-        jbtnBb.setForeground(new java.awt.Color(255, 255, 255));
-        jbtnBb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/teoriadelBigBang.png"))); // NOI18N
-        jbtnBb.setText("TEORÍA DEL BIG BANG");
-        jbtnBb.setBorderPainted(false);
-        jbtnBb.setOpaque(true);
-        jbtnBb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnBbActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnBb, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 280, 150));
-
-        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoOrigen (1).jpg"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
-
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
+        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoTeoOrigen.png"))); // NOI18N
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1030, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,22 +152,6 @@ public class teoria_Origen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtnBbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnBbActionPerformed
-
-    private void jbtElectriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtElectriActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtElectriActionPerformed
-
-    private void jbtnCosmoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCosmoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnCosmoActionPerformed
-
-    private void jbtnEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEstActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnEstActionPerformed
-
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
         formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
@@ -175,61 +161,32 @@ public class teoria_Origen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    
-    //método para el efecto botón
-    private void EfectoBoton(javax.swing.JButton boton) {
-        if (boton.getIcon() == null) return;
+    private void jbtnBigBangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBigBangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnBigBangActionPerformed
 
-        ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
-        int anchoNormal = imgOriginal.getIconWidth();
-        int altoNormal = imgOriginal.getIconHeight();
+    private void jbtnBranasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBranasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnBranasActionPerformed
 
-        // Calculamos las tres escalas:
-        int anchoHover = (int) (anchoNormal * 1.08); // Un poco más grande (Hover)
-        int altoHover = (int) (altoNormal * 1.08);
-
-        int anchoClick = (int) (anchoNormal * 0.94); // Un poco más chico (Efecto hundido/presionado)
-        int altoClick = (int) (altoNormal * 0.94);
-
-        // Creamos los tres iconos escalados
-        javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
-        javax.swing.Icon iconoHover = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoHover, altoHover, java.awt.Image.SCALE_DEFAULT));
-        javax.swing.Icon iconoClick = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoClick, altoClick, java.awt.Image.SCALE_DEFAULT));
-
-        // Estética del botón
-        boton.setContentAreaFilled(false);
-        boton.setBorderPainted(false);
-        boton.setFocusPainted(false);
-        boton.setIcon(iconoNormal);
-
-        // Control total de la ilusión de presión
-        boton.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseEntered(java.awt.event.MouseEvent e) {
-                boton.setIcon(iconoHover); // Crece al pasar el mouse
-            }
-
-            @Override
-            public void mouseExited(java.awt.event.MouseEvent e) {
-                boton.setIcon(iconoNormal); // Regresa al tamaño base al salir
-            }
-
-            @Override
-            public void mousePressed(java.awt.event.MouseEvent e) {
-                boton.setIcon(iconoClick); // ¡Se hunde al hacer click!
-            }
-
-            @Override
-            public void mouseReleased(java.awt.event.MouseEvent e) {
-                // Si sueltas el click dentro del botón, vuelve al tamaño hover
-                if (boton.getBounds().contains(e.getPoint())) {
-                    boton.setIcon(iconoHover);
-                } else {
-                    boton.setIcon(iconoNormal);
-                }
-            }
-        });
+    private void jbtnCiclicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCiclicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnCiclicaActionPerformed
+    //método para ajustar una imagen a un label
+    private void SetLabel(JLabel LabelName, String root){
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(LabelName.getWidth(), LabelName.getHeight(), Image.SCALE_DEFAULT));
+        LabelName.setIcon(icon);
+        this.repaint();
     }
+    //método para ajustar una imagen a un botón
+    private void SetBotones(JButton ButonName, String root){
+        ImageIcon image = new ImageIcon(root);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(ButonName.getWidth(), ButonName.getHeight(), Image.SCALE_DEFAULT));
+        ButonName.setIcon(icon);
+        this.repaint();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -274,12 +231,14 @@ public class teoria_Origen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabelMenuPrin;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbtElectri;
-    private javax.swing.JButton jbtnBb;
-    private javax.swing.JButton jbtnCosmo;
+    private javax.swing.JButton jbtnBigBang;
+    private javax.swing.JButton jbtnBranas;
+    private javax.swing.JButton jbtnCiclica;
+    private javax.swing.JButton jbtnElec;
     private javax.swing.JButton jbtnEst;
+    private javax.swing.JButton jbtnRebote;
+    private javax.swing.JLabel jlabelNave;
     // End of variables declaration//GEN-END:variables
 }

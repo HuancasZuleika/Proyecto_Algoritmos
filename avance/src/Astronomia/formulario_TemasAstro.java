@@ -11,8 +11,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -34,10 +32,10 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         //imagen se adapte al label
         SetFondoPrin(jLabelFondoAstro, "src/imagen/fondoPrinAstro2.png");
         //imagen se adapte al botón
-        SetBotones(jbtnOrigen, "src/imagen/btnOrigen.png");
+        /*SetBotones(jbtnOrigen, "src/imagen/btnOrigen.png");
         SetBotones(jbtnSistSolar, "src/imagen/btnSisSol.png");
         SetBotones(jbtnViaLact, "src/imagen/btnViaLac.png");
-        SetBotones(jbtnPlaneta, "src/imagen/btnPlanetas.png");
+        SetBotones(jbtnPlaneta, "src/imagen/btnPlanetas.png");*/
         //EfectoBotonMaster
         EfectoBotonMaster(jbtnPlaneta);
         EfectoBotonMaster(jbtnOrigen);
@@ -60,10 +58,10 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         jbtnPlaneta.setBorderPainted(false);
         jbtnPlaneta.setOpaque(false);
         //efectos para los botones        
-        /*EfectoBoton(jbtnOrigen);
+        EfectoBoton(jbtnOrigen);
         EfectoBoton(jbtnSistSolar);
         EfectoBoton(jbtnViaLact);
-        EfectoBoton(jbtnPlaneta);*/
+        EfectoBoton(jbtnPlaneta);
         
         
         //efecto boton para el ajuste
@@ -97,7 +95,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnPlanetaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 230, 210));
+        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 240, 230));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -117,7 +115,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnOrigenActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 170, 160));
+        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 240, 220));
 
         jbtnSistSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSisSol.png"))); // NOI18N
         jbtnSistSolar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +123,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnSistSolarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, 200, 190));
+        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 230, 220));
 
         jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLac.png"))); // NOI18N
         jbtnViaLact.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +131,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnViaLactActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 190, 190));
+        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 230, 230));
 
         jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro2.png"))); // NOI18N
         jPanel1.add(jLabelFondoAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
@@ -199,249 +197,144 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         this.repaint();
     }
     //método para ajustar una imagen a un botón
-    private void SetBotones(JButton ButonName, String root){
+    /*private void SetBotones(JButton ButonName, String root){
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(image.getImage().getScaledInstance(ButonName.getWidth(), ButonName.getHeight(), Image.SCALE_DEFAULT));
         ButonName.setIcon(icon);
         this.repaint();
-    }
+    }*/
     
     //método para el efecto botón
-    /*private void EfectoBoton(javax.swing.JButton boton) {
+    private void EfectoBoton(javax.swing.JButton boton) {
+            if (boton.getIcon() == null) return;
+
+            ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
+            int anchoNormal = imgOriginal.getIconWidth();
+            int altoNormal = imgOriginal.getIconHeight();
+
+            // Calculamos las tres escalas:
+            int anchoHover = (int) (anchoNormal * 1.02); // Un poco más grande (Hover)
+            int altoHover = (int) (altoNormal * 1.02);
+
+            int anchoClick = (int) (anchoNormal * 0.90); // Un poco más chico (Efecto hundido/presionado)
+            int altoClick = (int) (altoNormal * 0.90);
+
+            // Creamos los tres iconos escalados
+            javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
+            javax.swing.Icon iconoHover = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoHover, altoHover, java.awt.Image.SCALE_DEFAULT));
+            javax.swing.Icon iconoClick = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoClick, altoClick, java.awt.Image.SCALE_DEFAULT));
+
+            // Estética del botón
+            boton.setContentAreaFilled(false);
+            boton.setBorderPainted(false);
+            boton.setFocusPainted(false);
+            boton.setIcon(iconoNormal);
+
+            // Control total de la ilusión de presión
+            boton.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent e) {
+                    boton.setIcon(iconoHover); // Crece al pasar el mouse
+                }
+
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent e) {
+                    boton.setIcon(iconoNormal); // Regresa al tamaño base al salir
+                }
+
+                @Override
+                public void mousePressed(java.awt.event.MouseEvent e) {
+                    boton.setIcon(iconoClick); // ¡Se hunde al hacer click!
+                }
+
+                @Override
+                public void mouseReleased(java.awt.event.MouseEvent e) {
+                    // Si sueltas el click dentro del botón, vuelve al tamaño hover
+                    if (boton.getBounds().contains(e.getPoint())) {
+                        boton.setIcon(iconoHover);
+                    } else {
+                        boton.setIcon(iconoNormal);
+                    }
+                }
+            });
+        }
+    
+    private void EfectoBotonMaster(javax.swing.JButton boton) {
         if (boton.getIcon() == null) return;
 
         ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
-        int anchoNormal = imgOriginal.getIconWidth();
-        int altoNormal = imgOriginal.getIconHeight();
+        final int anchoNormal = imgOriginal.getIconWidth();
+        final int altoNormal = imgOriginal.getIconHeight();
 
-        // Calculamos las tres escalas:
-        int anchoHover = (int) (anchoNormal * 1.02); // Un poco más grande (Hover)
-        int altoHover = (int) (altoNormal * 1.02);
-
-        int anchoClick = (int) (anchoNormal * 0.90); // Un poco más chico (Efecto hundido/presionado)
-        int altoClick = (int) (altoNormal * 0.90);
-
-        // Creamos los tres iconos escalados
         javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
-        javax.swing.Icon iconoHover = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoHover, altoHover, java.awt.Image.SCALE_DEFAULT));
-        javax.swing.Icon iconoClick = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoClick, altoClick, java.awt.Image.SCALE_DEFAULT));
 
-        // Estética del botón
+        // Corrección para evitar cualquier tipo de cortada cuadrada
+        boton.setOpaque(false);
         boton.setContentAreaFilled(false);
         boton.setBorderPainted(false);
         boton.setFocusPainted(false);
+        boton.setBackground(new java.awt.Color(0, 0, 0, 0));
         boton.setIcon(iconoNormal);
 
-        // Control total de la ilusión de presión
+        // Variable de control para saber si el mouse está encima
+        final boolean[] mouseEncima = {false};
+
+        // Inyectamos la sombra morada suave y transparente alrededor de todo el círculo
+        boton.setUI(new javax.swing.plaf.basic.BasicButtonUI() {
+            @Override
+            public void paint(Graphics g, javax.swing.JComponent c) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+
+                // Limpieza absoluta de la caja del botón para asegurar transparencia total
+                g2d.setComposite(AlphaComposite.Clear);
+                g2d.fillRect(0, 0, c.getWidth(), c.getHeight());
+                g2d.setComposite(AlphaComposite.SrcOver);
+
+                // DIBUJAR LUZ: Solo cuando el mouse está encima
+                if (mouseEncima[0]) {
+                    int centroX = c.getWidth() / 2;
+                    int centroY = c.getHeight() / 2;
+
+                    Color colorSombraMorada = new Color(170, 90, 255);
+
+                    // Calcula el radio basándose en el tamaño original fijo
+                    int radioBase = anchoNormal / 2; 
+
+                    // 12 capas delgadas para que el halo cubra todo el contorno de forma suave
+                    for (int i = 12; i >= 0; i--) {
+                        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.05f));
+                        g2d.setColor(colorSombraMorada);
+
+                        int radioActual = radioBase + (int)(i * 1.2f); 
+                        int esquinaX = centroX - radioActual;
+                        int esquinaY = centroY - radioActual;
+                        int diametro = radioActual * 2;
+
+                        g2d.fillOval(esquinaX, esquinaY, diametro, diametro);
+                    }
+                }
+                g2d.dispose();
+                super.paint(g, c); // Dibuja la imagen por encima sin alterarla
+            }
+        });
+
+        // Listeners del Mouse simplificados únicamente para controlar la luz
         boton.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e) {
-                boton.setIcon(iconoHover); // Crece al pasar el mouse
+                mouseEncima[0] = true;
+                boton.repaint();
             }
 
             @Override
             public void mouseExited(java.awt.event.MouseEvent e) {
-                boton.setIcon(iconoNormal); // Regresa al tamaño base al salir
-            }
-
-            @Override
-            public void mousePressed(java.awt.event.MouseEvent e) {
-                boton.setIcon(iconoClick); // ¡Se hunde al hacer click!
-            }
-
-            @Override
-            public void mouseReleased(java.awt.event.MouseEvent e) {
-                // Si sueltas el click dentro del botón, vuelve al tamaño hover
-                if (boton.getBounds().contains(e.getPoint())) {
-                    boton.setIcon(iconoHover);
-                } else {
-                    boton.setIcon(iconoNormal);
-                }
+                mouseEncima[0] = false;
+                boton.repaint();
             }
         });
-    }*/
-    
-  private void EfectoBotonMaster(javax.swing.JButton boton) {
-    if (boton.getIcon() == null) return;
-
-    ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
-    final int anchoNormal = imgOriginal.getIconWidth();
-    final int altoNormal = imgOriginal.getIconHeight();
-
-    // Escalas de interacción (Modificado: Hover ahora reduce a 0.97 para el zoom in ligero hacia adentro)
-    int anchoHover = (int) (anchoNormal * 0.97); 
-    int altoHover = (int) (altoNormal * 0.97);
-    int anchoClick = (int) (anchoNormal * 0.92); 
-    int altoClick = (int) (altoNormal * 0.92);
-
-    javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
-    javax.swing.Icon iconoHover = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoHover, altoHover, java.awt.Image.SCALE_DEFAULT));
-    javax.swing.Icon iconoClick = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoClick, altoClick, java.awt.Image.SCALE_DEFAULT));
-
-    // Corrección para evitar cualquier tipo de cortada cuadrada
-    boton.setOpaque(false);
-    boton.setContentAreaFilled(false);
-    boton.setBorderPainted(false);
-    boton.setFocusPainted(false);
-    boton.setBackground(new java.awt.Color(0, 0, 0, 0));
-    boton.setIcon(iconoNormal);
-
-    // Variables de control de animaciones y estados
-    final double[] escalaActual = {1.0};
-    final int[] yOriginal = {-1}; 
-    final double[] tiempoFlotacion = {Math.random() * 10}; 
-    final boolean[] mostrarSombraClick = {false};
-    final boolean[] haciaAdelante = {false}; // Controla el estado de Hover activo
-
-    // Inyectamos la sombra morada suave y transparente
-    boton.setUI(new javax.swing.plaf.basic.BasicButtonUI() {
-        @Override
-        public void paint(Graphics g, javax.swing.JComponent c) {
-            Graphics2D g2d = (Graphics2D) g.create();
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
-            
-            // Limpieza absoluta de la caja del botón para asegurar transparencia total
-            g2d.setComposite(AlphaComposite.Clear);
-            g2d.fillRect(0, 0, c.getWidth(), c.getHeight());
-            g2d.setComposite(AlphaComposite.SrcOver);
-
-            // DIBUJAR SOMBRA: Ahora se muestra en Click O cuando el Hover esté activo
-            if (mostrarSombraClick[0] || haciaAdelante[0]) {
-                int centroX = c.getWidth() / 2;
-                int centroY = c.getHeight() / 2;
-                
-                Color colorSombraMorada = new Color(170, 90, 255);
-                
-                // Calcula el radio basándose en el tamaño actual real del botón en pantalla
-                int radioBase = (int) ((anchoNormal * escalaActual[0]) / 2); 
-
-                // 5 capas delgadas ajustadas para que el halo sea fino y no se corte
-                for (int i = 12; i >= 0; i--) {
-                    g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.05f));
-                    g2d.setColor(colorSombraMorada);
-                    
-                    int radioActual = radioBase + (int)(i * 1.2f); 
-                    int esquinaX = centroX - radioActual;
-                    int esquinaY = centroY - radioActual;
-                    int diametro = radioActual * 2;
-                    
-                    g2d.fillOval(esquinaX, esquinaY, diametro, diametro);
-                }
-            }
-            g2d.dispose();
-            super.paint(g, c); // Dibuja el planeta por encima
-        }
-    });
-
-    // TIMER 1: Controla el Zoom dinámico hacia adentro (baja de 1.0 a 0.97)
-    Timer timerZoom = new Timer(10, null);
-    timerZoom.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            boolean cambio = false;
-            if (haciaAdelante[0]) {
-                if (escalaActual[0] > 0.97) {
-                    escalaActual[0] -= 0.005;
-                    cambio = true;
-                }
-            } else {
-                if (escalaActual[0] < 1.0) {
-                    escalaActual[0] += 0.005;
-                    cambio = true;
-                }
-            }
-
-            if (cambio) {
-                int nuevoAncho = (int) (anchoNormal * escalaActual[0]);
-                int nuevoAlto = (int) (altoNormal * escalaActual[0]);
-                boton.setIcon(new ImageIcon(imgOriginal.getImage().getScaledInstance(nuevoAncho, nuevoAlto, java.awt.Image.SCALE_DEFAULT)));
-                boton.repaint();
-            } else if (!haciaAdelante[0] && escalaActual[0] >= 1.0) {
-                timerZoom.stop(); 
-            }
-        }
-    });
-
-    // TIMER 2: Flotación Cósmica constante por defecto
-    Timer timerFlotacion = new Timer(20, null);
-    timerFlotacion.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (yOriginal[0] == -1) {
-                yOriginal[0] = boton.getY();
-                if (yOriginal[0] <= 0) return; 
-            }
-            tiempoFlotacion[0] += 0.05; 
-            int desplazamientoY = (int) (Math.sin(tiempoFlotacion[0]) * 6); 
-            boton.setLocation(boton.getX(), yOriginal[0] + desplazamientoY);
-        }
-    });
-
-    // Arrancamos la flotación inicial
-    Timer iniciarFlotacionSegura = new Timer(100, e -> timerFlotacion.start());
-    iniciarFlotacionSegura.setRepeats(false);
-    iniciarFlotacionSegura.start();
-
-    // Listeners del Mouse
-    boton.addMouseListener(new java.awt.event.MouseAdapter() {
-        @Override
-        public void mouseEntered(java.awt.event.MouseEvent e) {
-            if (!mostrarSombraClick[0]) {
-                // DETENEMOS LA FLOTACIÓN INMEDIATAMENTE
-                timerFlotacion.stop();
-                if (yOriginal[0] != -1) {
-                    boton.setLocation(boton.getX(), yOriginal[0]);
-                }
-
-                haciaAdelante[0] = true; // Activa sombra y zoom in ligero
-                timerZoom.start();       
-            }
-        }
-
-        @Override
-        public void mouseExited(java.awt.event.MouseEvent e) {
-            if (!mostrarSombraClick[0]) {
-                haciaAdelante[0] = false;
-                timerZoom.start();       
-                timerFlotacion.start(); // REANUDAMOS LA FLOTACIÓN AL SALIR
-            }
-        }
-
-        @Override
-        public void mousePressed(java.awt.event.MouseEvent e) {
-            timerFlotacion.stop();
-            timerZoom.stop();
-            
-            if (yOriginal[0] != -1) {
-                boton.setLocation(boton.getX(), yOriginal[0]);
-            }
-            
-            escalaActual[0] = 0.92; // Actualiza la escala al tamaño del click
-            mostrarSombraClick[0] = true;
-            boton.setIcon(iconoClick);
-            boton.repaint();
-        }
-
-        @Override
-        public void mouseReleased(java.awt.event.MouseEvent e) {
-            mostrarSombraClick[0] = false;
-            
-            if (boton.getBounds().contains(e.getPoint())) {
-                haciaAdelante[0] = true;
-                escalaActual[0] = 0.97;
-                timerZoom.start();
-                // Si el mouse sigue dentro tras el click, se mantiene quieto con su sombra
-            } else {
-                haciaAdelante[0] = false;
-                escalaActual[0] = 1.0;
-                timerZoom.start();
-                timerFlotacion.start();
-            }
-            boton.repaint();
-        }
-    });
-}
+    }
     
     /**
      * @param args the command line arguments
