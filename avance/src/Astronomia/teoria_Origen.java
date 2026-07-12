@@ -107,12 +107,27 @@ public class teoria_Origen extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbtnRebote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnRebote.png"))); // NOI18N
+        jbtnRebote.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnReboteActionPerformed(evt);
+            }
+        });
         jPanel1.add(jbtnRebote, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 160, 160));
 
         jbtnEst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnEst.png"))); // NOI18N
+        jbtnEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnEstActionPerformed(evt);
+            }
+        });
         jPanel1.add(jbtnEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 160, 160));
 
         jbtnElec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnElec.png"))); // NOI18N
+        jbtnElec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnElecActionPerformed(evt);
+            }
+        });
         jPanel1.add(jbtnElec, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 160, 170));
 
         jbtnCiclica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnCiclica.png"))); // NOI18N
@@ -121,7 +136,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 jbtnCiclicaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnCiclica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 170, 160));
+        jPanel1.add(jbtnCiclica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 170, 160));
 
         jbtnBranas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnBranas.png"))); // NOI18N
         jbtnBranas.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +144,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 jbtnBranasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnBranas, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 160, 160));
+        jPanel1.add(jbtnBranas, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 160, 160));
 
         jbtnBigBang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnBigBang.png"))); // NOI18N
         jbtnBigBang.addActionListener(new java.awt.event.ActionListener() {
@@ -150,10 +165,10 @@ public class teoria_Origen extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 90, 90));
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, 90));
 
         jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoTeoOrigen.png"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1030, 640));
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 620));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +209,24 @@ public class teoria_Origen extends javax.swing.JFrame {
         conexBigBang.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnBigBangActionPerformed
+
+    private void jbtnElecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnElecActionPerformed
+        teoriaUnivElec1 conexElect = new teoriaUnivElec1();
+        conexElect.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnElecActionPerformed
+
+    private void jbtnEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEstActionPerformed
+        teoriaEstEst1 conexEst= new teoriaEstEst1();
+        conexEst.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnEstActionPerformed
+
+    private void jbtnReboteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnReboteActionPerformed
+        teoriaGranReb1 conexReb = new teoriaGranReb1();
+        conexReb.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnReboteActionPerformed
     //método para ajustar una imagen a un label
     private void SetLabel(JLabel LabelName, String root){
         ImageIcon image = new ImageIcon(root);
