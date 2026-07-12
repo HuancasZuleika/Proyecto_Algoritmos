@@ -4,6 +4,9 @@
  */
 package Astronomia;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,14 +15,49 @@ import javax.swing.JOptionPane;
  */
 public class QuizViaLactea1 extends javax.swing.JFrame {
     
-   private int puntos = 10; // puntos iniciales, ajusta el numero que quieras
+   public int puntos = 10; // puntos iniciales, ajusta el numero que quieras
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuizViaLactea1.class.getName());
 
 
  
     public QuizViaLactea1() {
         initComponents();
+        // --- Animacion de "respiracion" para los botones de respuesta ---
+        JButton[] botonesAnimados = { jBtnSol, jBtnLuna, jBtnSaturno, jBtnViaLactea };
+
+        final ImageIcon[] iconosOriginales = new ImageIcon[botonesAnimados.length];
+        final int[] anchoBase = new int[botonesAnimados.length];
+        final int[] altoBase = new int[botonesAnimados.length];
+        final int[] centroX = new int[botonesAnimados.length];
+        final int[] centroY = new int[botonesAnimados.length];
+
+        for (int i = 0; i < botonesAnimados.length; i++) {
+            JButton b = botonesAnimados[i];
+            iconosOriginales[i] = (ImageIcon) b.getIcon();
+            anchoBase[i] = b.getWidth();
+            altoBase[i]  = b.getHeight();
+            centroX[i]   = b.getX() + anchoBase[i] / 2;
+            centroY[i]   = b.getY() + altoBase[i] / 2;
+        }
+
+        final double[] anguloBotones = {0};
+        final double amplitudBotones = 0.05; 
+
+        javax.swing.Timer timerBotones = new javax.swing.Timer(30, e -> {
+            anguloBotones[0] += 0.06;
+            double factor = 1.0 + amplitudBotones * Math.sin(anguloBotones[0]);
+
+            for (int i = 0; i < botonesAnimados.length; i++) {
+                int w = (int) (anchoBase[i] * factor);
+                int h = (int) (altoBase[i] * factor);
+                Image escalado = iconosOriginales[i].getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH);
+                botonesAnimados[i].setIcon(new ImageIcon(escalado));
+                botonesAnimados[i].setBounds(centroX[i] - w / 2, centroY[i] - h / 2, w, h);
+            }
+        });
+        timerBotones.start();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +73,9 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         jBtnSaturno = new javax.swing.JButton();
         jBtnLuna = new javax.swing.JButton();
         jBtnSol = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jBtnAyuda = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        jBtnSiguiente = new javax.swing.JButton();
         jBtnPuntos = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -70,26 +108,28 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         jBtnSol.addActionListener(this::jBtnSolActionPerformed);
         getContentPane().add(jBtnSol, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 380, 180, 170));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ayuda (1) (1).png"))); // NOI18N
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 160, 150));
+        jBtnAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ayuda (1) (1).png"))); // NOI18N
+        jBtnAyuda.setBorderPainted(false);
+        jBtnAyuda.setContentAreaFilled(false);
+        jBtnAyuda.addActionListener(this::jBtnAyudaActionPerformed);
+        getContentPane().add(jBtnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 160, 150));
 
         jLabel3.setFont(new java.awt.Font("Swis721 BlkCn BT", 0, 36)); // NOI18N
         jLabel3.setText("¿Dónde vivimos dentro del universo?");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 560, 70));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 580, 120, 90));
+        jBtnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBtnSiguiente.setBorderPainted(false);
+        jBtnSiguiente.setContentAreaFilled(false);
+        jBtnSiguiente.addActionListener(this::jBtnSiguienteActionPerformed);
+        getContentPane().add(jBtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 580, 120, 90));
 
         jBtnPuntos.setBackground(new java.awt.Color(51, 0, 51));
         jBtnPuntos.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jBtnPuntos.setForeground(new java.awt.Color(255, 255, 255));
         jBtnPuntos.setText("10");
         jBtnPuntos.addActionListener(this::jBtnPuntosActionPerformed);
-        getContentPane().add(jBtnPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1015, 143, 50, 30));
+        getContentPane().add(jBtnPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(985, 133, 100, 60));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Acumulador (1).png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 60, 280, 130));
@@ -102,7 +142,7 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
 
     
     private void jBtnPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPuntosActionPerformed
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_jBtnPuntosActionPerformed
 
     private void jBtnSolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSolActionPerformed
@@ -119,51 +159,45 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnLunaActionPerformed
 
     private void jBtnViaLacteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnViaLacteaActionPerformed
-         puntos += 3; // o los puntos que quieras dar por acertar
-    actualizarPuntosEnPantalla();
-    JOptionPane.showMessageDialog(this, "¡Correcto! Vivimos en la Vía Láctea.", "¡Bien hecho!", JOptionPane.INFORMATION_MESSAGE);
-    // Aqui despues puedes abrir la siguiente mision
+     puntos += 10; // Suma 2 puntos por responder correctamente
+        actualizarPuntosEnPantalla();
+        JOptionPane.showMessageDialog(this, "¡EXCELENTE! ¡Respuesta correcta! +10 Puntos.", "¡Misión Cumplida!", JOptionPane.INFORMATION_MESSAGE);
+    
     }//GEN-LAST:event_jBtnViaLacteaActionPerformed
 
+    private void jBtnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAyudaActionPerformed
+        // CORRECCIÓN: Quitamos variables inexistentes. Aquí se procesa la pista directa.
+        puntos -= 2; // Resta los 2 puntos por usar la ayuda
+        actualizarPuntosEnPantalla();
+        
+        JOptionPane.showMessageDialog(this, 
+            "PISTA: \"Nuestra casa no tiene anillos, y no es el Sol ni la Luna...\"", 
+            "Pista Espacial", 
+            JOptionPane.INFORMATION_MESSAGE);                                      
     
-    private void manejarRespuestaIncorrecta() {
-    int opcion = JOptionPane.showConfirmDialog(
-        this,
-        "¡Oops! Incorrecto.\n¿Necesitas una pista?\n(cuesta 2 puntos, sin pista pierdes 3)",
-        "Respuesta incorrecta",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE
-    );
 
-    if (opcion == JOptionPane.YES_OPTION) {
-        // Quiso pista: resta 2 puntos y muestra la pista
-        puntos -= 2;
-        JOptionPane.showMessageDialog(
-            this,
-            "Pista: \"Nuestra casa no tiene anillos, y no es el Sol ni la Luna...\"",
-            "Aquí está tu pista",
-            JOptionPane.INFORMATION_MESSAGE
-        );
-    } else {
-        // No quiso pista: resta 3 puntos
-        puntos -= 3;
-        JOptionPane.showMessageDialog(
-            this,
-            "Sin pista. Inténtalo de nuevo.",
-            "Sigue intentando",
-            JOptionPane.INFORMATION_MESSAGE
-        );
+    }//GEN-LAST:event_jBtnAyudaActionPerformed
+
+    private void jBtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSiguienteActionPerformed
+       QuizViaLactea2 quiz = new QuizViaLactea2();
+    quiz.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jBtnSiguienteActionPerformed
+
+   private void manejarRespuestaIncorrecta() {
+    VentanaPersonalizada vp = new VentanaPersonalizada();
+    // Le pasamos "this" (el juego) y tu botón "jBtnPuntos"
+    vp.mostrarErrorPersonalizado(this, jBtnPuntos); 
+}
+
+    // CAMBIO: Se cambió a public para que VentanaPersonalizada pueda llamarlo
+    public void actualizarPuntosEnPantalla() {
+        jBtnPuntos.setText(String.valueOf(puntos));
     }
+    
+  
 
-    actualizarPuntosEnPantalla();
-}
 
-private void actualizarPuntosEnPantalla() {
-    jBtnPuntos.setText("PUNTOS ACUMULADOS: " + puntos);
-}
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -187,13 +221,13 @@ private void actualizarPuntosEnPantalla() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnAyuda;
     private javax.swing.JButton jBtnLuna;
     private javax.swing.JButton jBtnPuntos;
     private javax.swing.JButton jBtnSaturno;
+    private javax.swing.JButton jBtnSiguiente;
     private javax.swing.JButton jBtnSol;
     private javax.swing.JButton jBtnViaLactea;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

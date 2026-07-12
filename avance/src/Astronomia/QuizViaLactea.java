@@ -130,6 +130,7 @@ timerZoom.start();
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(this::jButton1ActionPerformed);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 560, 100, 100));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Lactea1 (1).png"))); // NOI18N
@@ -145,6 +146,12 @@ timerZoom.start();
     private void jLabelNinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNinoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabelNinoMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       QuizViaLactea1 quiz = new QuizViaLactea1();
+    quiz.setVisible(true);
+    this.dispose(); // cierra esta ventana actual (opcional)
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

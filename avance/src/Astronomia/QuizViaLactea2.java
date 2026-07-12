@@ -37,6 +37,7 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jBtnSiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,13 +77,19 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 150, 120));
 
         jButton6.setBackground(new java.awt.Color(51, 0, 51));
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 153, 70, 30));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 150, 90, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Tablero de Opciones (1) (1).png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 320, 410));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Acumulador (1).png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 70, 260, 130));
+
+        jBtnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBtnSiguiente.setBorderPainted(false);
+        jBtnSiguiente.setContentAreaFilled(false);
+        jBtnSiguiente.addActionListener(this::jBtnSiguienteActionPerformed);
+        getContentPane().add(jBtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 520, 100, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Lactea3 (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1150, 790));
@@ -93,6 +100,13 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jBtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSiguienteActionPerformed
+      QuizViaLactea3 quiz = new QuizViaLactea3();
+    quiz.setVisible(true);
+    this.dispose();
+        
+    }//GEN-LAST:event_jBtnSiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,6 +134,7 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnSiguiente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

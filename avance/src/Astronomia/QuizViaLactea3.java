@@ -4,6 +4,14 @@
  */
 package Astronomia;
 
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 /**
  *
  * @author Usuario
@@ -17,6 +25,16 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
      */
     public QuizViaLactea3() {
         initComponents();
+        try {
+        // Ajusta la ruta a donde tengas tu archivo .wav
+        File audioFile = new File("src/audio/Quiz3Lactea.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+        clip.start(); // Esto reproduce el audio automáticamente
+    } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+        e.printStackTrace();
+    }
     }
 
     /**
@@ -30,7 +48,9 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,15 +58,23 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel2.setText("ADIVINA QUIEN SOY ?");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ayuda (1) (1).png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, 120));
 
+        jButton3.setBackground(new java.awt.Color(51, 0, 51));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 140, 110, 50));
+
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Acumulador (1).png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 60, 260, 140));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/NIÑOFINALQUIZ1 (1) (1).png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 320, 490));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Lactea4 (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 760));
@@ -81,6 +109,8 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
