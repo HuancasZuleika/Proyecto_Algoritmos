@@ -13,9 +13,8 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.Timer;
+
 
 
 /**
@@ -27,6 +26,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
     public formulario_TemasAstro() {
         initComponents();
         //iniciar el programa en el centro de la pantalla
+        
         this.setLocationRelativeTo(this);
         
         //imagen se adapte al label
@@ -39,16 +39,11 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         //EfectoBotonMaster
         EfectoBotonMaster(jbtnPlaneta);
         EfectoBotonMaster(jbtnOrigen);
-        EfectoBotonMaster(jbtnSistSolar);
         EfectoBotonMaster(jbtnViaLact);
         //transparencia para el botón origen
         jbtnOrigen.setContentAreaFilled(false);
         jbtnOrigen.setBorderPainted(false);
         jbtnOrigen.setOpaque(false);
-        //transparencia para el botón vía láctea
-        jbtnSistSolar.setOpaque(false);
-        jbtnSistSolar.setContentAreaFilled(false);
-        jbtnSistSolar.setBorderPainted(false);
         //transparencia para el botón sistema solar
         jbtnViaLact.setContentAreaFilled(false);
         jbtnViaLact.setBorderPainted(false);
@@ -59,7 +54,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         jbtnPlaneta.setOpaque(false);
         //efectos para los botones        
         EfectoBoton(jbtnOrigen);
-        EfectoBoton(jbtnSistSolar);
         EfectoBoton(jbtnViaLact);
         EfectoBoton(jbtnPlaneta);
         
@@ -81,7 +75,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         jbtnPlaneta = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         jbtnOrigen = new javax.swing.JButton();
-        jbtnSistSolar = new javax.swing.JButton();
         jbtnViaLact = new javax.swing.JButton();
         jLabelFondoAstro = new javax.swing.JLabel();
 
@@ -95,7 +88,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnPlanetaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 240, 230));
+        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 240, 230));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -115,15 +108,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnOrigenActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 240, 220));
-
-        jbtnSistSolar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSisSol.png"))); // NOI18N
-        jbtnSistSolar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnSistSolarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnSistSolar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 230, 220));
+        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 240, 220));
 
         jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLac.png"))); // NOI18N
         jbtnViaLact.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +116,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnViaLactActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 230, 230));
+        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 230, 230));
 
         jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro2.png"))); // NOI18N
         jPanel1.add(jLabelFondoAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
@@ -158,13 +143,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         conexOrigen.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnOrigenActionPerformed
-
-    private void jbtnSistSolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSistSolarActionPerformed
-        teoria_SistSolar conexSistSolar = new teoria_SistSolar();
-        conexSistSolar.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_jbtnSistSolarActionPerformed
 
     private void jbtnViaLactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnViaLactActionPerformed
         teoria_ViaLact conexViaLac = new teoria_ViaLact();
@@ -199,13 +177,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         LabelName.setIcon(icon);
         this.repaint();
     }
-    //método para ajustar una imagen a un botón
-    /*private void SetBotones(JButton ButonName, String root){
-        ImageIcon image = new ImageIcon(root);
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(ButonName.getWidth(), ButonName.getHeight(), Image.SCALE_DEFAULT));
-        ButonName.setIcon(icon);
-        this.repaint();
-    }*/
     
     //método para el efecto botón
     private void EfectoBoton(javax.swing.JButton boton) {
@@ -260,7 +231,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                     }
                 }
             });
-        }
+    }
     
     private void EfectoBotonMaster(javax.swing.JButton boton) {
         if (boton.getIcon() == null) return;
@@ -387,7 +358,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnOrigen;
     private javax.swing.JButton jbtnPlaneta;
-    private javax.swing.JButton jbtnSistSolar;
     private javax.swing.JButton jbtnViaLact;
     // End of variables declaration//GEN-END:variables
 }

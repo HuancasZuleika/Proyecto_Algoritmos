@@ -18,6 +18,8 @@ public class MiniExploradores extends JFrame {
     private JLabel porcentaje;
 
     public MiniExploradores() {
+        
+        this.setExtendedState(MAXIMIZED_BOTH);
 
         // ANCHO Y ALTURA DE LA VENTANA
         setTitle("Carga");
