@@ -21,6 +21,7 @@ public class inicio extends javax.swing.JFrame {
     public inicio() {
         initComponents();
         //iniciar el programa en el centro de la pantalla
+        this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(this);
         
         SetFondoPrin(jLabelMenuPrin,"src/imagen/fondoMenuPrin.png");
@@ -73,6 +74,7 @@ public class inicio extends javax.swing.JFrame {
         jLabelMenuPrin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setExtendedState(6);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

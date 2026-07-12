@@ -4,14 +4,28 @@
  */
 package Astronomia;
 
-
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Point;
+import java.awt.RenderingHints;
 import javax.swing.Icon;
+import javax.swing.JLabel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.geom.FlatteningPathIterator;
+import java.awt.geom.Path2D;
+import java.awt.geom.PathIterator;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
-
-
+import javax.swing.Timer;
+import javax.swing.plaf.basic.BasicButtonUI;
 /**
  *
  * @author User
@@ -25,14 +39,6 @@ public class teoria_Origen extends javax.swing.JFrame {
         
         //ajustar a label
         SetLabel(jLabelMenuPrin, "src/imagen/fondoTeoOrigen.png");
-        
-        //ajustar imagen a botón
-        /*SetBotones(jbtnBigBang, "src/imagen/btnBigBang.png");
-        SetBotones(jbtnBranas, "src/imagen/btnBranas.png");
-        SetBotones(jbtnCiclica, "src/imagen/btnCiclica.png");
-        SetBotones(jbtnElec, "src/imagen/btnElec.png");
-        SetBotones(jbtnEst, "src/imagen/btnEst.png");
-        SetBotones(jbtnRebote, "src/imagen/btnRebote.png");*/
         
         //transparencia a botón bigbang
         jbtnBigBang.setContentAreaFilled(false);
@@ -58,6 +64,20 @@ public class teoria_Origen extends javax.swing.JFrame {
         jbtnRebote.setContentAreaFilled(false);
         jbtnRebote.setBorderPainted(false);
         jbtnRebote.setOpaque(false);
+        //efecto boton
+        EfectoBotonMaster(jbtnBigBang);
+        EfectoBotonMaster(jbtnBranas);
+        EfectoBotonMaster(jbtnCiclica);
+        EfectoBotonMaster(jbtnElec);
+        EfectoBotonMaster(jbtnEst);
+        EfectoBotonMaster(jbtnRebote);
+        
+        EfectoBoton(jbtnBigBang);
+        EfectoBoton(jbtnBranas);
+        EfectoBoton(jbtnCiclica);
+        EfectoBoton(jbtnElec);
+        EfectoBoton(jbtnEst);
+        EfectoBoton(jbtnRebote);
         
        
     }
@@ -101,7 +121,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 jbtnCiclicaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnCiclica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 170, 160));
+        jPanel1.add(jbtnCiclica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 170, 160));
 
         jbtnBranas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnBranas.png"))); // NOI18N
         jbtnBranas.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +150,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 90, 90));
+        jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 90, 90));
 
         jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoTeoOrigen.png"))); // NOI18N
         jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1030, 640));
@@ -161,10 +181,6 @@ public class teoria_Origen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void jbtnBigBangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBigBangActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnBigBangActionPerformed
-
     private void jbtnBranasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBranasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnBranasActionPerformed
@@ -172,6 +188,12 @@ public class teoria_Origen extends javax.swing.JFrame {
     private void jbtnCiclicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCiclicaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnCiclicaActionPerformed
+
+    private void jbtnBigBangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBigBangActionPerformed
+        teoriaBigBang1 conexBigBang = new teoriaBigBang1();
+        conexBigBang.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbtnBigBangActionPerformed
     //método para ajustar una imagen a un label
     private void SetLabel(JLabel LabelName, String root){
         ImageIcon image = new ImageIcon(root);
@@ -179,13 +201,249 @@ public class teoria_Origen extends javax.swing.JFrame {
         LabelName.setIcon(icon);
         this.repaint();
     }
-    //método para ajustar una imagen a un botón
-    private void SetBotones(JButton ButonName, String root){
-        ImageIcon image = new ImageIcon(root);
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(ButonName.getWidth(), ButonName.getHeight(), Image.SCALE_DEFAULT));
-        ButonName.setIcon(icon);
-        this.repaint();
+    //efecto botón
+    private void EfectoBoton(javax.swing.JButton boton) {
+        if (boton.getIcon() == null) return;
+
+        ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
+        int anchoNormal = imgOriginal.getIconWidth();
+        int altoNormal = imgOriginal.getIconHeight();
+
+        // Calculamos las tres escalas:
+        int anchoHover = (int) (anchoNormal * 1.02); // Un poco más grande (Hover)
+        int altoHover = (int) (altoNormal * 1.02);
+
+        int anchoClick = (int) (anchoNormal * 0.90); // Un poco más chico (Efecto hundido/presionado)
+        int altoClick = (int) (altoNormal * 0.90);
+
+        // Creamos los tres iconos escalados
+        javax.swing.Icon iconoNormal = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoNormal, altoNormal, java.awt.Image.SCALE_DEFAULT));
+        javax.swing.Icon iconoHover = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoHover, altoHover, java.awt.Image.SCALE_DEFAULT));
+        javax.swing.Icon iconoClick = new ImageIcon(imgOriginal.getImage().getScaledInstance(anchoClick, altoClick, java.awt.Image.SCALE_DEFAULT));
+
+        // Estética del botón
+        boton.setContentAreaFilled(false);
+        boton.setBorderPainted(false);
+        boton.setFocusPainted(false);
+        boton.setIcon(iconoNormal);
+
+        // Control total de la ilusión de presión
+        boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                boton.setIcon(iconoHover); // Crece al pasar el mouse
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                boton.setIcon(iconoNormal); // Regresa al tamaño base al salir
+            }
+
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent e) {
+                boton.setIcon(iconoClick); // ¡Se hunde al hacer click!
+            }
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent e) {
+                // Si sueltas el click dentro del botón, vuelve al tamaño hover
+                if (boton.getBounds().contains(e.getPoint())) {
+                    boton.setIcon(iconoHover);
+                } else {
+                    boton.setIcon(iconoNormal);
+                }
+            }
+        });
     }
+
+    
+    private static class Destello {
+        double x, y;
+        double velX, velY;
+        float opacidad = 1.0f;
+        int tamano;
+        Color color;
+
+        Destello(double x, double y, double angulo, java.util.Random random) {
+            this.x = x;
+            this.y = y;
+            // Velocidad aleatoria de disparo
+            double velocidad = 1.5 + random.nextDouble() * 2.5; 
+            this.velX = Math.cos(angulo) * velocidad;
+            this.velY = Math.sin(angulo) * velocidad;
+            this.tamano = 2 + random.nextInt(4); 
+            this.color = random.nextBoolean() ? Color.WHITE : new Color(180, 100, 255);
+        }
+
+        void actualizar() {
+            x += velX;
+            y += velY;
+            opacidad -= 0.04f; // Desvanecimiento
+            if (opacidad < 0) opacidad = 0;
+        }
+    }
+    
+    private void EfectoBotonMaster(JButton boton) {
+        if (boton.getIcon() == null) return;
+
+        ImageIcon imgOriginal = (ImageIcon) boton.getIcon();
+        final int anchoNormal = imgOriginal.getIconWidth();
+        final int altoNormal = imgOriginal.getIconHeight();
+
+        boton.setOpaque(false);
+        boton.setContentAreaFilled(false);
+        boton.setBorderPainted(false);
+        boton.setFocusPainted(false);
+        boton.setBackground(new java.awt.Color(0, 0, 0, 0));
+
+        final boolean[] mouseEncima = {false};
+        final float[] progresoEstrella = {0.0f};
+        final java.util.List<Point> puntosContorno = new ArrayList<>();
+        final java.util.List<Destello> listaDestellos = new ArrayList<>();
+        final Random random = new Random();
+
+        final Timer timerAnimacion = new Timer(16, e -> {
+            progresoEstrella[0] += 0.015f;
+            if (progresoEstrella[0] > 1.0f) progresoEstrella[0] = 0.0f;
+
+            if (mouseEncima[0] && !puntosContorno.isEmpty()) {
+                int totalPuntos = puntosContorno.size();
+
+                for (int k = 0; k < 15; k++) { 
+                    int indiceAleatorio = random.nextInt(totalPuntos);
+                    Point p = puntosContorno.get(indiceAleatorio);
+
+                    double centroX = anchoNormal / 2.0;
+                    double centroY = altoNormal / 2.0;
+                    double anguloDisparo = Math.atan2(p.y - centroY, p.x - centroX);
+                    anguloDisparo += (random.nextDouble() - 0.5) * 0.5;
+
+                    // PASAMOS EL RANDOM REQUERIDO AQUÍ
+                    listaDestellos.add(new Destello(p.x, p.y, anguloDisparo, random));
+                }
+            }
+
+            Iterator<Destello> iter = listaDestellos.iterator();
+            while (iter.hasNext()) {
+                Destello d = iter.next();
+                d.actualizar();
+                if (d.opacidad <= 0) {
+                    iter.remove();
+                }
+            }
+
+            boton.repaint();
+        });
+
+        boton.setUI(new BasicButtonUI() {
+            @Override
+            public void paint(Graphics g, javax.swing.JComponent c) {
+                Graphics2D g2d = (Graphics2D) g.create();
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                g2d.setComposite(AlphaComposite.Clear);
+                g2d.fillRect(0, 0, c.getWidth(), c.getHeight());
+                g2d.setComposite(AlphaComposite.SrcOver);
+
+                // Pintar destellos
+                for (Destello d : listaDestellos) {
+                    g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, d.opacidad));
+                    g2d.setColor(d.color);
+                    g2d.fillOval((int) d.x - d.tamano/2, (int) d.y - d.tamano/2, d.tamano, d.tamano);
+                }
+                g2d.setComposite(AlphaComposite.SrcOver); 
+
+                // Pintar estrella
+                if (mouseEncima[0] && !puntosContorno.isEmpty()) {
+                    int totalPuntos = puntosContorno.size();
+                    int indiceActual = (int) (progresoEstrella[0] * (totalPuntos - 1));
+                    Point puntoEstrella = puntosContorno.get(indiceActual);
+
+                    java.awt.geom.AffineTransform oldTransform = g2d.getTransform();
+
+                    g2d.translate(puntoEstrella.x, puntoEstrella.y);
+                    g2d.rotate(progresoEstrella[0] * Math.PI * 6);
+                    g2d.setColor(new Color(255, 215, 0));
+
+                    Path2D estrellaPath = new Path2D.Double();
+                    double rExter = 5.5; 
+                    double rInter = 2.2; 
+                    estrellaPath.moveTo(0, -rExter);
+                    for (int i = 1; i < 50; i++) {
+                        double r = (i % 2 == 0) ? rExter : rInter;
+                        double angulo = i * Math.PI / 5.0;
+                        estrellaPath.lineTo(r * Math.sin(angulo), -r * Math.cos(angulo));
+                    }
+                    estrellaPath.closePath();
+                    g2d.fill(estrellaPath);
+
+                    // Reemplaza g2d.restore(); por esto:
+                    g2d.setTransform(oldTransform);
+                }
+
+                g2d.dispose();
+                super.paint(g, c); 
+            }
+        });
+
+        boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                mouseEncima[0] = true;
+
+                if (puntosContorno.isEmpty()) {
+                    BufferedImage bi = new BufferedImage(anchoNormal, altoNormal, BufferedImage.TYPE_INT_ARGB);
+                    Graphics g = bi.createGraphics();
+                    imgOriginal.paintIcon(boton, g, 0, 0);
+                    g.dispose();
+
+                    Path2D mapaPixeles = new Path2D.Float();
+                    boolean trazando = false;
+
+                    for (int y = 0; y < altoNormal; y++) {
+                        for (int x = 0; x < anchoNormal; x++) {
+                            int alpha = (bi.getRGB(x, y) >> 24) & 0xff;
+                            if (alpha > 40) {
+                                if (!trazando) {
+                                    mapaPixeles.moveTo(x, y);
+                                    trazando = true;
+                                } else {
+                                    mapaPixeles.lineTo(x, y);
+                                }
+                            }
+                        }
+                    }
+                    mapaPixeles.closePath();
+
+                    FlatteningPathIterator iter = new FlatteningPathIterator(mapaPixeles.getPathIterator(null), 1.0);
+                    float[] coords = new float[6];
+                    while (!iter.isDone()) {
+                        int tipo = iter.currentSegment(coords);
+                        if (tipo == PathIterator.SEG_MOVETO || tipo == PathIterator.SEG_LINETO) {
+                            puntosContorno.add(new Point((int) coords[0], (int) coords[1]));
+                        }
+                        iter.next();
+                    }
+                }
+
+                timerAnimacion.start();
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                mouseEncima[0] = false;
+                Timer retrasoApagado = new Timer(500, ev -> {
+                    if (!mouseEncima[0] && listaDestellos.isEmpty()) {
+                        timerAnimacion.stop();
+                    }
+                });
+                retrasoApagado.setRepeats(false);
+                retrasoApagado.start();
+            }
+        });
+    }
+    
+    
     
     /**
      * @param args the command line arguments
@@ -222,11 +480,10 @@ public class teoria_Origen extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new teoria_Origen().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> {
+            new teoria_Origen().setVisible(true);
+        } // Variables declaration - do not modify
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

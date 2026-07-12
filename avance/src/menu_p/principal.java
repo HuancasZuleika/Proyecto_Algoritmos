@@ -15,5 +15,6 @@ public class principal {
     public static void main(String[] args) {
         inicio P = new inicio();
         P.setVisible(true);
+        
     }
 }
