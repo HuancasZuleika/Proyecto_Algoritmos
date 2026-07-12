@@ -170,6 +170,9 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         teoria_ViaLact conexViaLac = new teoria_ViaLact();
         conexViaLac.setVisible(true);
         this.dispose();
+        
+        
+        
     }//GEN-LAST:event_jbtnViaLactActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
