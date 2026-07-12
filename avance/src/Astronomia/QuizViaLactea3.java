@@ -51,6 +51,11 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jBtnSaturno = new javax.swing.JButton();
+        jBtnViaLactea = new javax.swing.JButton();
+        jBtnTierra = new javax.swing.JButton();
+        jBtnSol = new javax.swing.JButton();
+        jBtnSiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,7 +68,7 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Ayuda (1) (1).png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, 120));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, 120));
 
         jButton3.setBackground(new java.awt.Color(51, 0, 51));
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 140, 110, 50));
@@ -75,6 +80,31 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 320, 490));
+
+        jBtnSaturno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OpcionC (1).png"))); // NOI18N
+        jBtnSaturno.setBorderPainted(false);
+        jBtnSaturno.setContentAreaFilled(false);
+        getContentPane().add(jBtnSaturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 280, -1, -1));
+
+        jBtnViaLactea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Opcion D (1).png"))); // NOI18N
+        jBtnViaLactea.setBorderPainted(false);
+        jBtnViaLactea.setContentAreaFilled(false);
+        getContentPane().add(jBtnViaLactea, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, -1, -1));
+
+        jBtnTierra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OpcionE (1).png"))); // NOI18N
+        jBtnTierra.setBorderPainted(false);
+        jBtnTierra.setContentAreaFilled(false);
+        getContentPane().add(jBtnTierra, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, -1, 170));
+
+        jBtnSol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/OpcionA (2).png"))); // NOI18N
+        jBtnSol.setBorderPainted(false);
+        jBtnSol.setContentAreaFilled(false);
+        getContentPane().add(jBtnSol, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, -1, -1));
+
+        jBtnSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAdelante.png"))); // NOI18N
+        jBtnSiguiente.setBorderPainted(false);
+        jBtnSiguiente.setContentAreaFilled(false);
+        getContentPane().add(jBtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 630, -1, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Lactea4 (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 760));
@@ -108,6 +138,11 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnSaturno;
+    private javax.swing.JButton jBtnSiguiente;
+    private javax.swing.JButton jBtnSol;
+    private javax.swing.JButton jBtnTierra;
+    private javax.swing.JButton jBtnViaLactea;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
