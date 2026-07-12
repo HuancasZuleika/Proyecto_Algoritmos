@@ -136,8 +136,8 @@ public class teoriaBigBang1 extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
-        formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
-        pantallaAstro.setVisible(true);
+        teoria_Origen pantallaOrigen = new teoria_Origen();
+        pantallaOrigen.setVisible(true);
 
         // Cerramos la ventana actual de temas
         this.dispose();

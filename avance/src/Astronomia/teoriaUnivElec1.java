@@ -22,45 +22,19 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
         astro.iniciar();  
         
         audio = new AudioController();
-        reproducirNarracion("BigBang3.wav");
+        reproducirNarracion("Elect1.wav");
         
         //iniciar el programa en el centro de la pantalla
         this.setLocationRelativeTo(this);
         
         //ajustar a label
-        SetLabel(jLabelMenuPrin, "src/imagen/fondoBigBang3.png");
+        SetLabel(jLabelMenuPrin, "src/imagen/fondoUniElec1.png");
         //TRANSPARENCIA
-        jbtnDesf.setContentAreaFilled(false);
-        jbtnDesf.setBorderPainted(false);
-        jbtnDesf.setOpaque(false);
+        jbtnNext2.setContentAreaFilled(false);
+        jbtnNext2.setBorderPainted(false);
+        jbtnNext2.setOpaque(false);
         
-        jbtnAnt1.setContentAreaFilled(false);
-        jbtnAnt1.setBorderPainted(false);
-        jbtnAnt1.setOpaque(false);
-        
-        jbtnEins.setContentAreaFilled(false);
-        jbtnEins.setBorderPainted(false);
-        jbtnEins.setOpaque(false);
-        
-        jbtnHaw.setContentAreaFilled(false);
-        jbtnHaw.setBorderPainted(false);
-        jbtnHaw.setOpaque(false);
-        
-        jbtnHubb.setContentAreaFilled(false);
-        jbtnHubb.setBorderPainted(false);
-        jbtnHubb.setOpaque(false);
-        
-        jbtnHubb.setContentAreaFilled(false);
-        jbtnHubb.setBorderPainted(false);
-        jbtnHubb.setOpaque(false);
-
-        EfectoBoton(jbtnDesf);
-        EfectoBoton(jbtnAnt1);
-        EfectoBoton(jbtnEins);
-        EfectoBoton(jbtnHaw);
-        EfectoBoton(jbtnHubb);
-        EfectoBoton(jbtnLem);
-        
+        EfectoBoton(jbtnNext2);
        
     }
 
@@ -74,14 +48,8 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jlabelOvni = new javax.swing.JLabel();
-        jbtnHaw = new javax.swing.JButton();
-        jbtnLem = new javax.swing.JButton();
-        jbtnHubb = new javax.swing.JButton();
-        jbtnEins = new javax.swing.JButton();
-        jLabelburbuja = new javax.swing.JLabel();
-        jbtnDesf = new javax.swing.JButton();
-        jbtnAnt1 = new javax.swing.JButton();
+        jlabelburbuja = new javax.swing.JLabel();
+        jbtnNext2 = new javax.swing.JButton();
         jlabelAstro = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         jLabelMenuPrin = new javax.swing.JLabel();
@@ -91,61 +59,17 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlabelOvni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/QUIZ1.1__1_-removebg-preview.png"))); // NOI18N
-        jlabelOvni.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jlabelOvni, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 280, 260));
+        jlabelburbuja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/burbujaElect1.png"))); // NOI18N
+        jlabelburbuja.setText("jLabel1");
+        jPanel1.add(jlabelburbuja, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 280, 360));
 
-        jbtnHaw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/A.Hawking.png"))); // NOI18N
-        jbtnHaw.addActionListener(new java.awt.event.ActionListener() {
+        jbtnNext2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/botonNext1.png"))); // NOI18N
+        jbtnNext2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnHawActionPerformed(evt);
+                jbtnNext2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnHaw, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 230, 240));
-
-        jbtnLem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/A.Lemaitre.png"))); // NOI18N
-        jbtnLem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnLemActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnLem, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, 230, 230));
-
-        jbtnHubb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/A.Hubble.png"))); // NOI18N
-        jbtnHubb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnHubbActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnHubb, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 70, 230, 220));
-
-        jbtnEins.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/A.Einstein.png"))); // NOI18N
-        jbtnEins.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnEinsActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnEins, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 230, 230));
-
-        jLabelburbuja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/burbuja3.png"))); // NOI18N
-        jLabelburbuja.setText("jLabel1");
-        jPanel1.add(jLabelburbuja, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 350, 240));
-
-        jbtnDesf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/botonDesaf.png"))); // NOI18N
-        jbtnDesf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnDesfActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnDesf, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 250, 100));
-
-        jbtnAnt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/botonAnterior.png"))); // NOI18N
-        jbtnAnt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnAnt1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jbtnAnt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 250, 100));
+        jPanel1.add(jbtnNext2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 230, 100));
 
         jlabelAstro.setText("jLabel1");
         jPanel1.add(jlabelAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 270, 420));
@@ -159,8 +83,8 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
 
-        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoBigBang3.png"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 1030, 650));
+        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoUniElec1.png"))); // NOI18N
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,42 +105,18 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
-        formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
-        pantallaAstro.setVisible(true);
+        teoria_Origen pantallaOrigen = new teoria_Origen();
+        pantallaOrigen.setVisible(true);
 
         // Cerramos la ventana actual de temas
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
-        teoriaBigBang1 conexAnt=new teoriaBigBang1();
-        conexAnt.setVisible(true);
+    private void jbtnNext2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext2ActionPerformed
+        teoriaUnivElec2 conex = new teoriaUnivElec2();
+        conex.setVisible(true);
         this.dispose();
-
-    }//GEN-LAST:event_jbtnAnt1ActionPerformed
-
-    private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
-        teoriaUnivElec1 conexSig=new teoriaUnivElec1();
-        conexSig.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbtnDesfActionPerformed
-
-    private void jbtnEinsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEinsActionPerformed
-        // TODO add your handling code here:
-        reproducirAudioBoton("bbEinst.wav");
-    }//GEN-LAST:event_jbtnEinsActionPerformed
-
-    private void jbtnHubbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHubbActionPerformed
-        reproducirAudioBoton("bbHubb.wav");
-    }//GEN-LAST:event_jbtnHubbActionPerformed
-
-    private void jbtnHawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHawActionPerformed
-        reproducirAudioBoton("bbHaw.wav");
-    }//GEN-LAST:event_jbtnHawActionPerformed
-
-    private void jbtnLemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnLemActionPerformed
-        reproducirAudioBoton("bbLem.wav");
-    }//GEN-LAST:event_jbtnLemActionPerformed
+    }//GEN-LAST:event_jbtnNext2ActionPerformed
     //función para ajustar una imagen a un label
     private void SetLabel(JLabel LabelName, String root){
         ImageIcon image = new ImageIcon(root);
@@ -290,13 +190,6 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
         });
 
     }
-    
-    private void reproducirAudioBoton(String archivo) {
-
-        audio.reproducir("/audio/" + archivo, null);
-
-    }
-
     
     
     /**
@@ -463,15 +356,9 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabelMenuPrin;
-    private javax.swing.JLabel jLabelburbuja;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbtnAnt1;
-    private javax.swing.JButton jbtnDesf;
-    private javax.swing.JButton jbtnEins;
-    private javax.swing.JButton jbtnHaw;
-    private javax.swing.JButton jbtnHubb;
-    private javax.swing.JButton jbtnLem;
+    private javax.swing.JButton jbtnNext2;
     private javax.swing.JLabel jlabelAstro;
-    private javax.swing.JLabel jlabelOvni;
+    private javax.swing.JLabel jlabelburbuja;
     // End of variables declaration//GEN-END:variables
 }
