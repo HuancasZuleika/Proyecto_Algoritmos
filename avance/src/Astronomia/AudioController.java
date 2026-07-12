@@ -30,9 +30,12 @@ public class AudioController {
                 clip.close();
             }
 
-            URL url = getClass().getResource(ruta);
-
-            AudioInputStream audio = AudioSystem.getAudioInputStream(url);
+           URL url = getClass().getResource(ruta);
+if (url == null) {
+    System.err.println("⚠ No se encontró el archivo de audio: " + ruta);
+    return; // corta acá, no revienta el programa
+}
+AudioInputStream audio = AudioSystem.getAudioInputStream(url);
 
             clip = AudioSystem.getClip();
 

@@ -13,10 +13,8 @@ import javax.sound.sampled.Clip;
  * @author Usuario
  */
 public class QuizViaLactea2 extends javax.swing.JFrame {
-    
  
-   
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuizViaLactea2.class.getName());
+private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuizViaLactea2.class.getName());
  
     // Puntaje: arranca donde quedó la misión anterior (GameData.puntos)
     private double puntos = GameData.puntos;
@@ -27,6 +25,9 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
     // que cambiar los números de este mapa (x, y, ancho, alto).
     private final java.util.Map<javax.swing.JButton, java.awt.Rectangle> zonaCorrecta = new java.util.HashMap<>();
     private final java.util.Set<javax.swing.JButton> resueltos = new java.util.HashSet<>();
+ 
+    // Clip de audio de esta pantalla
+    private javax.sound.sampled.Clip clipMusica;
  
     /**
      * Creates new form QuizViaLactea2
@@ -56,9 +57,6 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
                     + "el Disco Galáctico son los brazos espirales, y el Halo es la zona más externa.");
         });
  
-        // Animación de "respiración" + flotado para que el botón de Ayuda llame la atención
-        iniciarAnimacionAyuda();
- 
         // Zonas correctas sobre el dibujo (jLabel2 está en x=580,y=280,430x360)
         zonaCorrecta.put(jButton2, new java.awt.Rectangle(779, 442, 38, 39));  // Nucleo
         zonaCorrecta.put(jButton4, new java.awt.Rectangle(747, 458, 54, 45)); // Bulbo Central
@@ -68,48 +66,57 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
         for (javax.swing.JButton b : zonaCorrecta.keySet()) {
             habilitarArrastre(b, contenedor);
         }
+ 
+        // Animación de flote para el botón de Ayuda
+        animarBotonAyuda();
+ 
+        // Música de fondo al abrir el formulario
+        reproducirMusicaFondo();
     }
  
     /**
-     * Da vida al botón de Ayuda con un pequeño "pulso" (crece y se encoge)
-     * combinado con un suave flotado vertical, en bucle continuo.
-     * Los fotogramas se pre-calculan una sola vez para no reescalar la
-     * imagen en cada tic del temporizador (más eficiente).
+     * Hace que el botón de Ayuda (jButton5) flote suavemente hacia arriba
+     * y abajo de forma continua, como si tuviera vida propia.
      */
-    private void iniciarAnimacionAyuda() {
+    private void animarBotonAyuda() {
         final java.awt.Point posOriginal = jButton5.getLocation();
-        final int anchoBase = jButton5.getWidth();
-        final int altoBase = jButton5.getHeight();
+        final double[] angulo = {0};
  
-        java.net.URL urlAyuda = getClass().getResource("/imagen/Ayuda (1) (1).png");
-        if (urlAyuda == null || anchoBase <= 0 || altoBase <= 0) {
-            return; // Si no se encuentra el ícono, no animamos (se queda estático, sin romper nada)
-        }
-        java.awt.Image base = new javax.swing.ImageIcon(urlAyuda).getImage();
- 
-        final int totalFotogramas = 40;
-        final javax.swing.ImageIcon[] fotogramas = new javax.swing.ImageIcon[totalFotogramas];
-        for (int i = 0; i < totalFotogramas; i++) {
-            double t = (i / (double) totalFotogramas) * 2 * Math.PI;
-            double escala = 1.0 + 0.08 * Math.sin(t); // varía entre 92% y 108% del tamaño original
-            int w = Math.max(1, (int) Math.round(anchoBase * escala));
-            int h = Math.max(1, (int) Math.round(altoBase * escala));
-            java.awt.Image escalada = base.getScaledInstance(w, h, java.awt.Image.SCALE_SMOOTH);
-            fotogramas[i] = new javax.swing.ImageIcon(escalada);
-        }
- 
-        final int[] frame = {0};
-        javax.swing.Timer animacion = new javax.swing.Timer(50, e -> {
-            javax.swing.ImageIcon icono = fotogramas[frame[0]];
-            double t = (frame[0] / (double) totalFotogramas) * 2 * Math.PI;
-            int offsetY = (int) Math.round(4 * Math.sin(t)); // flotado suave arriba/abajo
-            int x = posOriginal.x + (anchoBase - icono.getIconWidth()) / 2;
-            int y = posOriginal.y + (altoBase - icono.getIconHeight()) / 2 + offsetY;
-            jButton5.setIcon(icono);
-            jButton5.setBounds(x, y, icono.getIconWidth(), icono.getIconHeight());
-            frame[0] = (frame[0] + 1) % totalFotogramas;
+        javax.swing.Timer timerFlote = new javax.swing.Timer(30, e -> {
+            angulo[0] += 0.08;
+            int desplazamiento = (int) (Math.sin(angulo[0]) * 8); // sube/baja 8px
+            jButton5.setLocation(posOriginal.x, posOriginal.y + desplazamiento);
         });
-        animacion.start();
+        timerFlote.start();
+    }
+ 
+    /**
+     * Reproduce el audio una sola vez al abrir el formulario.
+     * AJUSTABLE: cambiá "QUIZ2.wav" por el nombre exacto de tu archivo
+     * (con la extensión y mayúsculas/minúsculas tal cual está guardado
+     * en src/audio/).
+     */
+    private void reproducirMusicaFondo() {
+        try {
+            java.net.URL url = getClass().getResource("/audio/QUIZ2.wav");
+            clipMusica = javax.sound.sampled.AudioSystem.getClip();
+            javax.sound.sampled.AudioInputStream audioIn = javax.sound.sampled.AudioSystem.getAudioInputStream(url);
+            clipMusica.open(audioIn);
+            clipMusica.start(); // se reproduce una sola vez, no en bucle
+        } catch (Exception ex) {
+            logger.log(java.util.logging.Level.SEVERE, "No se pudo reproducir la música", ex);
+        }
+    }
+ 
+    /**
+     * Detiene y libera el clip de audio, si está sonando.
+     * Se llama antes de pasar a la siguiente misión para que no siga de fondo.
+     */
+    private void detenerMusicaFondo() {
+        if (clipMusica != null && clipMusica.isRunning()) {
+            clipMusica.stop();
+            clipMusica.close();
+        }
     }
  
     private void habilitarArrastre(javax.swing.JButton btn, javax.swing.JPanel contenedor) {
@@ -147,13 +154,9 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
         java.awt.Point origen = (java.awt.Point) btn.getClientProperty("posOriginal");
  
         if (bounds.intersects(zonaSuya)) {
-            // ¡Correcto! El botón se queda fijo, centrado en la línea pero
-            // "arribita" de ella (apoyado justo encima, sin taparla).
+            // ¡Correcto!
             resueltos.add(btn);
-            final int margenSobreLinea = 6;
-            int destinoX = zonaSuya.x + zonaSuya.width / 2 - bounds.width / 2;
-            int destinoY = zonaSuya.y - bounds.height - margenSobreLinea;
-            btn.setLocation(destinoX, destinoY);
+            btn.setLocation(zonaSuya.x - (bounds.width - zonaSuya.width) / 2, zonaSuya.y - (bounds.height - zonaSuya.height) / 2);
             btn.setBackground(new java.awt.Color(190, 255, 190));
             puntos += 2.5;
             actualizarPuntosEnPantalla();
@@ -191,11 +194,6 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
      * WARNING: Do NOT modify this code. The content of this method is always
      * regenerated by the Form Editor.
      */
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -210,6 +208,7 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jBtnSiguiente = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -262,6 +261,11 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
         jBtnSiguiente.setContentAreaFilled(false);
         jBtnSiguiente.addActionListener(this::jBtnSiguienteActionPerformed);
         getContentPane().add(jBtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 520, 100, 90));
+
+        jLabel5.setFont(new java.awt.Font("Swis721 BT", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel5.setText("Averiguamos las Partes ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 440, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Lactea3 (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1150, 790));
@@ -324,5 +328,6 @@ public class QuizViaLactea2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
