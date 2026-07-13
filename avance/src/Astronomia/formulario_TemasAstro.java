@@ -164,6 +164,10 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
 
     private void jbtnPlanetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlanetaActionPerformed
         
+        Nivel1Sistemasolaryplaneta nivel1 = new Nivel1Sistemasolaryplaneta();
+    nivel1.setVisible(true);
+    this.dispose();
+        
         
     }//GEN-LAST:event_jbtnPlanetaActionPerformed
 

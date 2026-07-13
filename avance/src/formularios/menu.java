@@ -60,10 +60,10 @@ public class menu extends javax.swing.JFrame {
         btnJugar.setContentAreaFilled(false);
         btnJugar.setMargin(new java.awt.Insets(0, 0, 0, 0));
         btnJugar.addActionListener(this::btnJugarActionPerformed);
-        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 250, 200));
+        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 210, 190));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondo11.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondosecundario (1).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 740));
 
         pack();

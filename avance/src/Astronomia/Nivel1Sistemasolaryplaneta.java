@@ -20,9 +20,9 @@ import javax.swing.JButton;
  *
  * @author sayuri
  */
-public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
+public class Nivel1Sistemasolaryplaneta extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Nivel1Sistemasolaryplaneta21.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Nivel1Sistemasolaryplaneta.class.getName());
 
     private Timer timer;
 
@@ -50,7 +50,7 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
     /**
      * Creates new form Sistemasolaryplaneta
      */
-    public Nivel1Sistemasolaryplaneta21() {
+    public Nivel1Sistemasolaryplaneta() {
         initComponents();
         configurarContadorPuntos();
 
@@ -230,7 +230,7 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Nivel1Sistemasolaryplaneta21().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Nivel1Sistemasolaryplaneta().setVisible(true));
     }
 
     private void configurarContadorPuntos() {

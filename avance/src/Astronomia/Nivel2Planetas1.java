@@ -125,10 +125,9 @@ public class Nivel2Planetas1 extends javax.swing.JFrame {
 
     private void btnSiguienteNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteNivelActionPerformed
         // TODO add your handling code here:
-        Nivel3Ordenar nivel = new Nivel3Ordenar(GameData.puntos);
+        Nivel3Ordenar nivel = new Nivel3Ordenar();
         nivel.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_btnSiguienteNivelActionPerformed
 
     private void btnPistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPistaActionPerformed
