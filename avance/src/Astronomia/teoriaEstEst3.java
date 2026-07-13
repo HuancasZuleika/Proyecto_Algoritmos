@@ -176,7 +176,15 @@ public class teoriaEstEst3 extends javax.swing.JFrame {
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
        //desafio
+
        audio.detener();
+
+        Quiz_Estacionario1 siguiente = new Quiz_Estacionario1();
+        siguiente.setVisible(true);
+
+        this.dispose();
+       
+
     }//GEN-LAST:event_jbtnDesfActionPerformed
 
     private void jbtnFredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnFredActionPerformed

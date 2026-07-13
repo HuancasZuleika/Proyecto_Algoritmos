@@ -43,6 +43,8 @@ public class Quiz_BingBang3 extends javax.swing.JFrame {
     public Quiz_BingBang3() {
         initComponents();
         
+        lblPuntos.setText(GameData.formatearPuntos(GameData.puntos));
+        
         this.setLocationRelativeTo(null);
 
         Sonido.reproducirMusica("musica_espacio.wav", -15.0f);

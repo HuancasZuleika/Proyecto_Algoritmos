@@ -109,6 +109,7 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jbtnNext2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext2ActionPerformed
+
         audio.detener();
         teoriaEstEst2 conexSig=new teoriaEstEst2();
         conexSig.setVisible(true);

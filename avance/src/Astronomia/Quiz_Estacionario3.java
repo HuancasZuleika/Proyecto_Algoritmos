@@ -43,6 +43,8 @@ public class Quiz_Estacionario3 extends javax.swing.JFrame {
     public Quiz_Estacionario3() {
         initComponents();
         
+        lblPuntos.setText(GameData.formatearPuntos(GameData.puntos));
+        
         this.setLocationRelativeTo(null);
 
         Sonido.reproducirMusica("musica_espacio.wav", -15.0f);

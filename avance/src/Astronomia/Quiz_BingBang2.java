@@ -44,6 +44,8 @@ public class Quiz_BingBang2 extends javax.swing.JFrame {
         initComponents();
         
         this.setLocationRelativeTo(null);
+        
+        lblPuntos.setText(GameData.formatearPuntos(GameData.puntos));
 
         Sonido.reproducirMusica("musica_espacio.wav", -15.0f);
 
