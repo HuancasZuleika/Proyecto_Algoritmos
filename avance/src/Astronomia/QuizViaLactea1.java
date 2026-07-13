@@ -5,48 +5,32 @@
 package Astronomia;
 
 import java.awt.Image;
-import java.net.URL;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
  */
 public class QuizViaLactea1 extends javax.swing.JFrame {
-      public int puntos = 10; // puntos iniciales, ajusta el numero que quieras
+    
+   public int puntos = 10; // puntos iniciales, ajusta el numero que quieras
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuizViaLactea1.class.getName());
-    private Clip clipFondo; // audio que suena al abrir esta pantalla
- private Clip clipMusica; 
+
+
  
     public QuizViaLactea1() {
         initComponents();
+        // --- Animacion de "respiracion" para los botones de respuesta ---
+        JButton[] botonesAnimados = { jBtnSol, jBtnLuna, jBtnSaturno, jBtnViaLactea };
 
-        // --- Reproduce el audio al abrir el formulario ---
-         try {
-        java.net.URL urlSonido = getClass().getResource("/audio/Quiz1.wav"); // <-- cambia el nombre si tu archivo es otro
-        System.out.println("URL encontrada: " + urlSonido);
-        clipMusica = AudioSystem.getClip();
-        AudioInputStream audioIn = AudioSystem.getAudioInputStream(urlSonido);
-        clipMusica.open(audioIn);
-        clipMusica.start(); // se reproduce una sola vez, no en bucle
-    } catch (Exception ex) {
-        logger.log(java.util.logging.Level.SEVERE, "No se pudo reproducir la música", ex);
-    }
-       
-        
-
-        // --- Animacion de "respiracion" (zoom) para los botones de respuesta y el boton de Ayuda ---
-        JButton[] botonesAnimados = { jBtnSol, jBtnLuna, jBtnSaturno, jBtnViaLactea, jBtnAyuda };
- 
         final ImageIcon[] iconosOriginales = new ImageIcon[botonesAnimados.length];
         final int[] anchoBase = new int[botonesAnimados.length];
         final int[] altoBase = new int[botonesAnimados.length];
         final int[] centroX = new int[botonesAnimados.length];
         final int[] centroY = new int[botonesAnimados.length];
- 
+
         for (int i = 0; i < botonesAnimados.length; i++) {
             JButton b = botonesAnimados[i];
             iconosOriginales[i] = (ImageIcon) b.getIcon();
@@ -55,14 +39,14 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
             centroX[i]   = b.getX() + anchoBase[i] / 2;
             centroY[i]   = b.getY() + altoBase[i] / 2;
         }
- 
+
         final double[] anguloBotones = {0};
         final double amplitudBotones = 0.05; 
- 
+
         javax.swing.Timer timerBotones = new javax.swing.Timer(30, e -> {
             anguloBotones[0] += 0.06;
             double factor = 1.0 + amplitudBotones * Math.sin(anguloBotones[0]);
- 
+
             for (int i = 0; i < botonesAnimados.length; i++) {
                 int w = (int) (anchoBase[i] * factor);
                 int h = (int) (altoBase[i] * factor);
@@ -72,21 +56,9 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
             }
         });
         timerBotones.start();
- 
-        // --- Animacion de zoom (pulso) para el titulo de la pregunta ---
-        final java.awt.Font fuenteBaseTitulo = jLabel3.getFont();
-        final float tamanoBaseTitulo = fuenteBaseTitulo.getSize2D();
-        final double amplitudTitulo = 0.06; // 6% de variacion de tamaño
-        final double[] anguloTitulo = {0};
- 
-        javax.swing.Timer timerTitulo = new javax.swing.Timer(40, e -> {
-            anguloTitulo[0] += 0.05;
-            double factor = 1.0 + amplitudTitulo * Math.sin(anguloTitulo[0]);
-            float nuevoTamano = (float) (tamanoBaseTitulo * factor);
-            jLabel3.setFont(fuenteBaseTitulo.deriveFont(nuevoTamano));
-        });
-        timerTitulo.start();
     }
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -143,7 +115,6 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         getContentPane().add(jBtnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 160, 150));
 
         jLabel3.setFont(new java.awt.Font("Swis721 BlkCn BT", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 153, 153));
         jLabel3.setText("¿Dónde vivimos dentro del universo?");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 560, 70));
 
@@ -188,73 +159,44 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnLunaActionPerformed
 
     private void jBtnViaLacteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnViaLacteaActionPerformed
-       int puntosGanados = 10;
-        puntos += puntosGanados; // Suma 10 puntos por responder correctamente
+     puntos += 10; // Suma 2 puntos por responder correctamente
         actualizarPuntosEnPantalla();
-        VentanaPersonalizada vp = new VentanaPersonalizada();
-        vp.mostrarExitoPersonalizado(this, puntosGanados);
-        
-                                                 
+        JOptionPane.showMessageDialog(this, "¡EXCELENTE! ¡Respuesta correcta! +10 Puntos.", "¡Misión Cumplida!", JOptionPane.INFORMATION_MESSAGE);
+    
     }//GEN-LAST:event_jBtnViaLacteaActionPerformed
 
     private void jBtnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAyudaActionPerformed
-     puntos -= 2; // Resta 2 puntos por usar la ayuda
+        // CORRECCIÓN: Quitamos variables inexistentes. Aquí se procesa la pista directa.
+        puntos -= 2; // Resta los 2 puntos por usar la ayuda
         actualizarPuntosEnPantalla();
- 
-        VentanaPersonalizada vp = new VentanaPersonalizada();
-        vp.mostrarPistaPersonalizada(this,
-                "Nuestra casa no tiene anillos,"
-                        + " y no es el Sol ni la Luna...");
-                                             
+        
+        JOptionPane.showMessageDialog(this, 
+            "PISTA: \"Nuestra casa no tiene anillos, y no es el Sol ni la Luna...\"", 
+            "Pista Espacial", 
+            JOptionPane.INFORMATION_MESSAGE);                                      
+    
+
     }//GEN-LAST:event_jBtnAyudaActionPerformed
 
     private void jBtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSiguienteActionPerformed
-     // --- Corta el audio antes de pasar a la siguiente pantalla ---
-      
-    if (clipMusica != null && clipMusica.isRunning()) {
-        clipMusica.stop();
-        clipMusica.close();
-    }
-        QuizViaLactea2 quiz = new QuizViaLactea2();
+       QuizViaLactea2 quiz = new QuizViaLactea2();
     quiz.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_jBtnSiguienteActionPerformed
-
 
    private void manejarRespuestaIncorrecta() {
     VentanaPersonalizada vp = new VentanaPersonalizada();
     // Le pasamos "this" (el juego) y tu botón "jBtnPuntos"
     vp.mostrarErrorPersonalizado(this, jBtnPuntos); 
 }
- 
+
     // CAMBIO: Se cambió a public para que VentanaPersonalizada pueda llamarlo
-    private int puntosMostrados = puntos; // valor que se ve actualmente en pantalla (para animar desde aquí)
- 
     public void actualizarPuntosEnPantalla() {
-        final int origen = puntosMostrados;
-        final int destino = puntos;
-        final int diferencia = destino - origen;
-        if (diferencia == 0) {
-            jBtnPuntos.setText(String.valueOf(destino));
-            return;
-        }
-        final int pasos = 15;
-        final int[] paso = {0};
-        javax.swing.Timer timerContador = new javax.swing.Timer(20, null);
-        timerContador.addActionListener(e -> {
-            paso[0]++;
-            double avance = Math.min(1.0, paso[0] / (double) pasos);
-            int valorActual = origen + (int) Math.round(diferencia * avance);
-            jBtnPuntos.setText(String.valueOf(valorActual));
-            if (paso[0] >= pasos) {
-                jBtnPuntos.setText(String.valueOf(destino));
-                puntosMostrados = destino;
-                ((javax.swing.Timer) e.getSource()).stop();
-            }
-        });
-        timerContador.start();
+        jBtnPuntos.setText(String.valueOf(puntos));
     }
-   
+    
+  
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

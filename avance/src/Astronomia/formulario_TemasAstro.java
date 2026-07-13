@@ -82,13 +82,13 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jbtnPlaneta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnPlanetas.png"))); // NOI18N
+        jbtnPlaneta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSisSol.png"))); // NOI18N
         jbtnPlaneta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnPlanetaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 240, 230));
+        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, 240, 230));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -116,7 +116,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnViaLactActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 230, 230));
+        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 230, 230));
 
         jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro2.png"))); // NOI18N
         jPanel1.add(jLabelFondoAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));
@@ -145,7 +145,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnOrigenActionPerformed
 
     private void jbtnViaLactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnViaLactActionPerformed
-        teoria_ViaLact conexViaLac = new teoria_ViaLact();
+        DefinicionViaLactea conexViaLac = new DefinicionViaLactea();
         conexViaLac.setVisible(true);
         this.dispose();
         
