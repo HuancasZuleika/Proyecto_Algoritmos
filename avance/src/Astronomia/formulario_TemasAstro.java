@@ -88,7 +88,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnPlanetaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, 240, 230));
+        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 240, 230));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -108,7 +108,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnOrigenActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 240, 220));
+        jPanel1.add(jbtnOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 240, 220));
 
         jbtnViaLact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnViaLac.png"))); // NOI18N
         jbtnViaLact.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 jbtnViaLactActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 230, 230));
+        jPanel1.add(jbtnViaLact, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 230, 230));
 
         jLabelFondoAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoPrinAstro2.png"))); // NOI18N
         jPanel1.add(jLabelFondoAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1030, 640));

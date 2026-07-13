@@ -120,7 +120,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 jbtnEstActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 160, 160));
+        jPanel1.add(jbtnEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 160, 160));
 
         jbtnElec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnElec.png"))); // NOI18N
         jbtnElec.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 jbtnElecActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnElec, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 160, 170));
+        jPanel1.add(jbtnElec, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 160, 170));
 
         jbtnCiclica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnCiclica.png"))); // NOI18N
         jbtnCiclica.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class teoria_Origen extends javax.swing.JFrame {
                 jbtnBigBangActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnBigBang, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 170, 160));
+        jPanel1.add(jbtnBigBang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 170, 160));
 
         jlabelNave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/nave.png"))); // NOI18N
         jlabelNave.setText("jLabel1");
@@ -223,9 +223,7 @@ public class teoria_Origen extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnEstActionPerformed
 
     private void jbtnReboteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnReboteActionPerformed
-        teoriaGranReb1 conexReb = new teoriaGranReb1();
-        conexReb.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jbtnReboteActionPerformed
     //método para ajustar una imagen a un label
     private void SetLabel(JLabel LabelName, String root){

@@ -21,7 +21,7 @@ public class inicio extends javax.swing.JFrame {
     public inicio() {
         initComponents();
         //iniciar el programa en el centro de la pantalla
-        this.setExtendedState(MAXIMIZED_BOTH);
+        
         this.setLocationRelativeTo(this);
         
         SetFondoPrin(jLabelMenuPrin,"src/imagen/fondoMenuPrin.png");
@@ -74,7 +74,6 @@ public class inicio extends javax.swing.JFrame {
         jLabelMenuPrin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setExtendedState(6);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -83,30 +82,30 @@ public class inicio extends javax.swing.JFrame {
                 jbtnAstActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 170, 150));
+        jPanel1.add(jbtnAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 160, 140));
 
         jLabelMundoAst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MundoAstro.png"))); // NOI18N
-        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 250, 230));
+        jPanel1.add(jLabelMundoAst, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 240, 230));
 
         jbtnHist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnHistActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 210, 190));
+        jPanel1.add(jbtnHist, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 170, 150));
 
         jLabelMundoHis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MundoHisto.png"))); // NOI18N
-        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 270, 250));
+        jPanel1.add(jLabelMundoHis, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, 240, 210));
 
         jbtnMate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnMateActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 180, 160));
+        jPanel1.add(jbtnMate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 160, 140));
 
         jLabelMundoMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/MundoMate.png"))); // NOI18N
-        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 240, 230));
+        jPanel1.add(jLabelMundoMat, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 240, 210));
 
         jbtnAjuste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnAjuste.png"))); // NOI18N
         jbtnAjuste.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +116,7 @@ public class inicio extends javax.swing.JFrame {
         jPanel1.add(jbtnAjuste, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 100, 70));
 
         jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoMenuPrin.png"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 630));
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1060, 630));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
