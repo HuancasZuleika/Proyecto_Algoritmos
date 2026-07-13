@@ -43,6 +43,11 @@ public class Quiz_Electrico1 extends javax.swing.JFrame {
     public Quiz_Electrico1() {
         initComponents();
 
+        GameData.reiniciarJuego();
+
+        // Muestra 10 en la pantalla inicial
+        lblPuntos.setText(GameData.formatearPuntos(GameData.puntos));
+
         Sonido.reproducirMusica("musica_espacio.wav", -15.0f);
 
         lblPuntos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

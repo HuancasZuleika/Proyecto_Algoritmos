@@ -44,6 +44,11 @@ public class Quiz_BingBang1 extends javax.swing.JFrame {
     public Quiz_BingBang1() {
         initComponents();
 
+        GameData.reiniciarJuego();
+
+        // Muestra 10 en la pantalla inicial
+        lblPuntos.setText(GameData.formatearPuntos(GameData.puntos));
+
         this.pack();
         this.setLocationRelativeTo(null); // Centra la ventana en el monitor
         this.setResizable(false);
@@ -79,6 +84,7 @@ public class Quiz_BingBang1 extends javax.swing.JFrame {
 
         lblPuntos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblPuntos.setVerticalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblPuntos.setIconTextGap(-20);
         lblPuntos.setForeground(java.awt.Color.WHITE);
 
         jLabel3.setIcon(new ImageIcon(getClass().getResource("/imagen/astro_pensando.png")));
