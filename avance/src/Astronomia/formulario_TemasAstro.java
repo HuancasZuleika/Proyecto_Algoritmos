@@ -26,7 +26,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
     public formulario_TemasAstro() {
         initComponents();
         //iniciar el programa en el centro de la pantalla
-        
         this.setLocationRelativeTo(this);
         
         //imagen se adapte al label
@@ -82,13 +81,17 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jbtnPlaneta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnSisSol.png"))); // NOI18N
+        jbtnPlaneta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/bottonSistemaSolarDesafios.png"))); // NOI18N
+        jbtnPlaneta.setBorder(null);
+        jbtnPlaneta.setBorderPainted(false);
+        jbtnPlaneta.setContentAreaFilled(false);
+        jbtnPlaneta.setFocusPainted(false);
         jbtnPlaneta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnPlanetaActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, 240, 230));
+        jPanel1.add(jbtnPlaneta, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 240, 230));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnatras (1).png"))); // NOI18N
         btnVolver.setContentAreaFilled(false);
@@ -102,7 +105,6 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
         jbtnOrigen.setBackground(new java.awt.Color(242, 242, 242));
         jbtnOrigen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/btnOrigen.png"))); // NOI18N
         jbtnOrigen.setBorderPainted(false);
-        jbtnOrigen.setOpaque(true);
         jbtnOrigen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnOrigenActionPerformed(evt);
@@ -264,10 +266,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
                 g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
 
                 // Limpieza absoluta de la caja del botón para asegurar transparencia total
-                g2d.setComposite(AlphaComposite.Clear);
-                g2d.fillRect(0, 0, c.getWidth(), c.getHeight());
-                g2d.setComposite(AlphaComposite.SrcOver);
-
+               
                 // DIBUJAR LUZ: Solo cuando el mouse está encima
                 if (mouseEncima[0]) {
                     int centroX = c.getWidth() / 2;
