@@ -242,6 +242,7 @@ public class QuizViaLactea3 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 153));
         jLabel2.setText("ADIVINA QUIEN SOY ?");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, -1, -1));
 
