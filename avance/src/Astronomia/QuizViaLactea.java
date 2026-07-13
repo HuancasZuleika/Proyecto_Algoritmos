@@ -49,16 +49,17 @@ public class QuizViaLactea extends javax.swing.JFrame {
     public QuizViaLactea() {
         initComponents();
         try {
-    java.net.URL urlSonido = getClass().getResource("/audio/BienvenidaLactea.wav");
-    System.out.println("URL encontrada: " + urlSonido); // <-- linea nueva de diagnostico
-    
+    java.net.URL urlSonido = getClass().getResource("/audio/Bienvenida.wav");
+    System.out.println("URL encontrada: " + urlSonido);
+
     AudioInputStream audioStream = AudioSystem.getAudioInputStream(urlSonido);
-    Clip clip = AudioSystem.getClip();
-    clip.open(audioStream);
-    clip.start();
-            } catch (Exception e) {
+    clipBienvenida = AudioSystem.getClip();
+    clipBienvenida.open(audioStream);
+    clipBienvenida.start();
+} catch (Exception e) {
     e.printStackTrace();
-     }
+}
+ 
         
     
          ResponsiveResizer resizer = new ResponsiveResizer(this);
@@ -336,7 +337,11 @@ timerZoom.start();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnCoheteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCoheteActionPerformed
-   QuizViaLactea1 quiz = new QuizViaLactea1();
+     if (clipBienvenida != null && clipBienvenida.isRunning()) {
+        clipBienvenida.stop();
+        clipBienvenida.close();
+    }
+        QuizViaLactea1 quiz = new QuizViaLactea1();
     quiz.setVisible(true);
     this.dispose();     }//GEN-LAST:event_jBtnCoheteActionPerformed
 
@@ -387,7 +392,7 @@ timerZoom.start();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new QuizViaLactea().setVisible(true));
     }
-
+   private Clip clipBienvenida;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCohete;
     private javax.swing.JLabel jLabelFondo;

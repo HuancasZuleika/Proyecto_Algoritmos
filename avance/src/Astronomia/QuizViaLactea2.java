@@ -278,14 +278,15 @@ private static final java.util.logging.Logger logger = java.util.logging.Logger.
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jBtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSiguienteActionPerformed
-          if (resueltos.size() < zonaCorrecta.size()) {
-          VentanaPersonalizada vp = new VentanaPersonalizada();
-          vp.mostrarErrorSimplePersonalizado(this, "Todavía te faltan partes de la Vía Láctea por ubicar.");
-          return;
-      }
-      QuizViaLactea3 quiz = new QuizViaLactea3();
-    quiz.setVisible(true);
-    this.dispose();
+if (resueltos.size() < zonaCorrecta.size()) {
+      VentanaPersonalizada vp = new VentanaPersonalizada();
+      vp.mostrarErrorSimplePersonalizado(this, "Todavía te faltan partes de la Vía Láctea por ubicar.");
+      return;
+  }
+  detenerMusicaFondo();   // <-- esta línea nueva: corta la música antes de pasar de pantalla
+  QuizViaLactea3 quiz = new QuizViaLactea3();
+quiz.setVisible(true);
+this.dispose();
         
     
         
