@@ -158,6 +158,7 @@ public class teoriaUnivElec3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
+        audio.detener();
         Quiz_Electrico1 siguiente = new Quiz_Electrico1();
         siguiente.setVisible(true);
 
@@ -167,6 +168,7 @@ public class teoriaUnivElec3 extends javax.swing.JFrame {
 
     private void jbtnHannesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHannesActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         reproducirAudioBoton("Hannes.wav");
     }//GEN-LAST:event_jbtnHannesActionPerformed
     //función para ajustar una imagen a un label

@@ -76,8 +76,8 @@ public class Nivel4Explocion extends javax.swing.JFrame {
         lblEstrella = new javax.swing.JLabel();
         btnPista = new javax.swing.JButton();
         lblsateliteRoto = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         btnsiguiente = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -94,15 +94,15 @@ public class Nivel4Explocion extends javax.swing.JFrame {
         lblsateliteRoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/satelite-removebg-preview (1).png"))); // NOI18N
         getContentPane().add(lblsateliteRoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 90, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Nivel 4 (1).png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         btnsiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Siguiente-removebg-preview (1).png"))); // NOI18N
         btnsiguiente.setText("jButton2");
         btnsiguiente.setBorderPainted(false);
         btnsiguiente.setContentAreaFilled(false);
         btnsiguiente.addActionListener(this::btnsiguienteActionPerformed);
         getContentPane().add(btnsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 600, 160, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Nivel 4 (1).png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,6 +117,10 @@ public class Nivel4Explocion extends javax.swing.JFrame {
     private void btnsiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsiguienteActionPerformed
         // TODO add your handling code here:
         irSiguienteNivel();
+        
+formulario_TemasAstro quiz = new formulario_TemasAstro();
+quiz.setVisible(true);
+this.dispose();
 
     }//GEN-LAST:event_btnsiguienteActionPerformed
 

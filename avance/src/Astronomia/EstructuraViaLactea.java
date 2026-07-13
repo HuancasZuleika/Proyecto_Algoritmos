@@ -130,7 +130,10 @@ public class EstructuraViaLactea extends javax.swing.JFrame {
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
         audio.detener();
-        //conexion
+       
+        QuizViaLactea quiz = new QuizViaLactea();
+    quiz.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_jbtnDesfActionPerformed
      
     //función para ajustar una imagen a un label

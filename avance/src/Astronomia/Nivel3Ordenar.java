@@ -56,6 +56,7 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
      * Creates new form Nivel3Ordenar
      */
     public Nivel3Ordenar() {
+          initComponents();  
         prepararNivelOrdenar();
     }
 
