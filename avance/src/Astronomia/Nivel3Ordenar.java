@@ -37,7 +37,6 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Nivel3Ordenar.class.getName());
 
-   private int puntos = 10;
     private int aciertos = 0;
 
     private JLabel lblPuntaje;
@@ -52,15 +51,16 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
     private final Set<JLabel> planetasUnidos = new HashSet<JLabel>();
     private final Set<JTextArea> caracteristicasUnidas = new HashSet<JTextArea>();
     private final List<LineaUnion> lineas = new ArrayList<LineaUnion>();
+
     /**
      * Creates new form Nivel3Ordenar
      */
     public Nivel3Ordenar() {
-        this(10);
+        prepararNivelOrdenar();
     }
 
     public Nivel3Ordenar(int puntosRecibidos) {
-        puntos = Math.max(0, puntosRecibidos);
+        GameData.puntos = Math.max(0, puntosRecibidos);
         initComponents();
         prepararNivelOrdenar();
     }
@@ -138,7 +138,7 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-      try {
+        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -156,7 +156,7 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
         });
     }
 
-   private void prepararNivelOrdenar() {
+    private void prepararNivelOrdenar() {
         BtnSiguiente.setText("Siguiente");
         btnPista.setText("Pista (-3)");
 
@@ -307,7 +307,7 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
     }
 
     private void unirCorrectamente(JLabel planeta, JTextArea caracteristica) {
-        puntos += 10;
+        GameData.sumarPuntos();
         aciertos++;
 
         planetasUnidos.add(planeta);
@@ -325,7 +325,7 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
         mostrarEstrellitas(centroIzquierda(caracteristica));
 
         if (aciertos == 5) {
-            mostrarVentanaBonita("Lo hiciste muy bien", "Uniste todos los planetas con sus caracteristicas.\nPuntaje actual: " + puntos);
+            mostrarVentanaBonita("Lo hiciste muy bien", "Uniste todos los planetas con sus caracteristicas.\nPuntaje actual: " + GameData.puntos);
         }
     }
 
@@ -340,7 +340,7 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
         planetaSeleccionado = null;
 
         lblMensaje.setText("Incorrecto: -3 puntos. Vuelve a intentarlo.");
-        mostrarVentanaBonita("Vuelve a intentarlo", "La union no es correcta.\nSe descontaron 3 puntos.\nPuntaje actual: " + puntos);
+        mostrarVentanaBonita("Vuelve a intentarlo", "La union no es correcta.\nSe descontaron 3 puntos.\nPuntaje actual: " + GameData.puntos);
     }
 
     private void usarPista() {
@@ -356,15 +356,15 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
         }
 
         lblMensaje.setText("Pista usada: -3 puntos.");
-        mostrarVentanaBonita("Pista (-3 puntos)", pista + "\nPuntaje actual: " + puntos);
+        mostrarVentanaBonita("Pista (-3 puntos)", pista + "\nPuntaje actual: " + GameData.puntos);
     }
 
     private void restarPuntos(int cantidad) {
-        puntos = Math.max(0, puntos - cantidad);
+    GameData.restarPuntos();
     }
 
     private void actualizarMarcadores() {
-        lblPuntaje.setText("Puntos: " + puntos);
+    lblPuntaje.setText("Puntos: " + GameData.puntos);
     }
 
     private Point centroDerecha(JLabel label) {
@@ -376,18 +376,18 @@ public class Nivel3Ordenar extends javax.swing.JFrame {
     }
 
     private void irSiguienteNivel() {
-    if (aciertos < 5) {
-        mostrarVentanaBonita("Aun falta", "Primero une los 5 planetas con sus caracteristicas.");
-        return;
+        if (aciertos < 5) {
+            mostrarVentanaBonita("Aun falta", "Primero une los 5 planetas con sus caracteristicas.");
+            return;
+        }
+
+        mostrarVentanaBonita("Nivel completado",
+                "Puntaje actual: " + GameData.puntos + "\nYa puedes continuar.");
+
+        Nivel4Explocion nivel4 = new Nivel4Explocion();
+        nivel4.setVisible(true);
+        this.dispose();
     }
-
-    mostrarVentanaBonita("Nivel completado",
-            "Puntaje actual: " + puntos + "\nYa puedes continuar.");
-
-    Nivel4Explocion nivel4 = new Nivel4Explocion();
-    nivel4.setVisible(true);
-    this.dispose();
-}
 
     private void enviarFondoAtras() {
         getContentPane().setComponentZOrder(jLabel1, getContentPane().getComponentCount() - 1);

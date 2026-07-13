@@ -25,6 +25,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
+import javax.swing.Timer;
+import java.util.Random;
 
 /**
  *
@@ -34,7 +36,6 @@ public class Nivel4Explocion extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Nivel4Explocion.class.getName());
 
-    private int puntos = 10;
     private int basuraEliminada = 0;
     private int basuraTotal = 0;
 
@@ -43,19 +44,23 @@ public class Nivel4Explocion extends javax.swing.JFrame {
     private PanelOrbitas panelOrbitas;
 
     private final List<JLabel> objetosBasura = new ArrayList<JLabel>();
+    private final List<JLabel> objetosEstrella = new ArrayList<JLabel>();
+    private Timer timerMovimiento;
+    private double angulo = 0;
 
     /**
      * Creates new form Nivel4Explocion
      */
     public Nivel4Explocion() {
-        this(10);
+        initComponents();
+        lblsateliteRoto.setVisible(false);
+        prepararNivel();
     }
 
     public Nivel4Explocion(int puntosRecibidos) {
-        puntos = Math.max(0, puntosRecibidos);
+        GameData.puntos = Math.max(0, puntosRecibidos);
         initComponents();
         lblsateliteRoto.setVisible(false);
-
         prepararNivel();
     }
 
@@ -164,10 +169,11 @@ public class Nivel4Explocion extends javax.swing.JFrame {
         crearPanelOrbitas();
         crearMarcadores();
         crearObjetosDelNivel();
+        iniciarMovimientoCircular();
         enviarFondoAtras();
         actualizarMarcadores();
         lblEstrella.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
+        objetosEstrella.add(lblEstrella);
         lblEstrella.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent evt) {
@@ -228,7 +234,7 @@ public class Nivel4Explocion extends javax.swing.JFrame {
         basuraTotal = 0;
         basuraEliminada = 0;
         objetosBasura.clear();
-
+        objetosEstrella.clear();
         crearBasura(150, 410);
         crearBasura(220, 240);
         crearBasura(600, 245);
@@ -274,7 +280,7 @@ public class Nivel4Explocion extends javax.swing.JFrame {
                 tocarEstrella(estrella);
             }
         });
-
+        objetosEstrella.add(estrella);
         agregarComponente(estrella, x, y, 80, 70);
         getContentPane().setComponentZOrder(estrella, 0);
     }
@@ -288,9 +294,9 @@ public class Nivel4Explocion extends javax.swing.JFrame {
         basuraEliminada++;
 
         if (basuraEliminada % 4 == 0) {
-            puntos += 10;
+            GameData.sumarPuntos();
             lblMensaje.setText("Muy bien: limpiaste 4 basuras. +10 puntos.");
-            mostrarVentanaBonita("Buen trabajo", "Eliminaste 4 objetos de basura espacial.\nGanaste 10 puntos.\nPuntaje actual: " + puntos);
+            mostrarVentanaBonita("Buen trabajo", "Eliminaste 4 objetos de basura espacial.\nGanaste 10 puntos.\nPuntaje actual: " + GameData.puntos);
         } else {
             lblMensaje.setText("Basura eliminada. Sigue limpiando las orbitas.");
         }
@@ -303,7 +309,7 @@ public class Nivel4Explocion extends javax.swing.JFrame {
     }
 
     private void tocarEstrella(JLabel estrella) {
-        puntos = Math.max(0, puntos - 3);
+        GameData.restarPuntos();
         actualizarMarcadores();
 
         lblMensaje.setText("Cuidado: las estrellas no son basura. -3 puntos.");
@@ -311,7 +317,7 @@ public class Nivel4Explocion extends javax.swing.JFrame {
     }
 
     private void usarPista() {
-        puntos = Math.max(0, puntos - 3);
+        GameData.restarPuntos();
         actualizarMarcadores();
 
         int faltan = basuraTotal - basuraEliminada;
@@ -325,11 +331,11 @@ public class Nivel4Explocion extends javax.swing.JFrame {
         btnPista.setEnabled(false);
 
         lblMensaje.setText("Excelente: las orbitas vuelven a brillar.");
-        mostrarVentanaBonita("Nivel completado", "Limpiaste toda la basura espacial.\nLas orbitas vuelven a brillar.\nPuntaje actual: " + puntos);
+        mostrarVentanaBonita("Nivel completado", "Limpiaste toda la basura espacial.\nLas orbitas vuelven a brillar.\nPuntaje actual: " + GameData.puntos);
     }
 
     private void actualizarMarcadores() {
-        lblPuntaje.setText("Puntos: " + puntos);
+        lblPuntaje.setText("Puntos: " + GameData.puntos);
     }
 
     private void irSiguienteNivel() {
@@ -338,12 +344,8 @@ public class Nivel4Explocion extends javax.swing.JFrame {
             return;
         }
 
-        mostrarVentanaBonita("Muy bien", "Puntaje actual: " + puntos + "\nYa puedes continuar.");
+        mostrarVentanaBonita("Muy bien", "Puntaje actual: " + GameData.puntos + "\nYa puedes continuar.");
 
-        // Cambia Nivel5 por el nombre real de tu siguiente formulario.
-        // Nivel5 nivel = new Nivel5(puntos);
-        // nivel.setVisible(true);
-        // this.dispose();
     }
 
     private void enviarFondoAtras() {
@@ -463,6 +465,39 @@ public class Nivel4Explocion extends javax.swing.JFrame {
             g2.setFont(new Font("Arial", Font.BOLD, 28));
             g2.drawString("Orbitas limpias y brillantes", 485, 680);
         }
+    }
+
+    private void iniciarMovimientoCircular() {
+        timerMovimiento = new Timer(35, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                angulo += 0.02;
+
+                moverCircular(objetosBasura, 681, 380, 360, 145, angulo);
+                moverCircular(objetosEstrella, 681, 380, 500, 210, -angulo);
+            }
+        });
+
+        timerMovimiento.start();
+    }
+
+    private void moverCircular(List<JLabel> objetos, int centroX, int centroY, int radioX, int radioY, double anguloBase) {
+        for (int i = 0; i < objetos.size(); i++) {
+            JLabel objeto = objetos.get(i);
+
+            if (!objeto.isVisible()) {
+                continue;
+            }
+
+            double separacion = (2 * Math.PI / objetos.size()) * i;
+            double anguloObjeto = anguloBase + separacion;
+
+            int x = centroX + (int) (Math.cos(anguloObjeto) * radioX) - objeto.getWidth() / 2;
+            int y = centroY + (int) (Math.sin(anguloObjeto) * radioY) - objeto.getHeight() / 2;
+
+            objeto.setLocation(x, y);
+        }
+
+        getContentPane().repaint();
     }
 
 

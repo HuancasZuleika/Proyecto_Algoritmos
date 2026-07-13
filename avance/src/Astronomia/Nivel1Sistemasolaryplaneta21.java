@@ -34,7 +34,6 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
     private int yMouse;
     private boolean arrastrando = false;
     private JLabel planetaArrastrado = null;
-    private int puntos = 10;
     private JLabel lblPuntos = new JLabel();
     private JLabel lblMercurioFijo = new JLabel();
     private JLabel lblVenusFijo = new JLabel();
@@ -179,7 +178,7 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
 
     private void btnPistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPistaActionPerformed
         // TODO add your handling code here:
-        if (puntos <= 0) {
+        if ( + GameData.puntos <= 0) {
             mostrarVentanaBonita("Sin puntos", "Gastaste todos tus puntos", "Total: 0 puntos");
             return;
         }
@@ -197,7 +196,7 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
         mostrarVentanaBonita(
                 "Pista",
                 pistas[numero],
-                "-3 puntos | Total: " + puntos
+                "-3 puntos | Total: "  + GameData.puntos
         );
     }//GEN-LAST:event_btnPistaActionPerformed
 
@@ -249,27 +248,22 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
     }
 
     private void actualizarPuntos() {
-        lblPuntos.setText("Puntos: " + puntos);
+        lblPuntos.setText("Puntos: " + GameData.puntos);
     }
 
-    private void sumarPuntos(int cantidad) {
-        puntos += cantidad;
-        actualizarPuntos();
+  private void sumarPuntos(int cantidad) {
+    GameData.sumarPuntos();
+    actualizarPuntos();
+}
+
+private void restarPuntos(int cantidad) {
+    GameData.restarPuntos();
+    actualizarPuntos();
+
+    if (GameData.puntos == 0) {
+        mostrarVentanaBonita("Sin puntos", "Gastaste todos tus puntos", "Total: 0 puntos");
     }
-
-    private void restarPuntos(int cantidad) {
-        puntos -= cantidad;
-
-        if (puntos < 0) {
-            puntos = 0;
-        }
-
-        actualizarPuntos();
-
-        if (puntos == 0) {
-            mostrarVentanaBonita("Sin puntos", "Gastaste todos tus puntos", "Total: 0 puntos");
-        }
-    }
+}
 
     private void mostrarVentanaBonita(String titulo, String mensaje, String detalle) {
         JPanel panel = new JPanel(null);
@@ -523,7 +517,7 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
                 mostrarVentanaBonita(
                         "Lo hiciste muy bien",
                         "Uniste el planeta correctamente.",
-                        "Puntaje actual: " + puntos
+                        "Puntaje actual: "  + GameData.puntos
                 );
             });
             boolean quedan = false;
@@ -546,7 +540,7 @@ public class Nivel1Sistemasolaryplaneta21 extends javax.swing.JFrame {
             mostrarVentanaBonita(
                     "Vuelve a intentarlo",
                     "La union no es correcta.<br>Se descontaron 3 puntos.",
-                    "Puntaje actual: " + puntos
+                    "Puntaje actual: "  + GameData.puntos
             );
             regresarPlaneta(planeta);
 

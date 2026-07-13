@@ -29,7 +29,6 @@ public class Nivel2Planetas1 extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Nivel2Planetas1.class.getName());
 
-    private int puntos = 10;
     private int numeroMision = 0;
 
     private Timer timerMovimiento;
@@ -126,7 +125,7 @@ public class Nivel2Planetas1 extends javax.swing.JFrame {
 
     private void btnSiguienteNivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteNivelActionPerformed
         // TODO add your handling code here:
-        Nivel3Ordenar nivel = new Nivel3Ordenar(puntos);
+        Nivel3Ordenar nivel = new Nivel3Ordenar(GameData.puntos);
         nivel.setVisible(true);
         this.dispose();
 
@@ -282,14 +281,14 @@ public class Nivel2Planetas1 extends javax.swing.JFrame {
             explosionEstrellas(planeta.label);
 
             if (planetasPendientes.isEmpty()) {
-                puntos += 10;
+                GameData.sumarPuntos();
                 lblMensajeJuego.setText("Muy bien: +10 puntos");
                 pasarASiguienteMision();
             } else {
                 lblMensajeJuego.setText("Bien. Sigue buscando los planetas correctos.");
             }
         } else {
-            puntos = Math.max(0, puntos - 3);
+            GameData.restarPuntos();
             lblMensajeJuego.setText("Incorrecto: -3 puntos");
         }
 
@@ -326,11 +325,16 @@ public class Nivel2Planetas1 extends javax.swing.JFrame {
     }
 
     private void actualizarPuntaje() {
-        lblPuntaje.setText("Puntos: " + puntos);
+        lblPuntaje.setText("Puntos: " + GameData.puntos);
     }
 
     private void usarPista() {
-        puntos = Math.max(0, puntos - 3);
+        if (GameData.puntos <= 0) {
+            lblMensajeJuego.setText("Gastaste todos tus puntos");
+            actualizarPuntaje();
+            return;
+        }
+        GameData.restarPuntos();
         lblMensajeJuego.setText(misiones.get(numeroMision).pista);
         actualizarPuntaje();
     }
