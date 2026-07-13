@@ -98,7 +98,7 @@ private static final java.util.logging.Logger logger = java.util.logging.Logger.
      */
     private void reproducirMusicaFondo() {
         try {
-            java.net.URL url = getClass().getResource("/audio/QUIZ2.wav");
+            java.net.URL url = getClass().getResource("/audio/Quiz2.wav");
             clipMusica = javax.sound.sampled.AudioSystem.getClip();
             javax.sound.sampled.AudioInputStream audioIn = javax.sound.sampled.AudioSystem.getAudioInputStream(url);
             clipMusica.open(audioIn);
