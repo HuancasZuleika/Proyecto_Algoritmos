@@ -9,7 +9,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 /**
- *
+ * 
  * @author Usuario
  */
 public class QuizViaLactea2 extends javax.swing.JFrame {

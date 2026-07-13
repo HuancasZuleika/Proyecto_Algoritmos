@@ -10,14 +10,13 @@ package Astronomia;
  */
 public class GameData {
 
-    public static int puntos = 10;
+    public static int vidas = 3;
+    public static double puntos = 10;
 
-    // Suma 10 puntos
     public static void sumarPuntos() {
         puntos += 10;
     }
 
-    // Resta 3 puntos (sin bajar de 0)
     public static void restarPuntos() {
         if (puntos >= 3) {
             puntos -= 3;
@@ -26,17 +25,20 @@ public class GameData {
         }
     }
 
-    // Reinicia el juego
     public static void reiniciarJuego() {
         puntos = 10;
+        vidas = 3;
     }
 
-    public static int vidas = 3;
-
     public static void restarVida() {
-        if (vidas > 0) {
-            vidas--;
+        if (vidas > 0) vidas--;
+    }
+
+    public static String formatearPuntos(double p) {
+        if (p == Math.floor(p)) {
+            return String.valueOf((int) p);
         }
+        return String.format("%.1f", p);
     }
 
 }
