@@ -22,19 +22,21 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
         astro.iniciar();  
         
         audio = new AudioController();
-        reproducirNarracion("Elect1.wav");
+        reproducirNarracion("EstadoEst1.wav");
         
         //iniciar el programa en el centro de la pantalla
         this.setLocationRelativeTo(this);
         
         //ajustar a label
-        SetLabel(jLabelMenuPrin, "src/imagen/fondoUniElec1.png");
+        SetLabel(jLabelMenuPrin, "src/imagen/fondoEst1.png");
         //TRANSPARENCIA
         jbtnNext2.setContentAreaFilled(false);
         jbtnNext2.setBorderPainted(false);
         jbtnNext2.setOpaque(false);
         
         EfectoBoton(jbtnNext2);
+        
+        
        
     }
 
@@ -48,20 +50,14 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jlabelburbuja = new javax.swing.JLabel();
         jbtnNext2 = new javax.swing.JButton();
         jlabelAstro = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         jLabelMenuPrin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setExtendedState(6);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jlabelburbuja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/burbujaElect1.png"))); // NOI18N
-        jlabelburbuja.setText("jLabel1");
-        jPanel1.add(jlabelburbuja, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 280, 360));
 
         jbtnNext2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/botonNext1.png"))); // NOI18N
         jbtnNext2.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +65,7 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
                 jbtnNext2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtnNext2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 230, 100));
+        jPanel1.add(jbtnNext2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 530, 230, 100));
 
         jlabelAstro.setText("jLabel1");
         jPanel1.add(jlabelAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 270, 420));
@@ -83,8 +79,8 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
         });
         jPanel1.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
 
-        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoUniElec1.png"))); // NOI18N
-        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 650));
+        jLabelMenuPrin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/fondoEst1.png"))); // NOI18N
+        jPanel1.add(jLabelMenuPrin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,10 +90,9 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
@@ -487,6 +482,5 @@ public class teoriaEstEst1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnNext2;
     private javax.swing.JLabel jlabelAstro;
-    private javax.swing.JLabel jlabelburbuja;
     // End of variables declaration//GEN-END:variables
 }
