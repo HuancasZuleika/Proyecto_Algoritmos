@@ -118,7 +118,7 @@ public class Resultado_BingBang extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 620, 260, 70));
 
         lblResultado.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 70, 50));
+        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 100, 50));
 
         lblAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/astro_celebra.png"))); // NOI18N
         getContentPane().add(lblAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, -1));

@@ -119,7 +119,7 @@ public class Resultado_Electrico extends javax.swing.JFrame {
 
         lblResultado.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 500, 70, 50));
+        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 100, 50));
 
         lblAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/astro_celebra.png"))); // NOI18N
         getContentPane().add(lblAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));

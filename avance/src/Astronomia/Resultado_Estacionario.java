@@ -118,7 +118,7 @@ public class Resultado_Estacionario extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 630, 260, 70));
 
         lblResultado.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 70, 50));
+        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 490, 100, 50));
 
         lblAstro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/astro_celebra.png"))); // NOI18N
         getContentPane().add(lblAstro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));

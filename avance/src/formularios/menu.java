@@ -26,7 +26,6 @@ public class menu extends javax.swing.JFrame {
 
     public menu() {
         initComponents();
-        this.setExtendedState(MAXIMIZED_BOTH);
         setLocationRelativeTo(null);
         btnJugar.setOpaque(false);
         btnJugar.setContentAreaFilled(false);

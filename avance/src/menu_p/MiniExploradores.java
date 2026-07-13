@@ -19,8 +19,6 @@ public class MiniExploradores extends JFrame {
 
     public MiniExploradores() {
         
-        this.setExtendedState(MAXIMIZED_BOTH);
-
         // ANCHO Y ALTURA DE LA VENTANA
         setTitle("Carga");
         setSize(969, 745);

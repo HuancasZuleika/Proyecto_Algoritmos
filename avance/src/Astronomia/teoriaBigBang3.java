@@ -196,7 +196,10 @@ public class teoriaBigBang3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
-        
+         Quiz_BingBang1 siguiente = new Quiz_BingBang1();
+        siguiente.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jbtnDesfActionPerformed
 
     private void jbtnEinsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEinsActionPerformed
