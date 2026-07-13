@@ -5,22 +5,39 @@
 package Astronomia;
 
 import java.awt.Image;
+import java.net.URL;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
- 
 /**
  *
  * @author Usuario
  */
 public class QuizViaLactea1 extends javax.swing.JFrame {
-    
-   public int puntos = 10; // puntos iniciales, ajusta el numero que quieras
+      public int puntos = 10; // puntos iniciales, ajusta el numero que quieras
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuizViaLactea1.class.getName());
- 
- 
+    private Clip clipFondo; // audio que suena al abrir esta pantalla
+ private Clip clipMusica; 
  
     public QuizViaLactea1() {
         initComponents();
+
+        // --- Reproduce el audio al abrir el formulario ---
+         try {
+        java.net.URL urlSonido = getClass().getResource("/audio/Quiz1.wav"); // <-- cambia el nombre si tu archivo es otro
+        System.out.println("URL encontrada: " + urlSonido);
+        clipMusica = AudioSystem.getClip();
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(urlSonido);
+        clipMusica.open(audioIn);
+        clipMusica.start(); // se reproduce una sola vez, no en bucle
+    } catch (Exception ex) {
+        logger.log(java.util.logging.Level.SEVERE, "No se pudo reproducir la música", ex);
+    }
+       
+        
+
         // --- Animacion de "respiracion" (zoom) para los botones de respuesta y el boton de Ayuda ---
         JButton[] botonesAnimados = { jBtnSol, jBtnLuna, jBtnSaturno, jBtnViaLactea, jBtnAyuda };
  
@@ -70,7 +87,6 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         });
         timerTitulo.start();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -178,7 +194,7 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         VentanaPersonalizada vp = new VentanaPersonalizada();
         vp.mostrarExitoPersonalizado(this, puntosGanados);
         
-    //GEN-LAST:event_jBtnViaLacteaActionPerformed
+                                                 
     }//GEN-LAST:event_jBtnViaLacteaActionPerformed
 
     private void jBtnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAyudaActionPerformed
@@ -189,11 +205,17 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         vp.mostrarPistaPersonalizada(this,
                 "Nuestra casa no tiene anillos,"
                         + " y no es el Sol ni la Luna...");
-    //GEN-LAST:event_jBtnAyudaActionPerformed
+                                             
     }//GEN-LAST:event_jBtnAyudaActionPerformed
 
     private void jBtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSiguienteActionPerformed
-       QuizViaLactea2 quiz = new QuizViaLactea2();
+     // --- Corta el audio antes de pasar a la siguiente pantalla ---
+      
+    if (clipMusica != null && clipMusica.isRunning()) {
+        clipMusica.stop();
+        clipMusica.close();
+    }
+        QuizViaLactea2 quiz = new QuizViaLactea2();
     quiz.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_jBtnSiguienteActionPerformed
@@ -232,11 +254,7 @@ public class QuizViaLactea1 extends javax.swing.JFrame {
         });
         timerContador.start();
     }
-    
-  
-
-  
-
+   
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
