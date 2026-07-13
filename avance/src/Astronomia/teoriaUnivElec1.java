@@ -105,6 +105,7 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         teoria_Origen pantallaOrigen = new teoria_Origen();
         pantallaOrigen.setVisible(true);
 
@@ -113,6 +114,7 @@ public class teoriaUnivElec1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jbtnNext2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext2ActionPerformed
+        audio.detener();
         teoriaUnivElec2 conex = new teoriaUnivElec2();
         conex.setVisible(true);
         this.dispose();

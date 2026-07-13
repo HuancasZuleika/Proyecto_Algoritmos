@@ -146,6 +146,7 @@ public class DescubrimientoViaLactea extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
         pantallaAstro.setVisible(true);
 
@@ -154,6 +155,7 @@ public class DescubrimientoViaLactea extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         OrigenViaLactea conex = new OrigenViaLactea();
         conex.setVisible(true);
         this.dispose();
@@ -161,6 +163,7 @@ public class DescubrimientoViaLactea extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnSigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSigActionPerformed
+        audio.detener();
         EstructuraViaLactea conex = new EstructuraViaLactea();
         conex.setVisible(true);
         this.dispose();

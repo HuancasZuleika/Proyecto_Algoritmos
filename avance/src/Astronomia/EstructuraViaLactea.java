@@ -121,6 +121,7 @@ public class EstructuraViaLactea extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         DescubrimientoViaLactea conexAnt=new DescubrimientoViaLactea();
         conexAnt.setVisible(true);
         this.dispose();
@@ -128,6 +129,7 @@ public class EstructuraViaLactea extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
+        audio.detener();
         //conexion
     }//GEN-LAST:event_jbtnDesfActionPerformed
      

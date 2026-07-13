@@ -145,4 +145,27 @@ public class AstronautaController {
         
     }
     
+    public void detenerTodo() {
+
+        hablandoAhora = false;
+
+        if (timerFlotar != null) {
+            timerFlotar.stop();
+        }
+
+        if (timerParpadeo != null) {
+            timerParpadeo.stop();
+        }
+
+        if (timerAbrirOjos != null) {
+            timerAbrirOjos.stop();
+        }
+
+        if (timerHablar != null) {
+            timerHablar.stop();
+        }
+
+        lblAstronauta.setIcon(normal);
+    }
+    
 }

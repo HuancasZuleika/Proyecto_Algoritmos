@@ -181,6 +181,7 @@ public class teoriaBigBang3 extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
         pantallaAstro.setVisible(true);
 
@@ -189,6 +190,7 @@ public class teoriaBigBang3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         teoriaBigBang1 conexAnt=new teoriaBigBang1();
         conexAnt.setVisible(true);
         this.dispose();
@@ -196,7 +198,8 @@ public class teoriaBigBang3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
-        
+        audio.detener();
+        //desafio
     }//GEN-LAST:event_jbtnDesfActionPerformed
 
     private void jbtnEinsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEinsActionPerformed

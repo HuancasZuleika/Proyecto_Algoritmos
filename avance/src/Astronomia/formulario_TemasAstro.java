@@ -163,9 +163,7 @@ public class formulario_TemasAstro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jbtnPlanetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPlanetaActionPerformed
-        teoria_Planetas conexPlanetas = new teoria_Planetas();
-        conexPlanetas.setVisible(true);
-        this.dispose();
+        
         
     }//GEN-LAST:event_jbtnPlanetaActionPerformed
 

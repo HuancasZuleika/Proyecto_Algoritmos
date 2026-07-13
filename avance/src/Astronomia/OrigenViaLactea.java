@@ -133,6 +133,7 @@ public class OrigenViaLactea extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         DefinicionViaLactea pantallaOrigen = new DefinicionViaLactea();
         pantallaOrigen.setVisible(true);
 
@@ -142,12 +143,14 @@ public class OrigenViaLactea extends javax.swing.JFrame {
 
     private void jbtnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext1ActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         DescubrimientoViaLactea conexion = new DescubrimientoViaLactea();
         conexion.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbtnNext1ActionPerformed
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         teoriaBigBang1 conexAnt=new teoriaBigBang1();
         conexAnt.setVisible(true);
         this.dispose();

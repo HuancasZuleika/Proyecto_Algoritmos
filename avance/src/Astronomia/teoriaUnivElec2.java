@@ -168,6 +168,7 @@ public class teoriaUnivElec2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         teoriaUnivElec1 conexAnt=new teoriaUnivElec1();
         conexAnt.setVisible(true);
         this.dispose();
@@ -175,6 +176,7 @@ public class teoriaUnivElec2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnNext3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext3ActionPerformed
+        audio.detener();
         teoriaUnivElec3 conexSig=new teoriaUnivElec3();
         conexSig.setVisible(true);
         this.dispose();

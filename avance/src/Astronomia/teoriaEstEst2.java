@@ -163,6 +163,7 @@ public class teoriaEstEst2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         teoriaEstEst1 conexAnt=new teoriaEstEst1();
         conexAnt.setVisible(true);
         this.dispose();
@@ -170,6 +171,7 @@ public class teoriaEstEst2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnNex3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNex3ActionPerformed
+        audio.detener();
         teoriaEstEst3 conexSig=new teoriaEstEst3();
         conexSig.setVisible(true);
         this.dispose();
@@ -177,6 +179,7 @@ public class teoriaEstEst2 extends javax.swing.JFrame {
      
     //función para ajustar una imagen a un label
     private void SetLabel(JLabel LabelName, String root){
+        audio.detener();
         ImageIcon image = new ImageIcon(root);
         Icon icon = new ImageIcon(image.getImage().getScaledInstance(LabelName.getWidth(), LabelName.getHeight(), Image.SCALE_DEFAULT));
         LabelName.setIcon(icon);

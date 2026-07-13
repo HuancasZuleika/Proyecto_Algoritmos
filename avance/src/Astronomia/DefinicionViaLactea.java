@@ -118,7 +118,8 @@ public class DefinicionViaLactea extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
-        teoria_Origen pantallaOrigen = new teoria_Origen();
+        audio.detener();
+        formulario_TemasAstro pantallaOrigen = new formulario_TemasAstro();
         pantallaOrigen.setVisible(true);
 
         // Cerramos la ventana actual de temas
@@ -127,6 +128,7 @@ public class DefinicionViaLactea extends javax.swing.JFrame {
 
     private void jbtnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext1ActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         OrigenViaLactea conexion = new OrigenViaLactea();
         conexion.setVisible(true);
         this.dispose();

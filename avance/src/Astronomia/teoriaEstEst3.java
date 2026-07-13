@@ -158,6 +158,7 @@ public class teoriaEstEst3 extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        audio.detener();
         formulario_TemasAstro pantallaAstro = new formulario_TemasAstro();
         pantallaAstro.setVisible(true);
 
@@ -166,6 +167,7 @@ public class teoriaEstEst3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         teoriaEstEst2 conexAnt=new teoriaEstEst2();
         conexAnt.setVisible(true);
         this.dispose();
@@ -174,6 +176,7 @@ public class teoriaEstEst3 extends javax.swing.JFrame {
 
     private void jbtnDesfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnDesfActionPerformed
        //desafio
+       audio.detener();
     }//GEN-LAST:event_jbtnDesfActionPerformed
 
     private void jbtnFredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnFredActionPerformed

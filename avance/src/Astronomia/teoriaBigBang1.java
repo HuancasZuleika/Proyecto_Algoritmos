@@ -136,6 +136,8 @@ public class teoriaBigBang1 extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        audio.detener();
+        
         teoria_Origen pantallaOrigen = new teoria_Origen();
         pantallaOrigen.setVisible(true);
 
@@ -145,10 +147,13 @@ public class teoriaBigBang1 extends javax.swing.JFrame {
 
     private void jbtnBumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnBumActionPerformed
         // TODO add your handling code here:
+        audio.detener();
     }//GEN-LAST:event_jbtnBumActionPerformed
 
     private void jbtnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNext1ActionPerformed
         // TODO add your handling code here:
+        audio.detener();
+        
         teoriaBigBang2 conexion = new teoriaBigBang2();
         conexion.setVisible(true);
         this.dispose();

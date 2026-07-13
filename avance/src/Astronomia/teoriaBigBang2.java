@@ -162,6 +162,7 @@ public class teoriaBigBang2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnAnt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAnt1ActionPerformed
+        audio.detener();
         teoriaBigBang1 conexAnt=new teoriaBigBang1();
         conexAnt.setVisible(true);
         this.dispose();
@@ -169,6 +170,7 @@ public class teoriaBigBang2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAnt1ActionPerformed
 
     private void jbtnNex3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnNex3ActionPerformed
+        audio.detener();
         teoriaBigBang3 conexSig=new teoriaBigBang3();
         conexSig.setVisible(true);
         this.dispose();
